@@ -1,0 +1,192 @@
+# Excluded temporary files
+temporary-*.*
+*.tmp
+.DS_Store
+Exported Items.bib
+*.pyc
+latexmkrc
+
+# Ignore vim swap files
+.*.swp
+
+# R
+.Rproj.user
+.Rhistory
+*.Rproj
+.RData
+
+# Excluded pdf
+*.pdf
+!/archive/*.pdf
+!/figure/*.pdf
+!/image/*.pdf
+
+# Excluded doc
+*.doc
+*.docx
+
+# ipython checkpoint
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# LaTeX gitignore from github:
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+.$*.bib$
+*.spl
+*.xdv
+*.tex~
+*.ps
+
+# Ignore TexMaker compilation files
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# ingnore lyx VCS files and backups
+\#*.lyx\#
+*.lyx,v
+*.lyx~
+
+## From https://github.com/janzhou/latex-makefile
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+
+## Intermediate documents:
+*.dvi
+*-converted-to.*
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.brf
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Auxiliary and intermediate files from other packages:
+
+# algorithms
+*.alg
+*.loa
+
+# amsthm
+*.thm
+
+# beamer
+*.nav
+*.snm
+*.vrb
+
+#(e)ledmac/(e)ledpar
+*.end
+*.[1-9]
+*.[1-9][0-9]
+*.[1-9][0-9][0-9]
+*.[1-9]R
+*.[1-9][0-9]R
+*.[1-9][0-9][0-9]R
+*.eledsec[1-9]
+*.eledsec[1-9]R
+*.eledsec[1-9][0-9]
+*.eledsec[1-9][0-9]R
+*.eledsec[1-9][0-9][0-9]
+*.eledsec[1-9][0-9][0-9]R
+
+# glossaries
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+
+# hyperref
+*.brf
+
+# listings
+*.lol
+
+# makeidx
+*.idx
+*.ilg
+*.ind
+*.ist
+
+# minitoc
+*.maf
+*.mtc
+*.mtc0
+
+# minted
+*.pyg
+
+# morewrites
+*.mw
+
+# nomencl
+*.nlo
+
+# sagetex
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+
+# sympy
+*.sout
+*.sympy
+sympy-plots-for-*.tex/
+
+# todonotes
+*.tdo
+
+# xindy
+*.xdy
+
+# configure
+.configure
+
+# https://www.jetbrains.com/idea/
+.idea
+papers.iml
+
+# others
+
+.dropbox
+desktop.ini
+.directory
+.makefile
+*/out
+.pdfignore

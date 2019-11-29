@@ -1,0 +1,104 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[cn,11pt, simple]{elegantbook}
+
+\title{研究工具简单教程： Linux、Vim、\LaTeX{}、Git}
+\subtitle{基于 Virtualbox 虚拟机}
+
+\author{甘湘华}
+\institute{西南财经大学}
+\date{\today}
+\version{3.09}
+
+\extrainfo{本教程基于已经配置好所用软件的虚拟机。}
+
+\logo{logo.png}
+\cover{cover.jpg}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+% \thispagestyle{empty}
+
+\mainmatter
+\hypersetup{pageanchor=true}
+
+\chapter{Virtualbox 虚拟机使用教程}
+
+\section{参考资料}%
+\label{sec:vbox-ref}
+
+Virtualbox 虚拟机软件参考资料网址：
+\begin{itemize}
+    \item 官方网址： \href{https://www.virtualbox.org/}{https://www.virtualbox.org/} 
+    \item 官方论坛： \href{https://forums.virtualbox.org/}{https://forums.virtualbox.org/} 
+    \item 网络上的非官方网址和非官方教程：
+        \begin{itemize}
+            \item 如果官方网址下载虚拟机软件慢的话，
+                可以在
+                \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/6.0.14/}
+                {清华镜像下载}。
+            \item \href{https://www.jianshu.com/p/bfb4f4415411}{安装
+                virtualbox 教程}\footnote{本教程使用的虚拟机版本是 6.0.14}
+                \footnote{本教程作者已经感谢该文作者。}
+        \end{itemize}
+\end{itemize}
+
+\section{使用教程}%
+\label{sec:vbox-tip}
+
+\subsection{设定共享目录}%
+\label{sub:vbox-tip-share-folder}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
+  2019-11-29 17-52-45.png}
+  \caption{设定共享目录 --- 示意图 1}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
+  2019-11-29 17-53-28.png}
+  \caption{设定共享目录 --- 示意图 2}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
+  2019-11-29 17-54-41.png}
+  \caption{设定共享目录 --- 示意图 3}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
+  2019-11-29 17-55-59.png}
+  \caption{设定共享目录 --- 示意图 4}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
+  2019-11-29 17-59-22.png}
+  \caption{设定共享目录 --- 示意图 5}
+\end{figure}
+
+\subsection{调整虚拟机窗口大小}%
+\label{sec:vbox-tip-window-size}
+
+至少有两种方法：
+\begin{enumerate}
+    \item 按组合键 Host + H.（组合键在 Linux 和 Windows 上通常为右边的
+        Ctrl, 在 Mac 上通常为左边的 Command 键）
+    \item 用鼠标拖动窗口，调节窗口大小。
+\end{enumerate}
+
+
+
+%\nocite{*} 
+
+%\bibliography{reference}
+
+%\appendix
+
+\end{document}
