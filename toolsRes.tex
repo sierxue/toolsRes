@@ -4,14 +4,18 @@
 \documentclass[cn,11pt, simple]{elegantbook}
 
 \title{研究工具简单教程： Linux、Vim、\LaTeX{}、Git}
-\subtitle{基于 Virtualbox 虚拟机}
+\subtitle{基于作者配置好的 Virtualbox 虚拟机}
 
 \author{甘湘华}
 \institute{西南财经大学}
 \date{\today}
-\version{3.09}
+\version{0.01}
 
-\extrainfo{本教程基于已经配置好所用软件的虚拟机。}
+\extrainfo{本教程基于已经配置好所用软件的虚拟机，力求尽快让技术小白能够用
+    {\rm \LaTeX{}} 写研究论文，以及用~{\rm \lstinline{Git}}
+    工具来进行版本控制。
+    需要声明的是，作者本人也是小白一枚，请读者批判地学习本教程。
+    不当以及需改进之处，请不吝指出，谢谢！}
 
 \logo{logo.png}
 \cover{cover.jpg}
@@ -27,75 +31,311 @@
 \hypersetup{pageanchor=true}
 
 \chapter{Virtualbox 虚拟机使用教程}
+\label{cha:virtualbox-tips}
 
 \section{参考资料}%
-\label{sec:vbox-ref}
+\label{sec:virtualbox-refs}
 
 Virtualbox 虚拟机软件参考资料网址：
 \begin{itemize}
-    \item 官方网址： \href{https://www.virtualbox.org/}{https://www.virtualbox.org/} 
-    \item 官方论坛： \href{https://forums.virtualbox.org/}{https://forums.virtualbox.org/} 
+    \item 官方网址： \href{https://www.virtualbox.org/}{https://www.virtualbox.org/}
+    \item 官方论坛： \href{https://forums.virtualbox.org/}{https://forums.virtualbox.org/}
     \item 网络上的非官方网址和非官方教程：
         \begin{itemize}
             \item 如果官方网址下载虚拟机软件慢的话，
                 可以在
                 \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/6.0.14/}
-                {清华镜像下载}。
+                {清华镜像}下载。
             \item \href{https://www.jianshu.com/p/bfb4f4415411}{安装
                 virtualbox 教程}\footnote{本教程使用的虚拟机版本是 6.0.14}
                 \footnote{本教程作者已经感谢该文作者。}
         \end{itemize}
 \end{itemize}
 
-\section{使用教程}%
-\label{sec:vbox-tip}
+\section{使用教程及技巧}%
+\label{sec:virtualbox-tips}
 
 \subsection{设定共享目录}%
-\label{sub:vbox-tip-share-folder}
-\begin{figure}[htbp]
+\label{sub:virtualbox-tip-share-folder}
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
   2019-11-29 17-52-45.png}
   \caption{设定共享目录 --- 示意图 1}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
   2019-11-29 17-53-28.png}
   \caption{设定共享目录 --- 示意图 2}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
   2019-11-29 17-54-41.png}
   \caption{设定共享目录 --- 示意图 3}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
   2019-11-29 17-55-59.png}
   \caption{设定共享目录 --- 示意图 4}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
   2019-11-29 17-59-22.png}
   \caption{设定共享目录 --- 示意图 5}
 \end{figure}
 
+\newpage
 \subsection{调整虚拟机窗口大小}%
-\label{sec:vbox-tip-window-size}
+\label{sec:virtualbox-tip-window-size}
 
-至少有两种方法：
+至少有三种方法：
 \begin{enumerate}
+    \item 最大化虚拟机窗口。（在 Linux 和 Windows 上通常为点击右上角的方框，
+        在 Mac 上点击左上的放大键）
     \item 按组合键 Host + H.（组合键在 Linux 和 Windows 上通常为右边的
         Ctrl, 在 Mac 上通常为左边的 Command 键）
     \item 用鼠标拖动窗口，调节窗口大小。
 \end{enumerate}
 
+\chapter{Linux 使用教程}%
+\label{sec:linux-tips}
+
+\section{Linux 的简单介绍}%
+\label{sec:linux-intro}
+
+\subsection{Linux 的系统配置}%
+\label{sub:linux-settings}
+
+在 Unix/Linux/Mac 系统上，软件有它们各自的配置文件，通常以 ~.  开头，
+管它们叫 \emph{点文件}~(~ \texttt{dotfiles}).
+这些点文件数量多，并且所在的位置还有所不同，管理起来并不是一个容易的事情。
+一个方法是把所有的这些配置文件放进一个文件夹，对每个配置文件用命令
+\lstinline{ln -s} 链接到原来的位置。
+这个文件夹可以用 git 仓库进行管理，
+可以方便我们把一台电脑上的配置，同步到另外的电脑上。
+
+作者配置的虚拟机上使用
+\href{https://github.com/anishathalye/dotbot}{dotbot} 技术来管理 dotfiles.
+在本虚拟机的 \lstinline{~/.df/} 目录中有两个文件夹: \lstinline{dotfiles}
+中的配置文件是所有电脑中都共同拥有的; \lstinline{dotfiles-local}
+中的配置文件是某个电脑所特有的。
+建议本教程的读者在未掌握 \lstinline{dotfiles}
+的配置前，不要更改这两个文件夹中的任何文件。
+
+\subsection{本教程所用虚拟机的配置}%
+\label{sub:virtualbox-guest-settings}
+
+待续
+
+\subsection{使用本虚拟机的步骤和注意事项}%
+\label{sub:virtualbox-guest-ganx}
+
+\subsubsection{配置文件}%
+\label{ssub:virtualbox-guest-ganx-conf}
+
+本虚拟机的配置文件主要由以下两个仓库控制：
+\begin{itemize}
+    \item \href{https://github.com/ddpom/dotfiles}
+        {https://github.com/ddpom/dotfiles}
+    \item \href{https://github.com/ddpom/dotfiles-local}
+        {https://github.com/ddpom/dotfiles-local}
+\end{itemize}
+
+\subsubsection{设置配置文件仓库的更新提示}%
+\label{ssub:virtualbox-guest-ganx-conf-update-notification}
+
+两个仓库不时更新的，更新配置文件的提交实现后，会发出更新提示。
+如果你 \lstinline{watch (关注)} 了这两个仓库，就可以收到更新提示。
+设置步骤如下：
+\begin{enumerate}
+    \item 访问 \href{https://github.com/ddpom/dotfiles}
+        {https://github.com/ddpom/dotfiles}, 点击右上方
+        \lstinline{watch (关注)} 旁边的下拉菜单，选择 \lstinline{watching}.
+        如果你觉得这个仓库还有用的话，顺便点一下右边的 \lstinline{star}.
+    \item 访问 \href{https://github.com/ddpom/dotfiles-local}
+        {https://github.com/ddpom/dotfiles-local},
+        点击右上方 \lstinline{watch (关注)} 旁边的下拉菜单，
+        选择 \lstinline{watching}.
+        如果你觉得这个仓库还有用的话，顺便点一下右边的 \lstinline{star}.
+    \item 访问 \href{https://github.com/settings/notifications}
+        {https://github.com/settings/notifications},
+        配置你接收提示的选项。缺省设置下，你会在电子邮件里收到你关注的仓库的
+        提交。你还可以打钩 \lstinline{Web and Mobile} 选项。
+\end{enumerate}
+
+\section{Linux 的学习方式}%
+\label{sec:linux-learning}
+
+待续
+
+\section{Linux 的常用命令}%
+\label{sec:linux-commands}
+
+常用命令：
+\begin{enumerate}
+    \item \lstinline{cd}: 进 入某个目录; 例子：
+\begin{lstlisting}[ escapeinside=``]
+    cd ~/.ssh/
+\end{lstlisting}
+    \item \lstinline{mv}: 1. 修改文件或这目录的名字; 2.
+        移动文件或者整个目录； 例子：
+\begin{lstlisting}[escapeinside=``]
+    cd ~/.ssh/
+    mv github_yourname_ganx github_ddpom_ganx
+    mv github_yourname_ganx.pub github_ddpom_ganx.pub
+\end{lstlisting}
+\end{enumerate}
+
+\chapter{Vim 使用教程及技巧}%
+\label{sec:vim-tips}
+
+\section{Vim 的简单介绍}%
+\label{sec:vim-intro}
+
+待续
+%Vim 的学习曲线（To do）。
+
+\section{Vim 的学习方式}%
+\label{sec:vim-learning}
+
+在终端中，输入 \lstinline{vimtutor} 命令学习 Vim
+的基本用法，然后在使用中继续学习。
+
+\chapter{\LaTeX{} 使用教程}%
+\label{cha:latex-tips}
+
+\section{参考资料}%
+\label{sec:latex-refs}
+
+\LaTeX{} 参考资料网址：
+\begin{itemize}
+    \item 官方网址： \href{https://www.c tan.org/}{https://www.ctan.org/}
+    \item 问答网站：
+        \href{https://tex.stackexchange.com/}{https://tex.stackexchange.com/}
+    \item 软件下载：如果官方网址下载 \lstinline{texlive.iso} 慢的话，可以在
+    \href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/}
+                {清华镜像}~下载。
+    \item 数学符号： \href{books/latex-math-symbols.pdf}{速查表}~ ~
+        \href{http://mirrors .ustc.edu.cn/CTAN/info/symbols/comprehensive/symbols-a4.pdf}
+        {详细列表}
+        \footnote{如果 \lstinline{git clone} 了本仓库,
+        可以在本仓库的 \lstinline{books}
+        目录中阅读此电子书:
+        \href{books/symbols-a4.pdf}{数学符号详细列表} 。
+        由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+    \item \LaTeX{} 教程：
+        \begin{itemize}
+            \item \href{h ttps://github.com/luong-komorebi/Begin-Latex-in-minutes/blob/master/Translation-Chinese.md}
+                {学习 \LaTeX{} 从现在开始 (Begin \LaTeX{} in Minutes)}
+            \item
+                \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
+                {一份不太简短的LATEX介绍}
+        \href{http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf}
+                {中文下载}
+                \footnote{如果 \lstinline{git clone} 了本仓库,
+                可以在本仓库的 \lstinline{books}
+                目录中阅读此电子书:
+                \href{books/lshort-zh-cn.pdf}{一份不太简短的LATEX介绍} 。
+                由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+            \item
+                \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
+                {一份简短的 LaTeX 数学指南}
+                \href{https://wenda.latexstudio.net/article-5006.html}
+                {中文下载}
+                \footnote{如果 \lstinline{git clone} 了本仓库,
+                可以在本仓库的 \lstinline{books}
+                目录中阅读此电子书:
+                \href{books/short-math-guide(cn).pdf}
+                {一份简短的 LaTeX 数学指南} 。
+                由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+                \href{http://mirrors.ustc.edu.cn/CTAN/info/short-math-guide/short-math-guide.pdf}{英文下载}
+                \footnote{如果 \lstinline{git clone} 了本仓库,
+                可以在本仓库的 \lstinline{books}
+                目录中阅读此电子书:
+                \href{books/short-math-guide.pdf}
+                {Short Math Guide for \LaTeX{}} 。
+                由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+            \item \href{https://github.com/huangxg/lnotes}
+                {雷太赫排版系统简介 An introduction to TeX/LaTeX
+                typesetting system}
+        \href{https://github.com/huangxg/lnotes/raw/master/lnotes2.pdf}{下载}
+                \footnote{如果 \lstinline{git clone} 了本仓库,
+                可以在本仓库的 \lstinline{books}
+                目录中阅读此电子书:
+                \href{books/lnotes2.pdf}{雷太赫排版系统简介} 。
+                由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+        \end{itemize}
+\end{itemize}
+
+\section{使用教程}%
+\label{sec:latex-tips}
+
+待续
+
+\chapter{Git 使用教程}%
+\label{cha:git-tips}
+
+\section{Github 的注册和 SSH 设置}%
+\label{sec:git-hub}
+
+设置步骤：
+\begin{itemize}
+    \item 在 \href{https://github.com/}{https://github.com/}
+        上登陆（注册并登陆）你的账户。
+    \item 新建在github上使用的公匙：
+        \begin{itemize}
+            \item 打开一个终端 (\lstinline{terminal});
+            \item 运行以下命令 (用你注册时的电子邮件账户替换
+                \lstinline{yourEmail});
+\begin{lstlisting}
+    ssh-keygen -t rsa -C "yourEmail" -f ~/.ssh/github_ddpom_ganx
+\end{lstlisting}
+            \item 提示输入 \lstinline{passphrase}
+                时，可以留空，也可以输入你的 \lstinline{passphrase};
+            \item 运行以下命令，将公钥复制到剪切板;
+\begin{lstlisting}
+    xclip -sel clip < ~/.ssh/github_ddpom_ganx.pub
+\end{lstlisting}
+            \item 粘贴剪切板里的内容到你的 GitHub 账户中的 SSH 公钥：
+                \begin{itemize}
+                    \item 访问 \href{https://github.com/settings/keys}
+                        {https://github.com/settings/keys},
+                        如果提示你登陆的话，请登陆；
+                    \item 点击右上角的 \lstinline{New SSH key} 后，
+                        粘贴剪切板里的内容到文本框。
+                \end{itemize}
+            \item 运行以下命令，测试你的 SSH 设置：
+\begin{lstlisting}
+    ssh -T git@github.com
+\end{lstlisting}
+            \item 如果你看到如下信息，你的设置就成功了。
+\begin{lstlisting}
+    Hi yourUsername! You've successfully authenticated, but GitHub does not provide shell access.
+\end{lstlisting}
+        \end{itemize}
+\end{itemize}
 
 
-%\nocite{*} 
+\section{Git 的简单介绍}%
+\label{sec:git-intro}
+
+待续
+
+\section{Git 的学习方式}%
+\label{sec:git-learning}
+
+待续
+
+\section{Git 使用教程及技巧}%
+\label{sec:git-tips}
+
+待续
+
+%\nocite{*}
 
 %\bibliography{reference}
 
