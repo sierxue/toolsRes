@@ -167,6 +167,32 @@ Virtualbox 虚拟机软件参考资料网址：
         提交。你还可以打钩 \lstinline{Web and Mobile} 选项。
 \end{enumerate}
 
+\subsubsection{更新配置文件 --- 手动方式}%
+\label{sec:update-dotfiles}
+
+\begin{itemize}
+    \item 运行下面几个命令，更新 \href{https://github.com/ddpom/dotfiles}
+        {https://github.com/ddpom/dotfiles}:
+        \begin{lstlisting}[escapeinside=``]
+    cd ~/.df/dotfiles
+    git checkout .
+    git pull --rebase
+    git submodule update --remote --recursive
+    ./install
+        \end{lstlisting}
+    \item 运行下面几个命令，更新
+        \href{https://github.com/ddpom/dotfiles-local}
+        {https://github.com/ddpom/dotfiles-local}:
+        \begin{lstlisting}[escapeinside=``]
+    cd ~/.df/dotfiles-local
+    git checkout .
+    git pull --rebase
+    git submodule update --remote --recursive
+    ./install
+        \end{lstlisting}
+\end{itemize}
+
+
 \section{Linux 的学习方式}%
 \label{sec:linux-learning}
 
