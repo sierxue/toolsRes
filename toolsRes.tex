@@ -351,6 +351,27 @@ Virtualbox 虚拟机软件参考资料网址：
         \end{itemize}
 \end{itemize}
 
+\newpage
+\subsection{在虚拟机中设置用户名和电子邮件}%
+\label{sub:git-user-info}
+
+\begin{enumerate}
+    \item 用 \lstinline{gvim} 修改 \lstinline{~/.gitconfig_local}
+        （如果没有这个文件, \lstinline{gvim} 会新建这个文件并打开它）：
+\begin{lstlisting}[escapeinside=``]
+    gvim ~/.gitconfig_local
+\end{lstlisting}
+    \item 写入下面的内容，用你个人的用户名和邮件地址替换相应的信息：
+\begin{lstlisting}[escapeinside=``]
+[user]
+	name = yourUsername
+	email = yourEmail
+
+[github]
+	user = yourUsername
+\end{lstlisting}
+
+\end{enumerate}
 
 \section{Git 的简单介绍}%
 \label{sec:git-intro}
