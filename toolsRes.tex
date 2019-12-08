@@ -218,9 +218,42 @@ Virtualbox 虚拟机软件参考资料网址：
 \chapter{Vim 使用教程及技巧}%
 \label{cha:vim-tips}
 
+\section{参考资料}%
+\label{sec:vim-refs}
+
+\begin{itemize}
+    \item 官方网址： \href{https://www.vim.org/}{https://www.vim.org/}
+    \item 问答网站：
+        \href{https://vi.stackexchange.com/}{https://vi.stackexchange.com/}
+    \item vim 教程：
+        \begin{itemize}
+            \item \lstinline{vimtutor}
+                \footnote{在终端中，输入 \lstinline{vimtutor} 命令学习 Vim
+                的基本用法。}
+            \item \href{https://github.com/wsdjeg/vim-galore-zh_cn}
+                {Vim 从入门到精通}
+            \item \href{https://item.jd.com/12056490.html}
+                {Vim 使用技巧 (Pratical Vim) 第二版}
+        \end{itemize}
+\end{itemize}
+
+\section{Vim 的配置}%
 \label{sec:vim-intro}
 
+\subsection{Vim 的配置文件}%
+\label{sub:vim-config}
 
+本虚拟机中的配置文件为：
+\begin{lstlisting}[escapeinside=``]
+    ~/.df/dotfiles/vimrc
+    ~/.df/dotfiles-local/gvimrc
+    ~/.vimrc_customized
+    ~/.gvimrc_customized
+\end{lstlisting}
+\lstinline{vimrc} 和 \lstinline{gvimrc} 由
+\ref{ssub:virtualbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
+你对本台虚拟机的特殊设置可以在 \lstinline{.vimrc_customized} 和
+\lstinline{.gvimrc_customized} 中配置。
 
 %待续
 %%Vim 的学习曲线（To do）。
