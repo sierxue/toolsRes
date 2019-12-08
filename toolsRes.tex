@@ -173,24 +173,24 @@ Virtualbox 虚拟机软件参考资料网址：
 \begin{itemize}
     \item 运行下面几个命令，更新 \href{https://github.com/ddpom/dotfiles}
         {https://github.com/ddpom/dotfiles}:
-        \begin{lstlisting}[escapeinside=``]
-    cd ~/.df/dotfiles
-    git checkout .
-    git pull --rebase
-    git submodule update --remote --recursive
-    ./install
-        \end{lstlisting}
+\begin{lstlisting}[escapeinside=``]
+cd ~/.df/dotfiles
+git checkout .
+git pull --rebase
+git submodule update --remote --recursive
+./install
+\end{lstlisting}
     \item 运行下面几个命令，更新
         \href{https://github.com/ddpom/dotfiles-local}
         {https://github.com/ddpom/dotfiles-local}:
-        \begin{lstlisting}[escapeinside=``]
-    cd ~/.df/dotfiles-local
-    git checkout .
-    git pull --rebase
-    git submodule update --remote --recursive
-    ./install
-        \end{lstlisting}
-\end{itemize}
+\begin{lstlisting}[escapeinside=``]
+cd ~/.df/dotfiles-local
+git checkout .
+git pull --rebase
+git submodule update --remote --recursive
+./install
+\end{lstlisting}
+\end{enumerate}
 
 %\section{Linux 的学习方式}%
 %\label{sec:linux-learning}
@@ -204,14 +204,14 @@ Virtualbox 虚拟机软件参考资料网址：
 \begin{enumerate}
     \item \lstinline{cd}: 进 入某个目录; 例子：
 \begin{lstlisting}[ escapeinside=``]
-    cd ~/.ssh/
+cd ~/.ssh/
 \end{lstlisting}
     \item \lstinline{mv}: 1. 修改文件或这目录的名字; 2.
         移动文件或者整个目录； 例子：
 \begin{lstlisting}[escapeinside=``]
-    cd ~/.ssh/
-    mv github_yourname_ganx github_ddpom_ganx
-    mv github_yourname_ganx.pub github_ddpom_ganx.pub
+cd ~/.ssh/
+mv github_yourname_ganx github_ddpom_ganx
+mv github_yourname_ganx.pub github_ddpom_ganx.pub
 \end{lstlisting}
 \end{enumerate}
 
@@ -245,10 +245,10 @@ Virtualbox 虚拟机软件参考资料网址：
 
 本虚拟机中的配置文件为：
 \begin{lstlisting}[escapeinside=``]
-    ~/.df/dotfiles/vimrc
-    ~/.df/dotfiles-local/gvimrc
-    ~/.vimrc_customized
-    ~/.gvimrc_customized
+~/.df/dotfiles/vimrc
+~/.df/dotfiles-local/gvimrc
+~/.vimrc_customized
+~/.gvimrc_customized
 \end{lstlisting}
 \lstinline{vimrc} 和 \lstinline{gvimrc} 由
 \ref{ssub:virtualbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
@@ -260,8 +260,8 @@ Virtualbox 虚拟机软件参考资料网址：
 
 打开 \lstinline{~/.gvimrc_customized}, 进行 Gvim 的个性化设置。例如：
 \begin{lstlisting}[escapeinside=``]
-    set guifont=Monospace\ 13
-    set linespace=4
+set guifont=Monospace\ 13
+set linespace=4
 \end{lstlisting}
 
 \section{故障排除 (Troubleshooting)}%
@@ -379,13 +379,13 @@ Virtualbox 虚拟机软件参考资料网址：
             \item 运行以下命令 (用你注册时的电子邮件账户替换
                 \lstinline{yourEmail});
 \begin{lstlisting}
-    ssh-keygen -t rsa -C "yourEmail" -f ~/.ssh/github_ddpom_ganx
+ssh-keygen -t rsa -C "yourEmail" -f ~/.ssh/github_ddpom_ganx
 \end{lstlisting}
             \item 提示输入 \lstinline{passphrase}
                 时，可以留空，也可以输入你的 \lstinline{passphrase};
             \item 运行以下命令，将公钥复制到剪切板;
 \begin{lstlisting}
-    xclip -sel clip < ~/.ssh/github_ddpom_ganx.pub
+xclip -sel clip < ~/.ssh/github_ddpom_ganx.pub
 \end{lstlisting}
             \item 粘贴剪切板里的内容到你的 GitHub 账户中的 SSH 公钥：
                 \begin{itemize}
@@ -397,11 +397,11 @@ Virtualbox 虚拟机软件参考资料网址：
                 \end{itemize}
             \item 运行以下命令，测试你的 SSH 设置：
 \begin{lstlisting}
-    ssh -T git@github.com
+ssh -T git@github.com
 \end{lstlisting}
             \item 如果你看到如下信息，你的设置就成功了。
 \begin{lstlisting}
-    Hi yourUsername! You've successfully authenticated, but GitHub does not provide shell access.
+Hi yourUsername! You've successfully authenticated, but GitHub does not provide shell access.
 \end{lstlisting}
         \end{itemize}
 \end{itemize}
@@ -414,7 +414,7 @@ Virtualbox 虚拟机软件参考资料网址：
     \item 用 \lstinline{gvim} 修改 \lstinline{~/.gitconfig_local}
         （如果没有这个文件, \lstinline{gvim} 会新建这个文件并打开它）：
 \begin{lstlisting}[escapeinside=``]
-    gvim ~/.gitconfig_local
+gvim ~/.gitconfig_local
 \end{lstlisting}
     \item 写入下面的内容，用你个人的用户名和邮件地址替换相应的信息：
 \begin{lstlisting}[escapeinside=``]
