@@ -263,6 +263,23 @@ Virtualbox 虚拟机软件参考资料网址：
     set guifont=Monospace\ 13
     set linespace=4
 \end{lstlisting}
+
+\section{故障排除 (Troubleshooting)}%
+\label{sec:vim-troubleshooting}
+
+\subsection{Gvim 打开文件后不见光标}%
+\label{sub:vim-ts-cursor}
+
+\begin{enumerate}
+    \item 最大化虚拟机窗口（参见
+        \ref{sub:virtualbox-tip-window-size}）后打开文件，
+        若能见光标就停止，否则进入下一步。
+    \item 打开 \lstinline{~/.gvimrc_customized}, 修改
+        \lstinline{linespace} 的设置。比如，可以尝试  \lstinline{0 - 4}
+        之间的一个值。
+\end{enumerate}
+
+
 %待续
 %%Vim 的学习曲线（To do）。
 %
