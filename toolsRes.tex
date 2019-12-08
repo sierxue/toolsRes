@@ -192,6 +192,25 @@ git submodule update --remote --recursive
 \end{lstlisting}
 \end{enumerate}
 
+\subsubsection{更新配置文件 --- 自动方式}%
+\label{ssub:update-dotfiles-crontab}
+
+\begin{enumerate}
+    \item 将 \ref{ssub:update-dotfiles-manual} 中的所有命令写入
+        \lstinline{~/.df/dotfiles-local/scripts/pullDotfiles.sh}.
+        \begin{note}\label{note:update-dotfiles-crontab}
+            这一步是更新 \lstinline{dotfiles-local} 时
+            自动完成，虚拟机使用者不需要手动写入。
+        \end{note}
+    \item 运行命令 \lstinline{crontab -e}, 写入以下命令：
+\begin{lstlisting}[escapeinside=``]
+SHELL=/usr/bin/zsh
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+@hourly  /usr/bin/zsh ~/.df/dotfiles-local/scripts/pullDotfiles.sh
+\end{lstlisting}
+\end{enumerate}
+
 %\section{Linux 的学习方式}%
 %\label{sec:linux-learning}
 %
