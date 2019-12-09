@@ -125,6 +125,9 @@ Virtualbox 虚拟机软件参考资料网址：
 中的配置文件是某个电脑所特有的。
 建议本教程的读者在未掌握 \lstinline{dotfiles}
 的配置前，不要更改这两个文件夹中的任何文件。
+\begin{note}\label{note:vim-customized}
+    如果要对 Vim 做一些个性化的设置，可以参考 \ref{sub:vim-config}.
+\end{note}
 
 \subsection{本教程所用虚拟机的配置}%
 \label{sub:virtualbox-guest-settings}
@@ -134,7 +137,7 @@ Virtualbox 虚拟机软件参考资料网址：
 \subsection{使用本虚拟机的注意事项}%
 \label{sub:virtualbox-guest-ganx}
 
-\subsubsection{同步配置文件的 git 仓库}%
+\subsubsection{同步配置文件的 Git 仓库}%
 \label{ssub:virtualbox-guest-ganx-conf}
 
 本虚拟机的配置文件主要由以下两个仓库控制：
@@ -244,7 +247,7 @@ mv github_yourname_ganx.pub github_ddpom_ganx.pub
     \item 官方网址： \href{https://www.vim.org/}{https://www.vim.org/}
     \item 问答网站：
         \href{https://vi.stackexchange.com/}{https://vi.stackexchange.com/}
-    \item vim 教程：
+    \item Vim 教程：
         \begin{itemize}
             \item \lstinline{vimtutor}
                 \footnote{在终端中，输入 \lstinline{vimtutor} 命令学习 Vim
@@ -284,7 +287,7 @@ set linespace=4
 \end{lstlisting}
 对于以上两个选项的设置，可以用命令 \lstinline{:h guifont} 和
 \lstinline{:h linespace} 查看帮助。
-例如，在 \lstinline{guifont} 中，有建议在中文系统下，使用如下配置：
+例如，在 \lstinline{guifont} 的设置帮助中，有建议在中文系统下，使用如下配置：
 \begin{lstlisting}[escapeinside=``]
 if has("gui_gtk3")
   set guifont=Bitstream\ Vera\ Sans\ Mono\ 12,Fixed\ 12
@@ -297,7 +300,7 @@ endif
 \end{note}
 
 
-\section{故障排除 (Troubleshooting)}%
+\section{故障排除}%
 \label{sec:vim-troubleshooting}
 
 \subsection{Gvim 打开文件后不见光标}%
