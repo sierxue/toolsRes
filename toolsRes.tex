@@ -199,7 +199,7 @@ git submodule update --remote --recursive
 \label{ssub:update-dotfiles-crontab}
 
 \begin{enumerate}
-    \item 将 \ref{ssub:update-dotfiles-manual} 中的所有命令写入
+    \item 将 ~\ref{ssub:update-dotfiles-manual}~ 中的所有命令写入
         \lstinline{~/.df/dotfiles-local/scripts/pullDotfiles.sh}.
         \begin{note}\label{note:update-dotfiles-crontab}
             这一步是更新 \lstinline{dotfiles-local} 时
@@ -209,9 +209,20 @@ git submodule update --remote --recursive
 \begin{lstlisting}[escapeinside=``]
 SHELL=/usr/bin/zsh
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=""
 
 @hourly  /usr/bin/zsh ~/.df/dotfiles-local/scripts/pullDotfiles.sh
 \end{lstlisting}
+\begin{note}\label{note:crontab}
+    我们可以把自动更新的运行记录写入 \lstinline{log} 文件。
+    首先，运行~ \lstinline{mkdir ~/.df/log} 创建 \lstinline{log} 目录；
+    然后运行命令 \lstinline{crontab -e}, 在最后一行添加
+    \lstinline{ >> ~/.df/log/pullDotfiles.log}:
+\begin{lstlisting}[escapeinside=``]
+@hourly  /usr/bin/zsh ~/.df/dotfiles-local/scripts/pullDotfiles.sh >> ~/.df/log/pullDotfiles.log
+\end{lstlisting}
+添加以后不要断行，要确保所有的内容在一行上。
+\end{note}
 \end{enumerate}
 
 %\section{Linux 的学习方式}%
