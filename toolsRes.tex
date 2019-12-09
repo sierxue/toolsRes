@@ -282,6 +282,20 @@ mv github_yourname_ganx.pub github_ddpom_ganx.pub
 set guifont=Monospace\ 13
 set linespace=4
 \end{lstlisting}
+对于以上两个选项的设置，可以用命令 \lstinline{:h guifont} 和
+\lstinline{:h linespace} 查看帮助。
+例如，在 \lstinline{guifont} 中，有建议在中文系统下，使用如下配置：
+\begin{lstlisting}[escapeinside=``]
+if has("gui_gtk3")
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 12,Fixed\ 12
+  set guifontwide=Microsoft\ Yahei\ 12,WenQuanYi\ Zen\ Hei\ 12
+endif
+\end{lstlisting}
+\begin{note}\label{note:guifont}
+    在本虚拟机上，这个建议的设置不尽人意。也许在 \lstinline{Window}
+    系统上还不错。
+\end{note}
+
 
 \section{故障排除 (Troubleshooting)}%
 \label{sec:vim-troubleshooting}
