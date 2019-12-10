@@ -20,6 +20,7 @@ latexmkrc
 !/archive/*.pdf
 !/figure/*.pdf
 !/image/*.pdf
+!/books/*.pdf
 
 # Excluded doc
 *.doc
