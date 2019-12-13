@@ -46,13 +46,14 @@ Virtualbox 虚拟机软件参考资料网址：
                 可以在
                 \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/6.0.14/}
                 {清华镜像}下载。
-            \item \href{https://www.jianshu.com/p/bfb4f4415411}{安装
-                virtualbox 教程}\footnote{本教程使用的虚拟机版本是 6.0.14}
-                \footnote{本教程作者已经感谢该文作者。}
+            \item \href{https://www.jianshu.com/p/bfb4f4415411}
+                {安装 virtualbox 教程}
+                \footnote{本教程使用的虚拟机版本是 6.0.14}
+                % \footnote{本教程作者已经感谢该文作者。}
         \end{itemize}
 \end{itemize}
 
-\section{使用教程及技巧}%
+\section{常用操作}%
 \label{sec:virtualbox-tips}
 
 \subsection{设定共享目录}%
@@ -127,11 +128,19 @@ Virtualbox 虚拟机软件参考资料网址：
         \end{itemize}
 \end{itemize}
 
-\section{简单介绍}%
+\section{系统设置}%
 \label{sec:linux-intro}
 
-\subsection{系统配置}%
-\label{sub:linux-settings}
+\subsection{本教程所用虚拟机的安装和设置}%
+\label{sub:virtualbox-guest-settings}
+
+待续
+
+\subsection{点文件~(dotfiles)配置}%
+\label{sub:dotfiles-settings}
+
+\subsubsection{点文件介绍}%
+\label{ssub:dotfiles-settings-intro}
 
 在 Unix/Linux/Mac 系统上，软件有它们各自的配置文件，通常以 ~.  开头，
 管它们叫 \emph{点文件}~(~ \texttt{dotfiles}).
@@ -152,15 +161,10 @@ Virtualbox 虚拟机软件参考资料网址：
     如果要对 Vim 做一些个性化的设置，可以参考 \ref{sub:vim-config}.
 \end{note}
 
-\subsection{本教程所用虚拟机的配置}%
-\label{sub:virtualbox-guest-settings}
+%\subsection{使用本虚拟机的注意事项}%
+%\label{sub:virtualbox-guest-ganx}
 
-待续
-
-\subsection{使用本虚拟机的注意事项}%
-\label{sub:virtualbox-guest-ganx}
-
-\subsubsection{同步配置文件的 Git 仓库}%
+\subsubsection{同步点文件的 Git 仓库}%
 \label{ssub:virtualbox-guest-ganx-conf}
 
 本虚拟机的配置文件主要由以下两个仓库控制：
@@ -171,7 +175,7 @@ Virtualbox 虚拟机软件参考资料网址：
         {https://github.com/ddpom/dotfiles-local}
 \end{itemize}
 
-\subsubsection{设置配置文件仓库的更新提示}%
+\subsubsection{设置点文件仓库的更新提示}%
 \label{ssub:virtualbox-guest-ganx-conf-update-notification}
 
 两个仓库不时更新的，更新配置文件的提交实现后，会发出更新提示。
@@ -193,7 +197,7 @@ Virtualbox 虚拟机软件参考资料网址：
         提交。你还可以打钩 \lstinline{Web and Mobile} 选项。
 \end{enumerate}
 
-\subsubsection{更新配置文件 --- 手动方式}%
+\subsubsection{更新点文件 --- 手动方式}%
 \label{ssub:update-dotfiles-manual}
 
 \begin{enumerate}
@@ -218,7 +222,7 @@ git submodule update --remote --recursive
 \end{lstlisting}
 \end{enumerate}
 
-\subsubsection{更新配置文件 --- 自动方式}%
+\subsubsection{更新点文件 --- 自动方式}%
 \label{ssub:update-dotfiles-crontab}
 
 \begin{enumerate}
@@ -271,7 +275,7 @@ mv github_yourname_ganx.pub github_ddpom_ganx.pub
 \end{lstlisting}
 \end{enumerate}
 
-\chapter{Vim 使用教程及技巧}%
+\chapter{Vim 使用教程}%
 \label{cha:vim-tips}
 
 \section{参考资料}%
@@ -371,6 +375,7 @@ endif
     \href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/}
                 {清华镜像}~下载。
     \item 数学符号： \href{books/latex-math-symbols.pdf}{速查表}~ ~
+        \href{http://detexify.kirelabs.org/classify.html} {图像识别} ~ ~
         \href{http://mirrors .ustc.edu.cn/CTAN/info/symbols/comprehensive/symbols-a4.pdf}
         {详细列表}
         \footnote{如果 \lstinline{git clone} 了本仓库,
@@ -438,7 +443,7 @@ endif
     \item 问答网站：
         \href{https://stackoverflow.com/questions/tagged/git+github}
         {https://stackoverflow.com/questions/tagged/git+github}
-    \item Linux 教程：
+    \item Git~ 教程：
         \begin{itemize}
             \item \href{https://git-scm.com/book/zh/v2}
                 {Pro Git 中文}
@@ -451,7 +456,6 @@ endif
 \end{itemize}
 \section{常用配置}%
 \label{sec:git-settings}
-
 
 \subsection{Github 的注册和 SSH 设置}%
 \label{sec:git-ssh}
@@ -526,8 +530,8 @@ gvim ~/.gitconfig_local
 %
 %待续
 %
-%\section{Git 使用教程及技巧}%
-%\label{sec:git-tips}
+\section{常用操作}%
+\label{sec:git-tips}
 %
 %待续
 
