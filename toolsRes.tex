@@ -30,11 +30,15 @@
 \mainmatter
 \hypersetup{pageanchor=true}
 
-\chapter{Virtualbox 虚拟机使用教程}
-\label{cha:virtualbox-tips}
+\chapter{系统设置}
+\label{cha:settings-system}
 
-\section{参考资料}%
-\label{sec:virtualbox-refs}
+\section{Virtualbox 虚拟机}%
+\label{sec:virtualbox}
+
+
+\subsection{参考资料}%
+\label{sub:virtualbox-refs}
 
 Virtualbox 虚拟机软件参考资料网址：
 \begin{itemize}
@@ -53,11 +57,11 @@ Virtualbox 虚拟机软件参考资料网址：
         \end{itemize}
 \end{itemize}
 
-\section{常用操作}%
-\label{sec:virtualbox-tips}
+\subsection{常用操作}%
+\label{sub:virtualbox-tips}
 
-\subsection{设定共享目录}%
-\label{sub:virtualbox-tip-share-folder}
+\subsubsection{设定共享目录}%
+\label{ssub:virtualbox-tip-share-folder}
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
@@ -90,8 +94,8 @@ Virtualbox 虚拟机软件参考资料网址：
 \end{figure}
 
 \newpage
-\subsection{调整虚拟机窗口大小}%
-\label{sub:virtualbox-tip-window-size}
+\subsubsection{调整虚拟机窗口大小}%
+\label{ssub:virtualbox-tip-window-size}
 
 至少有三种方法：
 \begin{enumerate}
@@ -102,11 +106,11 @@ Virtualbox 虚拟机软件参考资料网址：
     \item 用鼠标拖动窗口，调节窗口大小。
 \end{enumerate}
 
-\chapter{Linux 使用教程}%
-\label{cha:linux-tips}
+\section{Linux 系统}%
+\label{sec:linux-tips}
 
-\section{参考资料}%
-\label{sec:linux-refs}
+\subsection{参考资料}%
+\label{sub:linux-refs}
 
 \begin{itemize}
     \item 官方网址： \href{https://www.linux.org/}{https://www.linux.org/}
@@ -128,19 +132,19 @@ Virtualbox 虚拟机软件参考资料网址：
         \end{itemize}
 \end{itemize}
 
-\section{系统设置}%
-\label{sec:linux-intro}
+\subsection{Linux 系统设置}%
+\label{sub:linux-intro}
 
-\subsection{本教程所用虚拟机的安装和设置}%
-\label{sub:virtualbox-guest-settings}
+\subsubsection{本教程所用虚拟机的安装和设置}%
+\label{ssub:virtualbox-guest-settings}
 
 待续
 
-\subsection{点文件~(dotfiles)配置}%
-\label{sub:dotfiles-settings}
+\subsubsection{点文件~(dotfiles)配置}%
+\label{ssub:dotfiles-settings}
 
-\subsubsection{点文件介绍}%
-\label{ssub:dotfiles-settings-intro}
+\paragraph{点文件介绍}%
+\label{sssub:dotfiles-settings-intro}
 
 在 Unix/Linux/Mac 系统上，软件有它们各自的配置文件，通常以 ~.  开头，
 管它们叫 \emph{点文件}~(~ \texttt{dotfiles}).
@@ -158,14 +162,14 @@ Virtualbox 虚拟机软件参考资料网址：
 建议本教程的读者在未掌握 \lstinline{dotfiles}
 的配置前，不要更改这两个文件夹中的任何文件。
 \begin{note}\label{note:vim-customized}
-    如果要对 Vim 做一些个性化的设置，可以参考 \ref{sub:vim-config}.
+    如果要对 Vim 做一些个性化的设置，可以参考 \ref{ssub:vim-config}.
 \end{note}
 
-%\subsection{使用本虚拟机的注意事项}%
-%\label{sub:virtualbox-guest-ganx}
+%\subsubsection{使用本虚拟机的注意事项}%
+%\label{ssub:virtualbox-guest-ganx}
 
-\subsubsection{同步点文件的 Git 仓库}%
-\label{ssub:virtualbox-guest-ganx-conf}
+\paragraph{同步点文件的 Git 仓库}%
+\label{sssub:virtualbox-guest-ganx-conf}
 
 本虚拟机的配置文件主要由以下两个仓库控制：
 \begin{itemize}
@@ -175,8 +179,8 @@ Virtualbox 虚拟机软件参考资料网址：
         {https://github.com/ddpom/dotfiles-local}
 \end{itemize}
 
-\subsubsection{设置点文件仓库的更新提示}%
-\label{ssub:virtualbox-guest-ganx-conf-update-notification}
+\paragraph{设置点文件仓库的更新提示}%
+\label{sssub:virtualbox-guest-ganx-conf-update-notification}
 
 两个仓库不时更新的，更新配置文件的提交实现后，会发出更新提示。
 如果你 \lstinline{watch (关注)} 了这两个仓库，就可以收到更新提示。
@@ -197,8 +201,8 @@ Virtualbox 虚拟机软件参考资料网址：
         提交。你还可以打钩 \lstinline{Web and Mobile} 选项。
 \end{enumerate}
 
-\subsubsection{更新点文件 --- 手动方式}%
-\label{ssub:update-dotfiles-manual}
+\paragraph{更新点文件 --- 手动方式}%
+\label{sssub:update-dotfiles-manual}
 
 \begin{enumerate}
     \item 运行下面几个命令，更新 \href{https://github.com/ddpom/dotfiles}
@@ -222,11 +226,11 @@ git submodule update --remote --recursive
 \end{lstlisting}
 \end{enumerate}
 
-\subsubsection{更新点文件 --- 自动方式}%
-\label{ssub:update-dotfiles-crontab}
+\paragraph{更新点文件 --- 自动方式}%
+\label{sssub:update-dotfiles-crontab}
 
 \begin{enumerate}
-    \item 将 ~\ref{ssub:update-dotfiles-manual}~ 中的所有命令写入
+    \item 将 ~\ref{sssub:update-dotfiles-manual}~ 中的所有命令写入
         \lstinline{~/.df/dotfiles-local/scripts/pullDotfiles.sh}.
         \begin{note}\label{note:update-dotfiles-crontab}
             这一步是更新 \lstinline{dotfiles-local} 时
@@ -252,13 +256,13 @@ MAILTO=""
 \end{note}
 \end{enumerate}
 
-%\section{Linux 的学习方式}%
-%\label{sec:linux-learning}
+%\subsection{Linux 的学习方式}%
+%\label{sub:linux-learning}
 %
 %待续
 %
-\section{常用命令}%
-\label{sec:linux-commands}
+\subsection{常用命令}%
+\label{sub:linux-commands}
 
 常用命令：
 \begin{enumerate}
@@ -275,11 +279,11 @@ mv github_yourname_ganx.pub github_ddpom_ganx.pub
 \end{lstlisting}
 \end{enumerate}
 
-\chapter{Vim 使用教程}%
-\label{cha:vim-tips}
+\section{Vim 编辑器}%
+\label{sec:vim}
 
-\section{参考资料}%
-\label{sec:vim-refs}
+\subsection{参考资料}%
+\label{sub:vim-refs}
 
 \begin{itemize}
     \item 官方网址： \href{https://www.vim.org/}{https://www.vim.org/}
@@ -297,11 +301,11 @@ mv github_yourname_ganx.pub github_ddpom_ganx.pub
         \end{itemize}
 \end{itemize}
 
-\section{常用配置}%
-\label{sec:vim-intro}
+\subsection{常用配置}%
+\label{sub:vim-intro}
 
-\subsection{Vim 的配置文件}%
-\label{sub:vim-config}
+\subsubsection{Vim 的配置文件}%
+\label{ssub:vim-config}
 
 本虚拟机中的配置文件为：
 \begin{lstlisting}[escapeinside=``]
@@ -311,12 +315,12 @@ mv github_yourname_ganx.pub github_ddpom_ganx.pub
 ~/.gvimrc_customized
 \end{lstlisting}
 \lstinline{vimrc} 和 \lstinline{gvimrc} 由
-\ref{ssub:virtualbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
+\ref{sssub:virtualbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
 你对本台虚拟机的特殊设置可以在 \lstinline{.vimrc_customized} 和
 \lstinline{.gvimrc_customized} 中配置。
 
-\subsection{Gvim 的个性化设置}%
-\label{sub:vim-gui-config-customized}
+\subsubsection{Gvim 的个性化设置}%
+\label{ssub:vim-gui-config-customized}
 
 打开 \lstinline{~/.gvimrc_customized}, 进行 Gvim 的个性化设置。例如：
 \begin{lstlisting}[escapeinside=``]
@@ -338,15 +342,15 @@ endif
 \end{note}
 
 
-\section{故障排除}%
-\label{sec:vim-troubleshooting}
+\subsection{故障排除}%
+\label{sub:vim-troubleshooting}
 
-\subsection{Gvim 打开文件后不见光标}%
-\label{sub:vim-ts-cursor}
+\subsubsection{Gvim 打开文件后不见光标}%
+\label{ssub:vim-ts-cursor}
 
 \begin{enumerate}
     \item 最大化虚拟机窗口（参见
-        \ref{sub:virtualbox-tip-window-size}）后打开文件，
+        \ref{ssub:virtualbox-tip-window-size}）后打开文件，
         若能见光标就停止，否则进入下一步。
     \item 打开 \lstinline{~/.gvimrc_customized}, 修改
         \lstinline{linespace} 的设置。比如，可以尝试  \lstinline{0 - 4}
@@ -357,8 +361,8 @@ endif
 %待续
 %%Vim 的学习曲线（To do）。
 %
-%\section{Vim 的学习方式}%
-%\label{sec:vim-learning}
+%\subsection{Vim 的学习方式}%
+%\label{sub:vim-learning}
 
 \chapter{\LaTeX{} 使用教程}%
 \label{cha:latex-tips}
@@ -458,7 +462,7 @@ endif
 \label{sec:git-settings}
 
 \subsection{Github 的注册和 SSH 设置}%
-\label{sec:git-ssh}
+\label{sub:git-ssh}
 
 设置步骤：
 \begin{itemize}
