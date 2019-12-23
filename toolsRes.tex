@@ -135,10 +135,6 @@ Virtualbox 虚拟机软件参考资料网址：
 \subsection{Linux 系统设置}%
 \label{sub:linux-intro}
 
-\subsubsection{本教程所用虚拟机的安装和设置}%
-\label{ssub:virtualbox-guest-settings}
-
-待续
 
 \subsubsection{点文件~(dotfiles)配置}%
 \label{ssub:dotfiles-settings}
@@ -256,11 +252,64 @@ MAILTO=""
 \end{note}
 \end{enumerate}
 
-%\subsection{Linux 的学习方式}%
-%\label{sub:linux-learning}
-%
-%待续
-%
+\subsection{本教程所用虚拟机的安装和设置}%
+\label{sub:virtualbox-guest-settings}
+
+\subsubsection{虚拟机的基本安装}%
+\label{ssub:linux-ubuntu}
+
+本虚拟机的系统为 Ubuntu 18.04; 安装选项为最小安装；用户名: ganx; 密码: 9;
+登录方式：自动登录。
+
+\subsubsection{安装虚拟机的 Guest Additions}%
+\label{ssub:virtualbox-guest-additions}
+\begin{enumerate}
+    \item \lstinline{sudo apt update} 
+    \item \lstinline{sudo apt install build-essential gcc make perl dkms menu } 
+    \item 打开安装盘，点击用于 Linux 系统的可执行文件直接安装。
+\end{enumerate}
+
+\subsubsection{在主机上设置与虚拟机的目录共享}%
+\label{ssub:vitualbox-shared-folder}
+\begin{enumerate}
+    \item \lstinline{sudo usermod -a -G vboxsf ganx} 
+    \item 参考 \ref{ssub:virtualbox-tip-share-folder},
+        设置guest上和主机目录对应的共享目录 （注意: 勾选自动挂载）。
+    \item 重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
+        共享目录生效。
+\end{enumerate}
+
+\subsubsection{Virtualbox 的其它设置}%
+\label{ssub:virtualbox-others}
+\begin{enumerate}
+    \item 调整虚拟机使用的内存大小；
+    \item 设置虚拟机的共享剪贴板选项为 \emph{双向}；
+    \item 设置用户界面。
+\end{enumerate}
+
+
+\subsubsection{安装 i-bus 拼音}%
+\label{ssub:pinyin-i-bus}
+\begin{enumerate}
+    \item \lstinline{sudo apt install ibus-libpinyin pinyin-database} 
+    \item 安装中文语言。
+    \item 将 "intelligent pinyin" 加入 "Input source".
+\end{enumerate}
+
+\subsubsection{安装搜狗拼音}%
+\label{ssub:pinyin-i-bus}
+\begin{enumerate}
+    \item 在 \href{https://pinyin.sogou.com/linux/}
+        {https://pinyin.sogou.com/linux/} 下载 64 位版本的安装包。
+        \footnote{安装本虚拟机时下载的版本是
+            \lstinline{sogoupinyin_2.3.1.0112_amd64.deb}
+        }
+    \item \lstinline{sudo apt -y install fcitx fcitx-bin fcitx-table-all} 
+    \item \lstinline{sudo dpkg -i sogoupinyin_2.3.1.0112_amd64.deb} 
+    \item \lstinline{sudo apt-get install -f}
+    \item 在系统设置中的语言设置选择缺省输入方式为 fcitx.
+\end{enumerate}
+
 \subsection{常用命令}%
 \label{sub:linux-commands}
 
