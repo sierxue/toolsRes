@@ -402,13 +402,17 @@ endif
 常用操作：
 \begin{itemize}
     \item \lstinline{\ll} 编译 \LaTeX{} 文档；
-    \item \lstinline{\lv} 打开 pdf 文档并且指向光标所在文本对应的位置；
+    \item \lstinline{\lv} 正向搜索 (Forward search)
+        \footnote{打开 pdf 文档并且指向光标所在文本对应的位置。}；
     \item \lstinline{\ll} 停止编译 (或者 \lstinline{\lk})；
     \item \lstinline{\le} 查看错误和警告信息；
     \item \lstinline{\lc} 清除编译中的辅助文件 (或者 \lstinline{\lC} 清除
         pdf 文件)。
+    \item \lstinline{ctrl + clik} 反向搜索 (Backward/inverse search)
+        \footnote{按住 ctrl 键，点击 pdf 文档上的内容，光标就会转到 Gvim
+        上相应的位置};
     \item 更多操作见插件 README;
-    \item 详细说明可以在命令模式下用 \lstinline{h:vimtex} 命令查看。
+    \item 插件的详细文档可以在命令模式下用 \lstinline{h:vimtex} 命令查看。
 \end{itemize}
 
 \subsection{故障排除}%
