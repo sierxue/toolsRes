@@ -94,7 +94,6 @@ Virtualbox 虚拟机软件参考资料网址：
   \caption{设定共享目录 --- 示意图 5}
 \end{figure}
 
-\newpage
 \subsubsection{调整虚拟机窗口大小}%
 \label{ssub:virtualbox-tip-window-size}
 
@@ -265,15 +264,15 @@ MAILTO=""
 \subsubsection{安装虚拟机的 Guest Additions}%
 \label{ssub:virtualbox-guest-additions}
 \begin{enumerate}
-    \item \lstinline{sudo apt update} 
-    \item \lstinline{sudo apt install build-essential gcc make perl dkms menu } 
+    \item \lstinline{sudo apt update}
+    \item \lstinline{sudo apt install build-essential gcc make perl dkms menu}
     \item 打开安装盘，点击用于 Linux 系统的可执行文件直接安装。
 \end{enumerate}
 
 \subsubsection{在主机上设置与虚拟机的目录共享}%
 \label{ssub:vitualbox-shared-folder}
 \begin{enumerate}
-    \item \lstinline{sudo usermod -a -G vboxsf ganx} 
+    \item \lstinline{sudo usermod -a -G vboxsf ganx}
     \item 参考 \ref{ssub:virtualbox-tip-share-folder},
         设置guest上和主机目录对应的共享目录 （注意: 勾选自动挂载）。
     \item 重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
@@ -292,21 +291,21 @@ MAILTO=""
 \subsubsection{安装 i-bus 拼音}%
 \label{ssub:pinyin-i-bus}
 \begin{enumerate}
-    \item \lstinline{sudo apt install ibus-libpinyin pinyin-database} 
+    \item \lstinline{sudo apt install ibus-libpinyin pinyin-database}
     \item 安装中文语言。
     \item 将 "intelligent pinyin" 加入 "Input source".
 \end{enumerate}
 
 \subsubsection{安装搜狗拼音}%
-\label{ssub:pinyin-i-bus}
+\label{ssub:pinyin-sogou}
 \begin{enumerate}
     \item 在 \href{https://pinyin.sogou.com/linux/}
         {https://pinyin.sogou.com/linux/} 下载 64 位版本的安装包。
         \footnote{安装本虚拟机时下载的版本是
             \lstinline{sogoupinyin_2.3.1.0112_amd64.deb}
         }
-    \item \lstinline{sudo apt -y install fcitx fcitx-bin fcitx-table-all} 
-    \item \lstinline{sudo dpkg -i sogoupinyin_2.3.1.0112_amd64.deb} 
+    \item \lstinline{sudo apt -y install fcitx fcitx-bin fcitx-table-all}
+    \item \lstinline{sudo dpkg -i sogoupinyin_2.3.1.0112_amd64.deb}
     \item \lstinline{sudo apt-get install -f}
     \item 在系统设置中的语言设置选择缺省输入方式为 fcitx.
 \end{enumerate}
@@ -553,7 +552,6 @@ Hi yourUsername! You've successfully authenticated, but GitHub does not provide 
         \end{itemize}
 \end{itemize}
 
-\newpage
 \subsection{在虚拟机中设置用户名和电子邮件}%
 \label{sub:git-user-info}
 
