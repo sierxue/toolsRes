@@ -240,6 +240,8 @@ MAILTO=""
 
 @hourly  /usr/bin/zsh ~/.df/dotfiles-local/scripts/pullDotfiles.sh
 \end{lstlisting}
+写入命令后，可以运行 \lstinline{crontab -l}
+来确认你刚才输入的内容是正确的。
 \begin{note}\label{note:crontab}
     我们可以把自动更新的运行记录写入 \lstinline{log} 文件。
     首先，运行~ \lstinline{mkdir ~/.df/log} 创建 \lstinline{log} 目录；
