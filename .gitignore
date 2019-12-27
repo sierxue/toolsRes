@@ -6,6 +6,11 @@ Exported Items.bib
 *.pyc
 latexmkrc
 
+# Excluded files in /figure/
+/figure/cover-black.jpg
+/figure/cover-dd.xcf
+/figure/photo-dd.jpg
+
 # Ignore vim swap files
 .*.swp
 
