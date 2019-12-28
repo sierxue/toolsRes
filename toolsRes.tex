@@ -34,11 +34,11 @@
 \label{cha:settings-system}
 
 \section{Virtualbox 虚拟机}%
-\label{sec:virtualbox}
+\label{sec:vbox}
 
 
 \subsection{参考资料}%
-\label{sub:virtualbox-refs}
+\label{sub:vbox-refs}
 
 Virtualbox 虚拟机软件参考资料网址：
 \begin{itemize}
@@ -144,10 +144,11 @@ Virtualbox 虚拟机的安装分为三个步骤：
 
 
 \subsection{常用操作}%
-\label{sub:virtualbox-tips}
+\label{sub:vbox-tips}
 
 \subsubsection{设定共享目录}%
-\label{ssub:virtualbox-tip-share-folder}
+\label{ssub:vbox-tip-share-folder}
+
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.9\textwidth]{screenshots/Screenshot from
@@ -180,7 +181,7 @@ Virtualbox 虚拟机的安装分为三个步骤：
 \end{figure}
 
 \subsubsection{调整虚拟机窗口大小}%
-\label{ssub:virtualbox-tip-window-size}
+\label{ssub:vbox-tip-window-size}
 
 至少有三种方法：
 \begin{enumerate}
@@ -247,10 +248,10 @@ Virtualbox 虚拟机的安装分为三个步骤：
 \end{note}
 
 %\subsubsection{使用本虚拟机的注意事项}%
-%\label{ssub:virtualbox-guest-ganx}
+%\label{ssub:vbox-guest-ganx}
 
 \paragraph{同步点文件的 Git 仓库}%
-\label{sssub:virtualbox-guest-ganx-conf}
+\label{sssub:vbox-guest-ganx-conf}
 
 本虚拟机的配置文件主要由以下两个仓库控制：
 \begin{itemize}
@@ -261,7 +262,7 @@ Virtualbox 虚拟机的安装分为三个步骤：
 \end{itemize}
 
 \paragraph{设置点文件仓库的更新提示}%
-\label{sssub:virtualbox-guest-ganx-conf-update-notification}
+\label{sssub:vbox-guest-ganx-conf-update-notification}
 
 两个仓库不时更新的，更新配置文件的提交实现后，会发出更新提示。
 如果你 \lstinline{watch (关注)} 了这两个仓库，就可以收到更新提示。
@@ -340,7 +341,7 @@ MAILTO=""
 \end{enumerate}
 
 \subsection{本教程所用虚拟机的安装和设置}%
-\label{sub:virtualbox-guest-settings}
+\label{sub:vbox-guest-settings}
 
 \subsubsection{虚拟机的基本安装}%
 \label{ssub:linux-ubuntu}
@@ -349,7 +350,7 @@ MAILTO=""
 登录方式：自动登录。
 
 \subsubsection{安装虚拟机的 Guest Additions}%
-\label{ssub:virtualbox-guest-additions}
+\label{ssub:vbox-guest-additions}
 \begin{enumerate}
     \item \lstinline{sudo apt update}
     \item \lstinline{sudo apt install build-essential gcc make perl dkms menu}
@@ -360,14 +361,14 @@ MAILTO=""
 \label{ssub:vitualbox-shared-folder}
 \begin{enumerate}
     \item \lstinline{sudo usermod -a -G vboxsf ganx}
-    \item 参考 \ref{ssub:virtualbox-tip-share-folder},
+    \item 参考 \ref{ssub:vbox-tip-share-folder},
         设置guest上和主机目录对应的共享目录 （注意: 勾选自动挂载）。
     \item 重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
         共享目录生效。
 \end{enumerate}
 
 \subsubsection{Virtualbox 的其它设置}%
-\label{ssub:virtualbox-others}
+\label{ssub:vbox-others}
 \begin{enumerate}
     \item 调整虚拟机使用的内存大小；
     \item 设置虚拟机的共享剪贴板选项为 \emph{双向}；
@@ -451,7 +452,7 @@ mv github_yourname_ganx.pub github_ddpom_ganx.pub
 ~/.gvimrc_customized
 \end{lstlisting}
 \lstinline{vimrc} 和 \lstinline{gvimrc} 由
-\ref{sssub:virtualbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
+\ref{sssub:vbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
 你对本台虚拟机的特殊设置可以在 \lstinline{.vimrc_customized} 和
 \lstinline{.gvimrc_customized} 中配置。
 
@@ -510,7 +511,7 @@ endif
 
 \begin{enumerate}
     \item 最大化虚拟机窗口（参见
-        \ref{ssub:virtualbox-tip-window-size}）后打开文件，
+        \ref{ssub:vbox-tip-window-size}）后打开文件，
         若能见光标就停止，否则进入下一步。
     \item 打开 \lstinline{~/.gvimrc_customized}, 修改
         \lstinline{linespace} 的设置。比如，可以尝试  \lstinline{0 - 4}
