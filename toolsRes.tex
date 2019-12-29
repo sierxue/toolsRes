@@ -186,7 +186,7 @@ Virtualbox 虚拟机的安装分为三个步骤：
         \end{itemize}
 \end{itemize}
 
-\subsection{Linux 系统设置}%
+\subsection{Linux 基本知识}%
 \label{sub:linux-intro}
 
 
@@ -308,6 +308,24 @@ MAILTO=""
 \end{note}
 \end{enumerate}
 
+\subsubsection{常用命令}%
+\label{ssub:linux-commands}
+
+常用命令：
+\begin{enumerate}
+    \item \lstinline{cd}: 进 入某个目录; 例子：
+\begin{lstlisting}[ escapeinside=``]
+cd ~/.ssh/
+\end{lstlisting}
+    \item \lstinline{mv}: 1. 修改文件或这目录的名字; 2.
+        移动文件或者整个目录； 例子：
+\begin{lstlisting}[escapeinside=``]
+cd ~/.ssh/
+mv github_yourname_ganx github_ddpom_ganx
+mv github_yourname_ganx.pub github_ddpom_ganx.pub
+\end{lstlisting}
+\end{enumerate}
+
 \subsection{本教程所用虚拟机的安装和设置}%
 \label{sub:vbox-guest-settings}
 
@@ -364,24 +382,6 @@ MAILTO=""
     \item \lstinline{sudo dpkg -i sogoupinyin_2.3.1.0112_amd64.deb}
     \item \lstinline{sudo apt-get install -f}
     \item 在系统设置中的语言设置选择缺省输入方式为 fcitx.
-\end{enumerate}
-
-\subsection{常用命令}%
-\label{sub:linux-commands}
-
-常用命令：
-\begin{enumerate}
-    \item \lstinline{cd}: 进 入某个目录; 例子：
-\begin{lstlisting}[ escapeinside=``]
-cd ~/.ssh/
-\end{lstlisting}
-    \item \lstinline{mv}: 1. 修改文件或这目录的名字; 2.
-        移动文件或者整个目录； 例子：
-\begin{lstlisting}[escapeinside=``]
-cd ~/.ssh/
-mv github_yourname_ganx github_ddpom_ganx
-mv github_yourname_ganx.pub github_ddpom_ganx.pub
-\end{lstlisting}
 \end{enumerate}
 
 \newpage
