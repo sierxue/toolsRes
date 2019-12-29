@@ -474,21 +474,6 @@ endif
     \item 插件的详细文档可以在命令模式下用 \lstinline{h:vimtex} 命令查看。
 \end{itemize}
 
-\subsection{故障排除}%
-\label{sub:vim-troubleshooting}
-
-\subsubsection{Gvim 打开文件后不见光标}%
-\label{ssub:vim-ts-cursor}
-
-\begin{enumerate}
-    \item 最大化虚拟机窗口（参见
-        \ref{ssub:vbox-tip-window-size}）后打开文件，
-        若能见光标就停止，否则进入下一步。
-    \item 打开 \lstinline{~/.gvimrc_customized}, 修改
-        \lstinline{linespace} 的设置。比如，可以尝试  \lstinline{0 - 4}
-        之间的一个值。
-\end{enumerate}
-
 
 %待续
 %%Vim 的学习曲线（To do）。
@@ -851,4 +836,21 @@ SIMILAR.
   \caption{设定共享目录 --- 示意图 5}
 \end{figure}
 
+\section{Virtualbox 虚拟机}%
+\label{sec:vbox-a}
+
+\subsection{故障排除}%
+\label{sub:vim-troubleshooting}
+
+\subsubsection{Gvim 打开文件后不见光标}%
+\label{ssub:vim-ts-cursor}
+
+\begin{enumerate}
+    \item 最大化虚拟机窗口（参见
+        \ref{ssub:vbox-tip-window-size}）后打开文件，
+        若能见光标就停止，否则进入下一步。
+    \item 打开 \lstinline{~/.gvimrc_customized}, 修改
+        \lstinline{linespace} 的设置。比如，可以尝试  \lstinline{0 - 4}
+        之间的一个值。
+\end{enumerate}
 \end{document}
