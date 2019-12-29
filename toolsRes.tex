@@ -79,7 +79,7 @@ Virtualbox 虚拟机的安装分为三个步骤：
     \item 安装 \lstinline{Extension pack};
     \item 安装 \lstinline{Guest additions}.
 \end{enumerate}
-\begin{note}\label{note:vbox-download-extpack}
+\begin{tip}\label{note:vbox-download-extpack}
     第二步安装中的 \lstinline{Extension pack} 软件对 Windows, Mac, Linux
     等都通用。
     点击
@@ -90,7 +90,7 @@ Virtualbox 虚拟机的安装分为三个步骤：
     \begin{center}\label{}
         \lstinline{Oracle_VM_VirtualBox_Extension_Pack-6.1.0.vbox-extpack}
     \end{center}
-\end{note}
+\end{tip}
 
 \subsubsection{Windowns 系统}%
 \label{ssub:vbox-install-win}
@@ -221,9 +221,9 @@ Virtualbox 虚拟机的安装分为三个步骤：
 中的配置文件是某个电脑所特有的。
 建议本教程的读者在未掌握 \lstinline{dotfiles}
 的配置前，不要更改这两个文件夹中的任何文件。
-\begin{note}\label{note:vim-customized}
+\begin{tip}\label{note:vim-customized}
     如果要对 Vim 做一些个性化的设置，可以参考 \ref{ssub:vim-config}.
-\end{note}
+\end{tip}
 
 %\subsubsection{使用本虚拟机的注意事项}%
 %\label{ssub:vbox-guest-ganx}
@@ -306,7 +306,7 @@ MAILTO=""
 \end{lstlisting}
 写入命令后，可以运行 \lstinline{crontab -l}
 来确认你刚才输入的内容是正确的。
-\begin{note}\label{note:crontab}
+\begin{share}\label{note:crontab}
     我们可以把自动更新的运行记录写入 \lstinline{log} 文件。
     首先，运行~ \lstinline{mkdir ~/.df/log} 创建 \lstinline{log} 目录；
     然后运行命令 \lstinline{crontab -e}, 在最后一行添加
@@ -315,7 +315,7 @@ MAILTO=""
 @hourly  /usr/bin/zsh ~/.df/dotfiles-local/scripts/pullDotfiles.sh >> ~/.df/log/pullDotfiles.log
 \end{lstlisting}
 添加以后不要断行，要确保所有的内容在一行上。
-\end{note}
+\end{share}
 \end{enumerate}
 
 \subsubsection{常用命令}%
