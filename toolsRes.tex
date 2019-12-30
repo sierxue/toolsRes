@@ -243,11 +243,11 @@ Virtualbox 虚拟机的安装分为两个步骤：
 % \label{sub:linux-intro}
 
 
-\subsubsection{点文件~(dotfiles)配置}%
-\label{ssub:dotfiles-settings}
+\subsection{Linux 点文件~(dotfiles)配置}%
+\label{sub:dotfiles-settings}
 
-\paragraph{点文件介绍}%
-\label{sssub:dotfiles-settings-intro}
+\subsubsection{点文件介绍}%
+\label{ssub:dotfiles-settings-intro}
 
 在 Unix/Linux/Mac 系统上，软件有它们各自的配置文件，通常以 ~.  开头，
 管它们叫 \emph{点文件}~(~ \texttt{dotfiles}).
@@ -271,8 +271,8 @@ Virtualbox 虚拟机的安装分为两个步骤：
 %\subsubsection{使用本虚拟机的注意事项}%
 %\label{ssub:vbox-guest-ganx}
 
-\paragraph{同步点文件的 Git 仓库}%
-\label{sssub:vbox-guest-ganx-conf}
+\subsubsection{同步点文件的 Git 仓库}%
+\label{ssub:vbox-guest-ganx-conf}
 
 本虚拟机的配置文件主要由以下两个仓库控制：
 \begin{itemize}
@@ -282,8 +282,8 @@ Virtualbox 虚拟机的安装分为两个步骤：
         {https://github.com/ddpom/dotfiles-local}
 \end{itemize}
 
-\paragraph{设置点文件仓库的更新提示}%
-\label{sssub:vbox-guest-ganx-conf-update-notification}
+\subsubsection{设置点文件仓库的更新提示}%
+\label{ssub:vbox-guest-ganx-conf-update-notification}
 
 两个仓库不时更新的，更新配置文件的提交实现后，会发出更新提示。
 如果你 \lstinline{watch (关注)} 了这两个仓库，就可以收到更新提示。
@@ -304,8 +304,8 @@ Virtualbox 虚拟机的安装分为两个步骤：
         提交。你还可以打钩 \lstinline{Web and Mobile} 选项。
 \end{enumerate}
 
-\paragraph{更新点文件 --- 手动方式}%
-\label{sssub:update-dotfiles-manual}
+\subsubsection{更新点文件 --- 手动方式}%
+\label{ssub:update-dotfiles-manual}
 
 \begin{enumerate}
     \item 运行下面几个命令，更新 \href{https://github.com/ddpom/dotfiles}
@@ -329,12 +329,17 @@ git submodule update --remote
 \end{lstlisting}
 \end{enumerate}
 
-\paragraph{更新点文件 --- 自动方式}%
-\label{sssub:update-dotfiles-crontab}
+\subsubsection{更新点文件 --- 自动方式}%
+\label{ssub:update-dotfiles-crontab}
 
 \begin{enumerate}
-    \item 将 ~\ref{sssub:update-dotfiles-manual}~ 中的所有命令写入
-        \lstinline{~/.df/dotfiles-local/scripts/pullDotfiles.sh}.
+    \item 本虚拟机已经将 ~\ref{ssub:update-dotfiles-manual}~ 中的所有命令写入
+\begin{lstlisting}[escapeinside=``]
+~/.df/dotfiles-local/scripts/pullDotfiles.sh
+\end{lstlisting}
+        脚本 \lstinline{pullDotfiles.sh} 的内容见 Github
+        \href{https://github.com/ddpom/scripts/blob/master/pullDotfiles.sh}
+        {链接}
         % \begin{note}\label{note:update-dotfiles-crontab}
         %     这一步是更新 \lstinline{dotfiles-local} 时
         %     自动完成，虚拟机使用者不需要手动写入。
@@ -474,7 +479,7 @@ MAILTO=""
 ~/.gvimrc_customized
 \end{lstlisting}
 \lstinline{vimrc} 和 \lstinline{gvimrc} 由
-\ref{sssub:vbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
+\ref{ssub:vbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
 你对本台虚拟机的特殊设置可以在 \lstinline{.vimrc_customized} 和
 \lstinline{.gvimrc_customized} 中配置。
 
