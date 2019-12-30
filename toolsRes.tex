@@ -52,16 +52,16 @@ Virtualbox 虚拟机软件参考资料网址：
 \begin{itemize}
     \item 官方网址： \href{https://www.virtualbox.org/}{https://www.virtualbox.org/}
     \item 官方论坛： \href{https://forums.virtualbox.org/}{https://forums.virtualbox.org/}
-    \item 网络上的非官方网址和非官方教程：
-        \begin{itemize}
-            \item 如果官方网址下载虚拟机软件慢的话，
-                可以在
-                \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/6.0.14/}
-                {清华镜像}下载。
-            \item \href{https://www.jianshu.com/p/bfb4f4415411}
-                {安装 virtualbox 教程}
-                \footnote{本教程使用的虚拟机版本是 6.0.14}
-        \end{itemize}
+    % \item 网络上的非官方网址和非官方教程：
+    %     \begin{itemize}
+    %         \item 如果官方网址下载虚拟机软件慢的话，
+    %             可以在
+    %             \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/6.0.14/}
+    %             {清华镜像}下载。
+    %         \item \href{https://www.jianshu.com/p/bfb4f4415411}
+    %             {安装 virtualbox 教程}
+    %             \footnote{本教程使用的虚拟机版本是 6.0.14}
+    %     \end{itemize}
 \end{itemize}
 
 \subsection{下载安装}%
@@ -79,47 +79,6 @@ Virtualbox 虚拟机的安装分为三个步骤：
     \item 安装 \lstinline{Extension pack};
     \item 安装 \lstinline{Guest additions}.
 \end{enumerate}
-\begin{tip}\label{note:vbox-download-extpack}
-    第二步安装中的 \lstinline{Extension pack} 软件对 Windows, Mac, Linux
-    等都通用。
-    点击
-    \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/}{清华镜像}，
-    选择最新的版本号。
-    假设最新的版本为 6.1.0，
-    则找到并下载
-    \begin{center}\label{}
-        \lstinline{Oracle_VM_VirtualBox_Extension_Pack-6.1.0.vbox-extpack}
-    \end{center}
-\end{tip}
-
-\subsubsection{Windowns 系统}%
-\label{ssub:vbox-install-win}
-
-安装分为三步：
-\begin{enumerate}
-    \item 下载
-        \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/virtualbox-Win-latest.exe}
-        {最新 Virtualbox 基本软件}，按常规安装；
-    \item 双击安装
-        \lstinline{Oracle_VM_VirtualBox_Extension_Pack-6.1.0.vbox-extpack};
-    \item 参考
-        \href{https://www.virtualbox.org/manual/UserManual.html#additions-windows}{官方使用手册}
-        安装 \lstinline{Guest additions}.
-\end{enumerate}
-
-\subsubsection{Mac 系统}%
-\label{ssub:vbox-install-mac}
-
-安装分为三步：
-\begin{enumerate}
-    \item 下载
-        \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/virtualbox-osx-latest.dmg}
-        {最新 Virtualbox 基本软件}，按常规安装；
-    \item 双击安装
-        \lstinline{Oracle_VM_VirtualBox_Extension_Pack-6.1.0.vbox-extpack};
-    \item \textbf{温馨提示}: Mac 系统 \textbf{不需要}~安装 \lstinline{Guest additions}.
-\end{enumerate}
-
 \subsubsection{Linux 系统}%
 \label{ssub:vbox-install-linux}
 
@@ -147,6 +106,79 @@ Virtualbox 虚拟机的安装分为三个步骤：
         \href{https://www.virtualbox.org/manual/UserManual.html#additions-linux}{官方使用手册}
         安装 \lstinline{Guest additions}.
 \end{enumerate}
+% \begin{tip}\label{note:vbox-download-extpack}
+%     安装第二步中的 \lstinline{Extension pack} 软件对 Windows, Mac, Linux
+%     等都通用。
+%     点击
+%     \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/}{清华镜像}，
+%     选择最新的版本号。
+%     假设最新的版本为 6.1.0，
+%     则找到并下载
+%     \begin{center}\label{}
+%         \lstinline{Oracle_VM_VirtualBox_Extension_Pack-6.1.0.vbox-extpack}
+%     \end{center}
+%     双击按提示安装。
+% \end{tip}
+% \begin{tip}\label{note:vbox-guest-addition}
+%     安装第三步中需要的 \lstinline{VboxGuestAdditions.iso},
+%     不用手动下载，第一步完成后就已自动下载了。
+% \end{tip}
+
+% \subsubsection{Windowns 系统}%
+% \label{ssub:vbox-install-win}
+%
+% 安装分为两步：
+% \begin{enumerate}
+%     \item 下载
+%         \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/virtualbox-Win-latest.exe}
+%         {最新 Virtualbox 基本软件}，按常规安装；
+%     \item 双击安装
+%         \lstinline{Oracle_VM_VirtualBox_Extension_Pack-6.1.0.vbox-extpack};
+%     % \item 参考
+%     %     \href{https://www.virtualbox.org/manual/UserManual.html#additions-windows}{官方使用手册}
+%     %     安装 \lstinline{Guest additions}.
+% \end{enumerate}
+%
+% \subsubsection{Mac 系统}%
+% \label{ssub:vbox-install-mac}
+%
+% 安装分为两步：
+% \begin{enumerate}
+%     \item 下载
+%         \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/virtualbox-osx-latest.dmg}
+%         {最新 Virtualbox 基本软件}，按常规安装；
+%     \item 双击安装
+%         \lstinline{Oracle_VM_VirtualBox_Extension_Pack-6.1.0.vbox-extpack};
+%     % \item \textbf{温馨提示}: Mac 系统 \textbf{不需要}~安装 \lstinline{Guest additions}.
+% \end{enumerate}
+%
+% \subsubsection{Linux 系统}%
+% \label{ssub:vbox-install-linux}
+%
+% 安装分为两步：
+% \begin{enumerate}
+%     \item Linux 的所有发行版可以参考
+%         \href{https://www.virtualbox.org/wiki/Linux_Downloads}{官方安装文档}，
+%         Debian 系列的发行版可以按下面两种方法安装：
+%         \begin{itemize}
+%             \item 在
+%                 \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/}
+%                 {清华镜像}
+%                 下载相应的 \lstinline{deb} 安装包安装。
+%             \item 参考
+%                 \href{https://www.virtualbox.org/wiki/Linux_Downloads}
+%                 {官方安装文档}
+%                 添加源，用 \lstinline{apt} 方式安装。
+%                 \textbf{温馨提示}：当版本跳跃时，比如从 6.0 升级到 6.1,
+%                 \lstinline{sudo apt update} 并不提醒升级，需要运行命令
+%                 \lstinline{sudo apt install virtualbox-6.1}.
+%         \end{itemize}
+%     \item 双击安装
+%         \lstinline{Oracle_VM_VirtualBox_Extension_Pack-6.1.0.vbox-extpack};
+%     % \item 参考
+%     %     \href{https://www.virtualbox.org/manual/UserManual.html#additions-linux}{官方使用手册}
+%     %     安装 \lstinline{Guest additions}.
+% \end{enumerate}
 
 \subsection{常用操作}%
 \label{sub:vbox-tips}
@@ -196,8 +228,8 @@ Virtualbox 虚拟机的安装分为三个步骤：
         \end{itemize}
 \end{itemize}
 
-\subsection{Linux 基本知识}%
-\label{sub:linux-intro}
+% \subsection{Linux 基本知识}%
+% \label{sub:linux-intro}
 
 
 \subsubsection{点文件~(dotfiles)配置}%
@@ -292,10 +324,10 @@ git submodule update --remote
 \begin{enumerate}
     \item 将 ~\ref{sssub:update-dotfiles-manual}~ 中的所有命令写入
         \lstinline{~/.df/dotfiles-local/scripts/pullDotfiles.sh}.
-        \begin{note}\label{note:update-dotfiles-crontab}
-            这一步是更新 \lstinline{dotfiles-local} 时
-            自动完成，虚拟机使用者不需要手动写入。
-        \end{note}
+        % \begin{note}\label{note:update-dotfiles-crontab}
+        %     这一步是更新 \lstinline{dotfiles-local} 时
+        %     自动完成，虚拟机使用者不需要手动写入。
+        % \end{note}
     \item 运行命令 \lstinline{crontab -e}, 写入以下命令：
 \begin{lstlisting}[escapeinside=``]
 SHELL=/usr/bin/zsh
@@ -318,23 +350,23 @@ MAILTO=""
 \end{share}
 \end{enumerate}
 
-\subsubsection{常用命令}%
-\label{ssub:linux-commands}
-
-常用命令：
-\begin{enumerate}
-    \item \lstinline{cd}: 进 入某个目录; 例子：
-\begin{lstlisting}[ escapeinside=``]
-cd ~/.ssh/
-\end{lstlisting}
-    \item \lstinline{mv}: 1. 修改文件或这目录的名字; 2.
-        移动文件或者整个目录； 例子：
-\begin{lstlisting}[escapeinside=``]
-cd ~/.ssh/
-mv github_yourname_ganx github_ddpom_ganx
-mv github_yourname_ganx.pub github_ddpom_ganx.pub
-\end{lstlisting}
-\end{enumerate}
+% \subsubsection{常用命令}%
+% \label{ssub:linux-commands}
+%
+% 常用命令：
+% \begin{enumerate}
+%     \item \lstinline{cd}: 进 入某个目录; 例子：
+% \begin{lstlisting}[ escapeinside=``]
+% cd ~/.ssh/
+% \end{lstlisting}
+%     \item \lstinline{mv}: 1. 修改文件或这目录的名字; 2.
+%         移动文件或者整个目录； 例子：
+% \begin{lstlisting}[escapeinside=``]
+% cd ~/.ssh/
+% mv github_yourname_ganx github_ddpom_ganx
+% mv github_yourname_ganx.pub github_ddpom_ganx.pub
+% \end{lstlisting}
+% \end{enumerate}
 
 \subsection{本教程所用虚拟机的安装和设置}%
 \label{sub:vbox-guest-settings}
