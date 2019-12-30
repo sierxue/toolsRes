@@ -194,7 +194,7 @@ Virtualbox 虚拟机的安装分为两个步骤：
 \subsection{使用虚拟机}%
 \label{sub:vbox-vm}
 
-按照 \ref{sub:vbox-install} 完成安装后，就可以制作虚拟机 (guest
+按照 \S\ref{sub:vbox-install} 完成安装后，就可以制作虚拟机 (guest
 machine) 了。
 虚拟机的一个优点是共享方便，团队成员使用同样的配置大大有利于团队协作。
 为配合本教程，我们精心制作了 Ubuntu 18.04 虚拟机，
@@ -204,7 +204,7 @@ machine) 了。
 \label{ssub:vbox-set-share-folder}
 
 当虚拟机需要与主机系统交换文件时，就可以设定共享目录。
-共享目录的设定详情参见附录 \ref{ssub:vbox-set-share-folder-a}.
+共享目录的设定详情参见附录 \S\ref{ssub:vbox-set-share-folder-a}.
 
 \subsubsection{调整虚拟机窗口大小}%
 \label{ssub:vbox-set-window-size}
@@ -271,7 +271,7 @@ machine) 了。
 建议本教程的读者在未掌握 \lstinline{dotfiles}
 的配置前，不要更改这两个文件夹中的任何文件。
 \begin{tip}\label{note:vim-customized}
-    如果要对 Vim 做一些个性化的设置，可以参考 \ref{ssub:vim-config}.
+    如果要对 Vim 做一些个性化的设置，可以参考 \S\ref{ssub:vim-config}.
 \end{tip}
 
 %\subsubsection{使用本虚拟机的注意事项}%
@@ -339,7 +339,7 @@ git submodule update --remote
 \label{ssub:update-dotfiles-crontab}
 
 \begin{enumerate}
-    \item 本虚拟机已经将 ~\ref{ssub:update-dotfiles-manual}~ 中的所有命令写入
+    \item 本虚拟机已经将 ~\S\ref{ssub:update-dotfiles-manual}~ 中的所有命令写入
 \begin{lstlisting}[escapeinside=``]
 ~/.df/dotfiles-local/scripts/pullDotfiles.sh
 \end{lstlisting}
@@ -411,7 +411,7 @@ MAILTO=""
 \label{ssub:vbox-shared-folder}
 \begin{enumerate}
     \item \lstinline{sudo usermod -a -G vboxsf ganx}
-    \item 参考 \ref{ssub:vbox-set-share-folder},
+    \item 参考 \S\ref{ssub:vbox-set-share-folder},
         设置guest上和主机目录对应的共享目录 （注意: 勾选自动挂载）。
     \item 重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
         共享目录生效。
@@ -485,7 +485,7 @@ MAILTO=""
 ~/.gvimrc_customized
 \end{lstlisting}
 \lstinline{vimrc} 和 \lstinline{gvimrc} 由
-\ref{ssub:vbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
+\S\ref{ssub:vbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
 你对本台虚拟机的特殊设置可以在 \lstinline{.vimrc_customized} 和
 \lstinline{.gvimrc_customized} 中配置。
 
@@ -774,7 +774,7 @@ with \ldots.
 
 如果我们对 Perishables Joint Pricing and Inventory Control
 不确定正确与否，可以在搜索框中查看英文文献中对这个短语的使用情况，参见图
-\ref{fig:ludwig-search}。
+\S\ref{fig:ludwig-search}。
 
 \begin{figure}[!htbp]
   \centering
@@ -784,25 +784,25 @@ with \ldots.
   \label{fig:ludwig-search}
 \end{figure}
 
-从图 \ref{fig:ludwig-result-1} 及 \ref{fig:ludwig-result-2}
+从图 \S\ref{fig:ludwig-result-1} 及 \S\ref{fig:ludwig-result-2}
 可以看到，搜索的结果不理想。
 因为 Ludwig 使用的语言资料库太大，搜索结果不理想时可以考虑缩小搜索范围。
 注意到缺省情况下筛选功能是关闭了的（可以看到 filter OFF
 字样），我们可以打开筛选选项，根据实际情况选择搜索范围。详情参见图
-\ref{fig:ludwig-filter}.
+\S\ref{fig:ludwig-filter}.
 
 令人遗憾的是，搜索结果任然不理想（见图
-\ref{fig:ludwig-result-3}），没有看到完整的匹配，只看到左中位置显示的 60
+\S\ref{fig:ludwig-result-3}），没有看到完整的匹配，只看到左中位置显示的 60
 SIMILAR.
 这时，我们可以考虑搜索更少的关键词。
 从搜索结果中，我们发现 Perishables
 和其它关键词甚少关联，可以考虑去掉这个关键词后重新搜索。
-搜索结果见图 \ref{fig:ludwig-result-4},
+搜索结果见图 \S\ref{fig:ludwig-result-4},
 我们可以看到仍然没有得到完美匹配，只看到 60 SIMILAR.
 但令人欣慰的是，在第一个结果中，我们看到了除大小写外的完美匹配。
 可以理解成这个搜索是大小写敏感的。
 这时我们可以考虑把搜索框中的大写字母全部改成小写字母来搜索。
-搜索结果见图 \ref{fig:ludwig-result-5}, 我们可以看到两个完美匹配
+搜索结果见图 \S\ref{fig:ludwig-result-5}, 我们可以看到两个完美匹配
 (2 EXACT).
 
 \begin{figure}[!htbp]
@@ -915,7 +915,7 @@ SIMILAR.
 
 \begin{enumerate}
     \item 最大化虚拟机窗口（参见
-        \ref{ssub:vbox-set-window-size}）后打开文件，
+        \S\ref{ssub:vbox-set-window-size}）后打开文件，
         若能见光标就停止，否则进入下一步。
     \item 打开 \lstinline{~/.gvimrc_customized}, 修改
         \lstinline{linespace} 的设置。比如，可以尝试  \lstinline{0 - 4}
