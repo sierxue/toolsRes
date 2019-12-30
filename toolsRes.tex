@@ -201,13 +201,13 @@ machine) 了。
 可以让读者快速地学习常用的开源工具，而不用花费大量时间于软件的安装和配置。
 
 \subsubsection{设定共享目录}%
-\label{ssub:vbox-tip-share-folder}
+\label{ssub:vbox-set-share-folder}
 
 当虚拟机需要与主机系统交换文件时，就可以设定共享目录。
-共享目录的设定详情参见附录 \ref{ssub:vbox-tip-share-folder-a}.
+共享目录的设定详情参见附录 \ref{ssub:vbox-set-share-folder-a}.
 
 \subsubsection{调整虚拟机窗口大小}%
-\label{ssub:vbox-tip-window-size}
+\label{ssub:vbox-set-window-size}
 
 至少有三种方法：
 \begin{enumerate}
@@ -391,7 +391,7 @@ MAILTO=""
 % \end{enumerate}
 
 \subsection{本教程所用虚拟机的安装和设置}%
-\label{sub:vbox-guest-settings}
+\label{sub:vbox-vm-install-set}
 
 \subsubsection{虚拟机的基本安装}%
 \label{ssub:linux-ubuntu}
@@ -411,7 +411,7 @@ MAILTO=""
 \label{ssub:vbox-shared-folder}
 \begin{enumerate}
     \item \lstinline{sudo usermod -a -G vboxsf ganx}
-    \item 参考 \ref{ssub:vbox-tip-share-folder},
+    \item 参考 \ref{ssub:vbox-set-share-folder},
         设置guest上和主机目录对应的共享目录 （注意: 勾选自动挂载）。
     \item 重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
         共享目录生效。
@@ -868,7 +868,7 @@ SIMILAR.
 \label{sub:vbox-graphic-illustration}
 
 \subsubsection{设定共享目录的图示}%
-\label{ssub:vbox-tip-share-folder-a}
+\label{ssub:vbox-set-share-folder-a}
 
 \begin{figure}[!htbp]
   \centering
@@ -915,7 +915,7 @@ SIMILAR.
 
 \begin{enumerate}
     \item 最大化虚拟机窗口（参见
-        \ref{ssub:vbox-tip-window-size}）后打开文件，
+        \ref{ssub:vbox-set-window-size}）后打开文件，
         若能见光标就停止，否则进入下一步。
     \item 打开 \lstinline{~/.gvimrc_customized}, 修改
         \lstinline{linespace} 的设置。比如，可以尝试  \lstinline{0 - 4}
