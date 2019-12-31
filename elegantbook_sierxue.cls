@@ -381,7 +381,7 @@
 
 
 %%define the note and proof environment
-\RequirePackage{fontawesome,pifont,manfnt,bbding}
+\RequirePackage{pifont,manfnt,bbding}
 % list/itemize/enumerate setting
 \RequirePackage[shortlabels]{enumitem}
 \setlist{nolistsep}
@@ -565,15 +565,15 @@
 
 
 
-\newenvironment{note}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\faWarning\quad}\textbf{\color{second}%
+\newenvironment{note}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\dbend\quad}\textbf{\color{second}%
   \ifdefstring{\ELEGANT@lang}{en}{Note}{注意}\,
 }}\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\kaishu}}{\par}
 
-\newenvironment{tip}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\faStarO\quad}\textbf{\color{second}%
+\newenvironment{tip}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\manconcentriccircles\quad}\textbf{\color{second}%
   \ifdefstring{\ELEGANT@lang}{en}{Tip}{提示}\,
 }}\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\kaishu}}{\par}
 
-\newenvironment{share}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\faThumbsOUp\quad}\textbf{\color{second}%
+\newenvironment{share}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\manerrarrow\quad}\textbf{\color{second}%
   \ifdefstring{\ELEGANT@lang}{en}{Tip}{分享}\,
 }}\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\kaishu}}{\par}
 
