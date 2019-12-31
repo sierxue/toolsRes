@@ -220,7 +220,14 @@ machine) 了。
 \label{ssub:vbox-set-share-folder}
 
 当虚拟机需要与主机系统交换文件时，就可以设定共享目录。
+重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
+共享目录生效。
 共享目录的设定详情参见附录 \S\ref{ssub:vbox-set-share-folder-a}.
+\begin{tip}\label{tip:vbox-share-folder-activate}
+    如果曾经运行过 \S\ref{ssub:vbox-ganx-vboxsf} 中的命令授予用户权限，
+    可以运行命令 \lstinline{sudo systemctl daemon-reload},
+    共享目录在未重启虚拟机的情况下马上生效。
+\end{tip}
 
 \subsubsection{调整虚拟机窗口大小}%
 \label{ssub:vbox-set-window-size}
@@ -421,15 +428,9 @@ MAILTO=""
     \item 打开安装盘，点击用于 Linux 系统的可执行文件直接安装。
 \end{enumerate}
 
-\subsubsection{在主机上设置与虚拟机的目录共享}%
-\label{ssub:vbox-shared-folder}
-\begin{enumerate}
-    \item \lstinline{sudo usermod -a -G vboxsf ganx}
-    \item 参考 \S\ref{ssub:vbox-set-share-folder},
-        设置guest上和主机目录对应的共享目录 （注意: 勾选自动挂载）。
-    \item 重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
-        共享目录生效。
-\end{enumerate}
+\subsubsection{设置虚拟机用户 ganx 创建共享目录的权限}%
+\label{ssub:vbox-ganx-vboxsf}
+\lstinline{sudo usermod -a -G vboxsf ganx}
 
 \subsubsection{Virtualbox 的其它设置}%
 \label{ssub:vbox-others}
