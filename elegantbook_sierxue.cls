@@ -48,6 +48,7 @@
 
 \DeclareVoidOption{normal}{\ekv{device=normal}}
 \DeclareVoidOption{pad}{\ekv{device=pad}}
+\DeclareVoidOption{phone}{\ekv{device=phone}}
 
 \DeclareVoidOption{numbers}{\ekv{cite=numbers}}
 \DeclareVoidOption{authoryear}{\ekv{cite=authoryear}}
@@ -333,6 +334,12 @@
   margin=16mm,
   headheight=2.17cm,
   footskip=4mm
+}}{\relax}
+
+\ifdefstring{\ELEGANT@device}{phone}{
+\geometry{
+  a5paper,
+  margin=12mm,
 }}{\relax}
 
 \RequirePackage{hyperref}
@@ -698,21 +705,37 @@
 }
 \def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
 
+\ifdefstring{\ELEGANT@device}{normal}{
 \newcommand*{\logo}[1]{
  \def\@logo{\includegraphics[width=4.2cm]{#1}
  }
 }
-\ifdefstring{\ELEGANT@device}{normal}{
 \newcommand*{\cover}[1]{
  \def\@cover{\includegraphics[width=\linewidth]{#1}
  }
 }}{\relax}
 
 \ifdefstring{\ELEGANT@device}{pad}{
+\newcommand*{\logo}[1]{
+ \def\@logo{\includegraphics[width=4.2cm]{#1}
+ }
+}
 \newcommand*{\cover}[1]{
  \def\@cover{\includegraphics[trim=0 26bp 0 26bp,clip=true, width=\linewidth]{#1}
  }
 }}{\relax}
+
+\ifdefstring{\ELEGANT@device}{phone}{
+\newcommand*{\logo}[1]{
+ \def\@logo{
+     % \includegraphics[width=3.2cm]{#1}
+ }
+}
+\newcommand*{\cover}[1]{
+ \def\@cover{
+ }
+}}{\relax}
+% next: The swufe logo's position needs to be lifted.
 
 \renewcommand{\baselinestretch}{1.35} 
 
