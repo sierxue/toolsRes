@@ -763,7 +763,7 @@
     {\renewcommand{\arraystretch}{0.618}
     \begin{tabular}{l} 
       \ifdefstring{\ELEGANT@lang}{en}{\textbf{Author:}}{\kaishu 作者：} \@author \\
-      \ifdefstring{\ELEGANT@lang}{en}{\textbf{Institute:}}{\kaishu 组织：} \the\institute\\
+      % \ifdefstring{\ELEGANT@lang}{en}{\textbf{Institute:}}{\kaishu 组织：} \the\institute\\
       \ifdefstring{\ELEGANT@lang}{en}{\textbf{Date:}}{\kaishu 时间：} \@date\\
       \ifdefstring{\ELEGANT@lang}{en}{\textbf{Version:}}{\kaishu 版本：} \the\version\\
     \end{tabular}}
