@@ -430,6 +430,36 @@ MAILTO=""
    \label{tab:theorem-class}%
  \end{table}%
 
+\subsubsection{设置 keyring 的密码为空}%
+\label{ssub:vm-keyring}
+
+做此设置以及初始安装时设置的 ``自动登录''后，
+可以不输入任何密码使用虚拟机。
+% next
+
+\subsubsection{设置 sudo 时不询问密码}%
+\label{ssub:vm-sudo}
+\begin{enumerate}
+    \item \lstinline{sudo gedit /etc/sudoers.d/ganx}
+    \item 写入下面两行：
+\begin{lstlisting}[escapeinside=``]
+User_Alias      NORMAL = ganx
+NORMAL  ALL = NOPASSWD: ALL
+\end{lstlisting}
+    \item \lstinline{sudo chmod 0440 /etc/sudoers.d/ganx}
+\end{enumerate}
+
+\subsubsection{切换软件源}%
+\label{ssub:vm-source}
+% next
+
+\subsubsection{映射 CapsLock 键到 Ctrl 键}%
+\label{ssub:vm-caps-ctrl}
+
+CapsLock 键的位置非常好，但因为 Unix 用户经常要用 Ctrl 键而从来不用 CapsLock,
+所以做此映射。
+% next
+
 \subsubsection{安装虚拟机的 Guest Additions}%
 \label{ssub:vbox-guest-additions}
 \begin{itemize}
@@ -456,6 +486,26 @@ MAILTO=""
 \subsubsection{设置虚拟机用户 ganx 创建共享目录的权限}%
 \label{ssub:vbox-ganx-vboxsf}
 \lstinline{sudo usermod -a -G vboxsf ganx}
+
+\subsubsection{安装设置工具 tweak}%
+\label{ssub:vm-treak}
+
+% next
+
+\subsubsection{安装版本控制软件 Git}%
+\label{ssub:vm-git}
+
+\begin{lstlisting}[escapeinside=``]
+sudo apt update
+sudo apt install git
+sudo apt install gitk
+sudo apt install git-gui
+\end{lstlisting}
+\begin{note}\label{note:ubuntu-update}
+    用 \lstinline{sudo apt install} 安装任何软件之前，都需要运行
+    \lstinline{sudo apt install} 来确保软件源提供的软件是最新的。
+    在教程的余下部分，我们省略掉这条命令以节省篇幅。
+\end{note}
 
 \subsubsection{Virtualbox 的其它设置}%
 \label{ssub:vbox-others}
