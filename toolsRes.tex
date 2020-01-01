@@ -432,11 +432,26 @@ MAILTO=""
 
 \subsubsection{安装虚拟机的 Guest Additions}%
 \label{ssub:vbox-guest-additions}
-\begin{enumerate}
-    \item \lstinline{sudo apt update}
-    \item \lstinline{sudo apt install build-essential gcc make perl dkms menu}
-    \item 打开安装盘，点击用于 Linux 系统的可执行文件直接安装。
-\end{enumerate}
+\begin{itemize}
+    \item \textbf{Windows 系统}：参考
+        \href{https://www.virtualbox.org/manual/UserManual.html#additions-windows}{官方使用手册}
+        安装 \lstinline{Guest additions}.
+    \item \textbf{Mac 系统}： \textbf{不需要}~安装
+        \lstinline{Guest additions}.
+    \item \textbf{Linux 系统}： 参考
+        \href{https://www.virtualbox.org/manual/UserManual.html#additions-linux}{官方使用手册}
+    \item \textbf{Linux 系统 Debian 系列}：
+        \begin{enumerate}
+            \item \lstinline{sudo apt update}
+            \item \lstinline{sudo apt install build-essential gcc make perl dkms menu}
+            \item \lstinline{mount} 安装盘
+                \lstinline{VBoxGuestAdditions.iso},~
+                在光盘目录下运行如下命令安装：
+                 \begin{center}\label{}
+                     \lstinline{sh ./VBoxLinuxAdditions.run}
+                 \end{center}
+        \end{enumerate}
+\end{itemize}
 
 \subsubsection{设置虚拟机用户 ganx 创建共享目录的权限}%
 \label{ssub:vbox-ganx-vboxsf}
