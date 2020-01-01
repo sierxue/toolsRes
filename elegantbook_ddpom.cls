@@ -8,7 +8,7 @@
 %%%%%%%%%%%%%%%%%%%%%
 % % !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{elegantbook_sierxue}[2019/08/18 v3.09 ElegantBook document class]
+\ProvidesClass{elegantbook_ddpom}[2019/08/18 v3.09 ElegantBook document class] % ganx Change {elegantbook} to {elegantbook_sierxue}.
 
 \RequirePackage{kvoptions}
 \RequirePackage{etoolbox}
@@ -48,7 +48,8 @@
 
 \DeclareVoidOption{normal}{\ekv{device=normal}}
 \DeclareVoidOption{pad}{\ekv{device=pad}}
-\DeclareVoidOption{phone}{\ekv{device=phone}}
+\DeclareVoidOption{phone}{\ekv{device=phone}} % ganx Add this line.
+\DeclareVoidOption{phonePortrait}{\ekv{device=phonePortrait}} % ganx Add this line.
 
 \DeclareVoidOption{numbers}{\ekv{cite=numbers}}
 \DeclareVoidOption{authoryear}{\ekv{cite=authoryear}}
@@ -77,6 +78,49 @@
 % \ProcessOptions*\relax
 \LoadClass[a4paper,oneside]{book}
 
+%% device settings
+\RequirePackage{geometry}
+\ifdefstring{\ELEGANT@device}{normal}{
+\geometry{
+  a4paper,
+  top=25.4mm, bottom=25.4mm,
+  headheight=2.17cm,
+  headsep=4mm,
+  footskip=12mm
+}
+
+\ifdefstring{\ELEGANT@marginpar}{margintrue}{
+\geometry{
+  marginparwidth=5cm, marginparsep=5mm,
+  left=2cm,right=7cm,
+}
+}{\relax}
+}{\relax}
+
+\ifdefstring{\ELEGANT@device}{pad}{
+\geometry{
+  paperwidth=7.5in, 
+  paperheight=10in,
+  margin=16mm,
+  headheight=2.17cm,
+  footskip=4mm
+}}{\relax}
+
+% ganx Add a block. Begin
+\ifdefstring{\ELEGANT@device}{phone}{
+\geometry{
+  a5paper,
+  margin=12mm,
+}}{\relax}
+% ganx Add a block. End
+
+% ganx Add a block. Begin
+\ifdefstring{\ELEGANT@device}{phonePortrait}{
+\geometry{
+  a6paper,
+  margin=11mm,
+}}{\relax}
+% ganx Add a block. End
 
 \RequirePackage{indentfirst,comment}
 % fontsetting
@@ -156,30 +200,30 @@
 }{\relax}
 
 %green color
-  \definecolor{structure1}{RGB}{0,120,2}%
-  \definecolor{main1}{RGB}{0,120,2}%
-  \definecolor{second1}{RGB}{230,90,7}%
-  \definecolor{third1}{RGB}{0,160,152}%
+\definecolor{structure1}{RGB}{0,120,2}%
+\definecolor{main1}{RGB}{0,120,2}%
+\definecolor{second1}{RGB}{230,90,7}%
+\definecolor{third1}{RGB}{0,160,152}%
 %cyan color
-  \definecolor{structure2}{RGB}{31,186,190}%
-  \definecolor{main2}{RGB}{59,180,5}%
-  \definecolor{second2}{RGB}{175,153,8}%
-  \definecolor{third2}{RGB}{244,105,102}%
+\definecolor{structure2}{RGB}{31,186,190}%
+\definecolor{main2}{RGB}{59,180,5}%
+\definecolor{second2}{RGB}{175,153,8}%
+\definecolor{third2}{RGB}{244,105,102}%
 %blue color
-  \definecolor{structure3}{RGB}{60,113,183}
-  \definecolor{main3}{RGB}{0,166,82}%
-  \definecolor{second3}{RGB}{255,134,24}%
-  \definecolor{third3}{RGB}{0,174,247}%
+\definecolor{structure3}{RGB}{60,113,183}
+\definecolor{main3}{RGB}{0,166,82}%
+\definecolor{second3}{RGB}{255,134,24}%
+\definecolor{third3}{RGB}{0,174,247}%
 % gray color
-  \definecolor{structure4}{RGB}{150,150,150}
-  \definecolor{main4}{RGB}{150,150,150}%
-  \definecolor{second4}{RGB}{150,150,150}%
-  \definecolor{third4}{RGB}{150,150,150}%
+\definecolor{structure4}{RGB}{150,150,150}
+\definecolor{main4}{RGB}{150,150,150}%
+\definecolor{second4}{RGB}{150,150,150}%
+\definecolor{third4}{RGB}{150,150,150}%
 % black color
-  \definecolor{structure5}{RGB}{0,0,0}
-  \definecolor{main5}{RGB}{0,0,0}%
-  \definecolor{second5}{RGB}{0,0,0}%
-  \definecolor{third5}{RGB}{0,0,0}%
+\definecolor{structure5}{RGB}{0,0,0}
+\definecolor{main5}{RGB}{0,0,0}%
+\definecolor{second5}{RGB}{0,0,0}%
+\definecolor{third5}{RGB}{0,0,0}%
 
 % corlor definition
 \definecolor{winered}{rgb}{0.5,0,0}
@@ -307,41 +351,6 @@
 \setlist[itemize,3]{label={\eitemiii}}
 
 
-%% device settings
-
-\RequirePackage{geometry}
-\ifdefstring{\ELEGANT@device}{normal}{
-\geometry{
-  a4paper,
-  top=25.4mm, bottom=25.4mm,
-  headheight=2.17cm,
-  headsep=4mm,
-  footskip=12mm
-}
-
-\ifdefstring{\ELEGANT@marginpar}{margintrue}{
-\geometry{
-  marginparwidth=5cm, marginparsep=5mm,
-  left=2cm,right=7cm,
-}
-}{\relax}
-}{\relax}
-
-\ifdefstring{\ELEGANT@device}{pad}{
-\geometry{
-  paperwidth=7.5in, 
-  paperheight=10in,
-  margin=16mm,
-  headheight=2.17cm,
-  footskip=4mm
-}}{\relax}
-
-\ifdefstring{\ELEGANT@device}{phone}{
-\geometry{
-  a5paper,
-  margin=12mm,
-}}{\relax}
-
 \RequirePackage{hyperref}
 \hypersetup{
   breaklinks,
@@ -388,7 +397,7 @@
 
 
 %%define the note and proof environment
-\RequirePackage{pifont,manfnt,bbding}
+\RequirePackage{fontawesome,pifont,manfnt,bbding} % ganx Insert fontawesome.
 % list/itemize/enumerate setting
 \RequirePackage[shortlabels]{enumitem}
 \setlist{nolistsep}
@@ -448,6 +457,14 @@
   \ifdefstring{\ELEGANT@lang}{en}{Theorem}{定理}
 }{thmstyle}{thm}
 
+\newtcbtheorem[auto counter,number within=chapter]{postulate}{
+  \ifdefstring{\ELEGANT@lang}{en}{Postulate}{公设}
+}{thmstyle}{pos}
+
+\newtcbtheorem[auto counter,number within=chapter]{axiom}{
+  \ifdefstring{\ELEGANT@lang}{en}{Axiom}{公理}
+}{thmstyle}{axi}
+
 \newtcbtheorem[auto counter,number within=chapter]{proposition}{
   \ifdefstring{\ELEGANT@lang}{en}{Proposition}{命题}
 }{propstyle}{pro}
@@ -505,6 +522,8 @@
 \newtheorem{etheorem}{\ifdefstring{\ELEGANT@lang}{en}{Theorem}{定理}}[chapter]
 \newtheorem{elemma}{\ifdefstring{\ELEGANT@lang}{en}{Lemma}{引理}}[chapter]
 \newtheorem{ecorollary}{\ifdefstring{\ELEGANT@lang}{en}{Corollary}{推论}}[chapter]
+\newtheorem{epostulate}{\ifdefstring{\ELEGANT@lang}{en}{Postulate}{公设}}[chapter]
+\newtheorem{eaxiom}{\ifdefstring{\ELEGANT@lang}{en}{Axiom}{公理}}[chapter]
 
 \theoremstyle{eprostyle}
 \newtheorem{eproposition}{\ifdefstring{\ELEGANT@lang}{en}{Proposition}{命题}}[chapter]
@@ -524,6 +543,14 @@
 \newenvironment{corollary}[2]
   {\ifstrempty{#1}{\ecorollary}{\ecorollary[#1]}\ifstrempty{#2}{}{\label{cor:#2}}}
   {\endecorollary}
+
+\newenvironment{postulate}[2]
+  {\ifstrempty{#1}{\epostulate}{\epostulate[#1]}\ifstrempty{#2}{}{\label{pos:#2}}}
+  {\endepostulate}
+
+\newenvironment{axiom}[2]
+  {\ifstrempty{#1}{\eaxiom}{\eaxiom[#1]}\ifstrempty{#2}{}{\label{axi:#2}}}
+  {\endaxiom}
 
 \newenvironment{proposition}[2]
   {\ifstrempty{#1}{\eproposition}{\eproposition[#1]}\ifstrempty{#2}{}{\label{pro:#2}}}
@@ -572,17 +599,19 @@
 
 
 
-\newenvironment{note}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\dbend\quad}\textbf{\color{second}%
+\newenvironment{note}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\faWarning\quad}\textbf{\color{second}% % ganx Change textdbend to dbend.
   \ifdefstring{\ELEGANT@lang}{en}{Note}{注意}\,
 }}\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\kaishu}}{\par}
 
-\newenvironment{tip}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\manconcentriccircles\quad}\textbf{\color{second}%
+% ganx Add a block. Begin
+\newenvironment{tip}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\faStarO\quad}\textbf{\color{second}%
   \ifdefstring{\ELEGANT@lang}{en}{Tip}{提示}\,
 }}\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\kaishu}}{\par}
 
 \newenvironment{share}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\manerrarrow\quad}\textbf{\color{second}%
   \ifdefstring{\ELEGANT@lang}{en}{Tip}{分享}\,
 }}\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\kaishu}}{\par}
+% ganx Add a block. End
 
 \newenvironment{proof}{\par\noindent\textbf{\color{second}%
   \ifdefstring{\ELEGANT@lang}{en}{Proof}{证明}\;
@@ -705,6 +734,25 @@
 }
 \def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
 
+% ganx Comment a block. Begin
+% \newcommand*{\logo}[1]{
+%  \def\@logo{\includegraphics[width=4.2cm]{#1}
+%  }
+% }
+% \ifdefstring{\ELEGANT@device}{normal}{
+% \newcommand*{\cover}[1]{
+%  \def\@cover{\includegraphics[width=\linewidth]{#1}
+%  }
+% }}{\relax}
+%
+% \ifdefstring{\ELEGANT@device}{pad}{
+% \newcommand*{\cover}[1]{
+%  \def\@cover{\includegraphics[trim=0 26bp 0 26bp,clip=true, width=\linewidth]{#1}
+%  }
+% }}{\relax}
+% ganx Comment a block. End
+
+% ganx Add a block to replace the blcok above. Begin
 \ifdefstring{\ELEGANT@device}{normal}{
 \newcommand*{\logo}[1]{
  \def\@logo{\includegraphics[width=4.2cm]{#1}
@@ -728,14 +776,23 @@
 \ifdefstring{\ELEGANT@device}{phone}{
 \newcommand*{\logo}[1]{
  \def\@logo{
-     % \includegraphics[width=3.2cm]{#1}
  }
 }
 \newcommand*{\cover}[1]{
  \def\@cover{
  }
 }}{\relax}
-% next: The swufe logo's position needs to be lifted.
+
+\ifdefstring{\ELEGANT@device}{phonePortrait}{
+\newcommand*{\logo}[1]{
+ \def\@logo{
+ }
+}
+\newcommand*{\cover}[1]{
+ \def\@cover{
+ }
+}}{\relax}
+% ganx Add a block to replace the blcok above. End
 
 \renewcommand{\baselinestretch}{1.35} 
 
@@ -763,7 +820,7 @@
     {\renewcommand{\arraystretch}{0.618}
     \begin{tabular}{l} 
       \ifdefstring{\ELEGANT@lang}{en}{\textbf{Author:}}{\kaishu 作者：} \@author \\
-      % \ifdefstring{\ELEGANT@lang}{en}{\textbf{Institute:}}{\kaishu 组织：} \the\institute\\
+      % \ifdefstring{\ELEGANT@lang}{en}{\textbf{Institute:}}{\kaishu 组织：} \the\institute\\ % ganx Comment out this line.
       \ifdefstring{\ELEGANT@lang}{en}{\textbf{Date:}}{\kaishu 时间：} \@date\\
       \ifdefstring{\ELEGANT@lang}{en}{\textbf{Version:}}{\kaishu 版本：} \the\version\\
     \end{tabular}}
@@ -818,4 +875,5 @@
 }
 \newcommand\bmmax{0}
 \RequirePackage{bm}
+
 
