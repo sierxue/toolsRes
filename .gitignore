@@ -12,7 +12,8 @@ latexmkrc
 /figure/photo-dd.jpg
 
 # Ignore vim swap files
-.*.swp
+*.swp
+*.swo
 
 # R
 .Rproj.user
