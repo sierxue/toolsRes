@@ -343,7 +343,7 @@ machine) 了。
 cd ~/.df/dotfiles
 git checkout .
 git pull --rebase
-git submodule update --remote
+git submodule update --remote --recursive
 ./install
 \end{lstlisting}
     \item 运行下面几个命令，更新
@@ -353,7 +353,7 @@ git submodule update --remote
 cd ~/.df/dotfiles-local
 git checkout .
 git pull --rebase
-git submodule update --remote
+git submodule update --remote --recursive
 ./install
 \end{lstlisting}
 \end{enumerate}
@@ -368,7 +368,7 @@ git submodule update --remote
 \end{lstlisting}
         脚本 \lstinline{pullDotfiles.sh} 的内容见 Github
         \href{https://github.com/ddpom/scripts/blob/master/pullDotfiles.sh}
-        {链接}
+        {链接}。
         % \begin{note}\label{note:update-dotfiles-crontab}
         %     这一步是更新 \lstinline{dotfiles-local} 时
         %     自动完成，虚拟机使用者不需要手动写入。
