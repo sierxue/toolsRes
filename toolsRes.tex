@@ -200,7 +200,7 @@ machine) 了。
 虚拟机的一个优点是共享方便，团队成员使用同样的配置大大有利于团队协作。
 为配合本教程，我们精心制作了 Ubuntu 18.04 虚拟机，
 可以让读者快速地学习常用的开源工具，而不用花费大量时间于软件的安装和配置。
-我们命名此虚拟机为 ganx@vm, 其安装和配置参见 \S\ref{sub:vbox-vm-install-set}.
+我们称此虚拟机为 ganx@vm, 其安装和配置参见 \S\ref{sub:vbox-vm-install-set}.
 
 
 \subsubsection{获取虚拟机}%
@@ -482,6 +482,11 @@ CapsLock 键的位置非常好，但因为 Unix 用户经常要用 Ctrl 键而�
                  \end{center}
         \end{enumerate}
 \end{itemize}
+\begin{note}\label{note:ubuntu-update}
+    用 \lstinline{sudo apt install} 安装任何软件之前，都需要运行
+    \lstinline{sudo apt install} 来确保软件源提供的软件是最新的。
+    在教程的余下部分，我们省略掉这条命令以节省篇幅。
+\end{note}
 
 \subsubsection{设置虚拟机用户 ganx 创建共享目录的权限}%
 \label{ssub:vbox-ganx-vboxsf}
@@ -491,21 +496,6 @@ CapsLock 键的位置非常好，但因为 Unix 用户经常要用 Ctrl 键而�
 \label{ssub:vm-treak}
 
 % next
-
-\subsubsection{安装版本控制软件 Git}%
-\label{ssub:vm-git}
-
-\begin{lstlisting}[escapeinside=``]
-sudo apt update
-sudo apt install git
-sudo apt install gitk
-sudo apt install git-gui
-\end{lstlisting}
-\begin{note}\label{note:ubuntu-update}
-    用 \lstinline{sudo apt install} 安装任何软件之前，都需要运行
-    \lstinline{sudo apt install} 来确保软件源提供的软件是最新的。
-    在教程的余下部分，我们省略掉这条命令以节省篇幅。
-\end{note}
 
 \subsubsection{Virtualbox 的其它设置}%
 \label{ssub:vbox-others}
@@ -537,6 +527,13 @@ sudo apt install git-gui
     \item \lstinline{sudo apt-get install -f}
     \item 在系统设置中的语言设置选择缺省输入方式为 fcitx.
 \end{enumerate}
+
+\subsubsection{安装版本控制软件 Git}%
+\label{ssub:vm-git}
+
+\begin{lstlisting}[escapeinside=``]
+sudo apt install git gitk git-gui
+\end{lstlisting}
 
 \subsubsection{安装编辑软件 Vim}%
 \label{ssub:vm-apt-vim}
