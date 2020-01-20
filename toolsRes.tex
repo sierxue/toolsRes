@@ -297,10 +297,6 @@ git submodule update --remote --recursive
         脚本 \lstinline{pullDotfiles.sh} 的内容见 Github
         \href{https://github.com/ddpom/scripts/blob/master/pullDotfiles.sh}
         {链接}。
-        % \begin{note}\label{note:update-dotfiles-crontab}
-        %     这一步是更新 \lstinline{dotfiles-local} 时
-        %     自动完成，虚拟机使用者不需要手动写入。
-        % \end{note}
     \item 运行命令 \lstinline{crontab -l}, 确认你看到以下内容：
 \begin{lstlisting}[escapeinside=``]
 SHELL=/usr/bin/zsh
@@ -309,35 +305,7 @@ MAILTO=""
 
 @hourly  /usr/bin/zsh ~/.df/dotfiles-local/scripts/pullDotfiles.sh >> ~/.df/log/pullDotfiles.log
 \end{lstlisting}
-% \begin{share}\label{note:crontab}
-%     我们可以把自动更新的运行记录写入 \lstinline{log} 文件。
-%     首先，运行~ \lstinline{mkdir ~/.df/log} 创建 \lstinline{log} 目录；
-%     然后运行命令 \lstinline{crontab -e}, 在最后一行添加
-%     \lstinline{ >> ~/.df/log/pullDotfiles.log}:
-% \begin{lstlisting}[escapeinside=``]
-% @hourly  /usr/bin/zsh ~/.df/dotfiles-local/scripts/pullDotfiles.sh >> ~/.df/log/pullDotfiles.log
-% \end{lstlisting}
-% 添加以后不要断行，要确保所有的内容在一行上。
-% \end{share}
 \end{enumerate}
-
-% \subsubsection{常用命令}%
-% \label{ssub:linux-commands}
-%
-% 常用命令：
-% \begin{enumerate}
-%     \item \lstinline{cd}: 进 入某个目录; 例子：
-% \begin{lstlisting}[ escapeinside=``]
-% cd ~/.ssh/
-% \end{lstlisting}
-%     \item \lstinline{mv}: 1. 修改文件或这目录的名字; 2.
-%         移动文件或者整个目录； 例子：
-% \begin{lstlisting}[escapeinside=``]
-% cd ~/.ssh/
-% mv github_yourname_ganx github_ddpom_ganx
-% mv github_yourname_ganx.pub github_ddpom_ganx.pub
-% \end{lstlisting}
-% \end{enumerate}
 
 \subsection{虚拟机的安装和设置}%
 \label{sub:vbox-vm-install-set}
@@ -347,7 +315,6 @@ MAILTO=""
 
 \begin{table}[H]
    \centering
-   % \caption{虚拟机 ganx@vm 的基本信息}
      \begin{tabular}{llllll}
      \toprule
      系统 & 初始安装 & 用户名 & 密码 & 登录方式 \\
@@ -675,8 +642,6 @@ endif
         由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
     \item \LaTeX{} 教程：
         \begin{itemize}
-            % \item \href{https://github.com/luong-komorebi/Begin-Latex-in-minutes/blob/master/Translation-Chinese.md}
-            %     {学习 \LaTeX{} 从现在开始 (Begin \LaTeX{} in Minutes)}
             \item \href{https://www.latexstudio.net/archives/9377.html}
                 {30分钟从完全陌生到基本入门}
             \item
