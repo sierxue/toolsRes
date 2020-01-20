@@ -592,11 +592,11 @@ endif
 \label{sec:latex-intro}
 
 \emph{使用 {\rm\LaTeX{}} 排版科技文章的优点}
-~\footnote{
+~\footnote{参考
     \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
-                {一份不太简短的LATEX介绍}
+                {一份（不太）简短的LATEX介绍}
 }
-~\footnote{
+~\footnote{参考
     \href{https://github.com/HymanHuang/plutothesis/tree/master/PlutoKaiTi/a4paper}
     {哈尔滨工业大学学位论文开题报告模板 0.2.0.20080430 版}
 }
@@ -625,6 +625,27 @@ endif
     %     更成为一种信仰，因为它的诞生及其发展本身就是一段趋向完美的传奇。
 \end{itemize}
 
+\LaTeX\ 的缺点也是显而易见的：
+~\footnote{引用自
+    \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
+        {一份（不太）简短的LATEX介绍}，做了细微修改。
+}
+\begin{itemize}
+    \item 入门门槛高。看完
+        \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
+                {一份（不太）简短的LATEX介绍}，
+        用户只是入门而已，离精通它还较远。
+    \item 不容易排查错误。
+        \LaTeX\ 作为一个依靠编写代码工作的排版工具，
+        其使用的宏语言比 C++ 或 Python 等程序设计语言在错误排查方面困难得多。
+        它虽然能够提示错误，但不提供调试的机制，有时错误提示还很难理解。
+    \item 不容易定制样式。\LaTeX\
+        提供了一个基本上良好的样式，为了让用户不去关注样式而专注于文档结构。
+        但如果想要改进 \LaTeX\ 生成的文档样式则是比较困难。
+    \item 相比“所见即所得”的模式有一些不便，为了查看生成文档的效果，
+        用户总要不停地编译。
+        所幸的是，用户可以使用编辑器的自动即时编译功能，不需要手动进行。
+\end{itemize}
 \newpage
 \section{参考资料}%
 \label{sec:latex-refs}
