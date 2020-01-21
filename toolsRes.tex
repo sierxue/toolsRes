@@ -591,8 +591,8 @@ endif
 \section*{序言}%
 \label{sec:latex-intro}
 
-\emph{使用 {\rm\LaTeX{}} 排版科技文章的优点}
-~\footnote{参考
+\subsection*{使用 \LaTeX{} 排版科技文章的优点
+\footnote{参考
     \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
                 {一份（不太）简短的LATEX介绍}
 }
@@ -600,7 +600,8 @@ endif
     \href{https://github.com/HymanHuang/plutothesis/tree/master/PlutoKaiTi/a4paper}
     {哈尔滨工业大学学位论文开题报告模板 0.2.0.20080430 版}
 }
-：
+}%
+\label{sub:latex-advantage}
 \begin{itemize}
     \item \LaTeX{}的设计思想基于 \emph{所想即所得}，即 \emph{WYSIWYG
         (What you see is what you mean)},
@@ -624,27 +625,54 @@ endif
     % \item  对许多忠实的~TeXer 而言，\TeX/\LaTeX 已经不仅仅是一种排版软件，
     %     更成为一种信仰，因为它的诞生及其发展本身就是一段趋向完美的传奇。
 \end{itemize}
-
-\LaTeX\ 的缺点也是显而易见的：
-~\footnote{引用自
-    \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
-        {一份（不太）简短的LATEX介绍}，做了细微修改。
-}
+\subsection*{\LaTeX{} 排版的缺点及应对措施}%
+\label{sub:latex-disadvantage}
+虽然我觉得很难找到 \LaTeX\ 的缺点，但有不少用户认为其有不少让人诟病的地方。
+下面列出几点，同时我也给出我的看法以及有可能克服这些缺点的措施：
 \begin{itemize}
-    \item 入门门槛高。看完
+    \item 入门不太难，精通太费时。看完
         \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
-                {一份（不太）简短的LATEX介绍}，
+                {一份（不太）简短的 \LaTeX{} 介绍}，
         用户只是入门而已，离精通它还较远。
+        \emph{
+            {\bf 我的看法和建议}： {\rm \LaTeX{}} 的学习者需要明白学习的目的
+            是作为一个 {\rm \LaTeX{}} 的用户还是 {\rm \LaTeX{}}
+            的模板设计者。
+            如果是作为使用现成模板的用户，那么入门就足够了；
+            如果是模板设计者，当然需要精通这门语言，也就需要较长学习时间了。
+        }
     \item 不容易排查错误。
         \LaTeX\ 作为一个依靠编写代码工作的排版工具，
         其使用的宏语言比 C++ 或 Python 等程序设计语言在错误排查方面困难得多。
         它虽然能够提示错误，但不提供调试的机制，有时错误提示还很难理解。
+        \emph{
+            {\bf 我的看法和建议}： {\rm \LaTeX{}} 的报错机制虽然不够友好，
+            但是其错误类型却是有限的三种： 1. 宏包缺失； 2. 字体缺失； 3.
+            公式、文献引用等语法错误。
+            避免前两类错误的一个方法是完全安装所有宏包以及字体。
+            如果没有完全安装，在出现此类错误后，查看 log 文件，很容易找到
+            缺失的包或者是字体，安装上即可。
+            避免或者减少第 3 类错误，可以花些时间学习基本语法，
+            在已有的标准样例片段上更改，或者是使用一些辅助软件。
+        }
     \item 不容易定制样式。\LaTeX\
         提供了一个基本上良好的样式，为了让用户不去关注样式而专注于文档结构。
         但如果想要改进 \LaTeX\ 生成的文档样式则是比较困难。
+        \emph{
+            {\bf 我的看法和建议}： 如果只是模板的使用者，认真阅读模板的
+            使用说明，尽量在不修改模板的情况下完成自己的任务。
+            如果实在要改进生成的文档样式，可以向模板的设计者、维护者、或者
+            模板的社区求助。
+            如果还不能达成目的，再花时间学习模板的设计原理及语法，改进模板。
+        }
     \item 相比“所见即所得”的模式有一些不便，为了查看生成文档的效果，
         用户总要不停地编译。
-        所幸的是，用户可以使用编辑器的自动即时编译功能，不需要手动进行。
+        \emph{
+            {\bf 我的看法和建议}：
+            所幸的是，大多编辑器都已经提供自动即时编译功能，
+            用户不需要手动进行编译。
+            虽然不是真正的 ``所见即所得'', 但已离其不远了。
+        }
 \end{itemize}
 \newpage
 \section{参考资料}%
