@@ -307,157 +307,6 @@ MAILTO=""
 \end{lstlisting}
 \end{enumerate}
 
-\subsection{虚拟机的安装和设置}%
-\label{sub:vbox-vm-install-set}
-
-\subsubsection{虚拟机基本信息}%
-\label{ssub:linux-ubuntu}
-
-\begin{table}[H]
-   \centering
-     \begin{tabular}{llllll}
-     \toprule
-     系统 & 初始安装 & 用户名 & 密码 & 登录方式 \\
-     \midrule
-     Ubuntu 18.04 & 最小安装 & ganx   & 9 & 自动登录\\
-     \bottomrule
-     \end{tabular}%
-   \label{tab:theorem-class}%
-\end{table}%
-
-\subsubsection{设置 keyring 的密码为空}%
-\label{ssub:vm-keyring}
-
-做此设置以及初始安装时设置的 ``自动登录''后，
-可以不输入任何密码使用虚拟机。
-% next
-
-\subsubsection{设置 sudo 时不询问密码}%
-\label{ssub:vm-sudo}
-\begin{enumerate}
-    \item \lstinline{sudo gedit /etc/sudoers.d/ganx}
-    \item 写入下面两行：
-\begin{lstlisting}[escapeinside=``]
-User_Alias      NORMAL = ganx
-NORMAL  ALL = NOPASSWD: ALL
-\end{lstlisting}
-    \item \lstinline{sudo chmod 0440 /etc/sudoers.d/ganx}
-\end{enumerate}
-
-\subsubsection{切换软件源}%
-\label{ssub:vm-source}
-% next
-
-\subsubsection{映射 CapsLock 键到 Ctrl 键}%
-\label{ssub:vm-caps-ctrl}
-
-CapsLock 键的位置非常好，但因为 Unix 用户经常要用 Ctrl 键而从来不用 CapsLock,
-所以做此映射。
-% next
-
-\subsubsection{安装虚拟机的 Guest Additions}%
-\label{ssub:vbox-guest-additions}
-\begin{itemize}
-    \item \textbf{Windows 系统}：参考
-        \href{https://www.virtualbox.org/manual/UserManual.html#additions-windows}{官方使用手册}
-        安装 \lstinline{Guest additions}.
-    \item \textbf{Mac 系统}： \textbf{不需要}~安装
-        \lstinline{Guest additions}.
-    \item \textbf{Linux 系统}： 参考
-        \href{https://www.virtualbox.org/manual/UserManual.html#additions-linux}{官方使用手册}
-    \item \textbf{Linux 系统 Debian 系列}：
-        \begin{enumerate}
-            \item \lstinline{sudo apt update}
-            \item \lstinline{sudo apt install build-essential gcc make perl dkms menu}
-            \item \lstinline{mount} 安装盘
-                \lstinline{VBoxGuestAdditions.iso},~
-                在光盘目录下运行如下命令安装：
-                 \begin{center}\label{center:vm-guest-additions}
-                     \lstinline{sh ./VBoxLinuxAdditions.run}
-                 \end{center}
-        \end{enumerate}
-\end{itemize}
-\begin{note}\label{note:ubuntu-update}
-    用 \lstinline{sudo apt install} 安装任何软件之前，都需要运行
-    \lstinline{sudo apt install} 来确保软件源提供的软件是最新的。
-    在教程的余下部分，我们省略掉这条命令以节省篇幅。
-\end{note}
-
-\subsubsection{设置虚拟机用户 ganx 创建共享目录的权限}%
-\label{ssub:vbox-ganx-vboxsf}
-\lstinline{sudo usermod -a -G vboxsf ganx}
-
-\subsubsection{安装设置工具 tweak}%
-\label{ssub:vm-treak}
-
-% next
-
-\subsubsection{安装 i-bus 拼音}%
-\label{ssub:pinyin-i-bus}
-\begin{enumerate}
-    \item \lstinline{sudo apt install ibus-libpinyin pinyin-database}
-    \item 安装中文语言。
-    \item 将 "intelligent pinyin" 加入 "Input source".
-\end{enumerate}
-
-\subsubsection{安装搜狗拼音}%
-\label{ssub:pinyin-sogou}
-\begin{enumerate}
-    \item 在 \href{https://pinyin.sogou.com/linux/}
-        {https://pinyin.sogou.com/linux/} 下载 64 位版本的安装包。
-        \footnote{安装本虚拟机时下载的版本是
-            \lstinline{sogoupinyin_2.3.1.0112_amd64.deb}
-        }
-    \item \lstinline{sudo apt -y install fcitx fcitx-bin fcitx-table-all}
-    \item \lstinline{sudo dpkg -i sogoupinyin_2.3.1.0112_amd64.deb}
-    \item \lstinline{sudo apt-get install -f}
-    \item 在系统设置中的语言设置选择缺省输入方式为 fcitx.
-\end{enumerate}
-
-\subsubsection{安装配置终端 zsh}%
-\label{ssub:vm-zsh}
-
-\begin{lstlisting}[escapeinside=``]
-sudo apt install curl zsh zsh-doc
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-chsh -s $(which zsh)
-\end{lstlisting}
-
-\subsubsection{安装版本控制软件 Git}%
-\label{ssub:vm-git}
-
-\begin{lstlisting}[escapeinside=``]
-sudo apt install git gitk git-gui
-\end{lstlisting}
-
-\subsubsection{安装编辑软件 Vim}%
-\label{ssub:vm-apt-vim}
-
-\begin{lstlisting}[escapeinside=``]
-sudo apt install vim vim-common vim-gnome
-\end{lstlisting}
-
-\subsubsection{安装 pdf 阅读软件 zathura}%
-\label{ssub:vm-zathura}
-
-\begin{lstlisting}[escapeinside=``]
-sudo apt install zathura
-sudo apt install xdotool
-\end{lstlisting}
-
-\subsubsection{安装文献管理器 zotero}%
-\label{ssub:vm-zotero}
-
-在 \href{https://www.zotero.org/download/}{www.zotero.org/download/}
-下载安装包 \lstinline{Zotero-5.x.xx_linux-x86_64.tar.bz2}.
-然后运行如下命令：
-\begin{lstlisting}[escapeinside=``]
-sudo tar -xf ~/Documents/tools/Zotero-.x.xx_linux-x86_64.tar.bz2 -C /opt
-sudo bash /opt/Zotero_linux-x86_64/set_launcher_icon
-sudo ln -s /opt/Zotero_linux-x86_64/zotero.desktop /usr/share/applications/
-sudo chown -R ganx: /opt/Zotero_linux-x86_64
-\end{lstlisting}
-
 \newpage
 \section{Vim 编辑器}%
 \label{sec:vim}
@@ -1009,6 +858,157 @@ SIMILAR.
 
 \section{Linux 系统}%
 \label{sec:linux-a}
+
+\subsection{虚拟机的安装和设置}%
+\label{sub:vbox-vm-install-set}
+
+\subsubsection{虚拟机基本信息}%
+\label{ssub:linux-ubuntu}
+
+\begin{table}[H]
+   \centering
+     \begin{tabular}{llllll}
+     \toprule
+     系统 & 初始安装 & 用户名 & 密码 & 登录方式 \\
+     \midrule
+     Ubuntu 18.04 & 最小安装 & ganx   & 9 & 自动登录\\
+     \bottomrule
+     \end{tabular}%
+   \label{tab:theorem-class}%
+\end{table}%
+
+\subsubsection{设置 keyring 的密码为空}%
+\label{ssub:vm-keyring}
+
+做此设置以及初始安装时设置的 ``自动登录''后，
+可以不输入任何密码使用虚拟机。
+% next
+
+\subsubsection{设置 sudo 时不询问密码}%
+\label{ssub:vm-sudo}
+\begin{enumerate}
+    \item \lstinline{sudo gedit /etc/sudoers.d/ganx}
+    \item 写入下面两行：
+\begin{lstlisting}[escapeinside=``]
+User_Alias      NORMAL = ganx
+NORMAL  ALL = NOPASSWD: ALL
+\end{lstlisting}
+    \item \lstinline{sudo chmod 0440 /etc/sudoers.d/ganx}
+\end{enumerate}
+
+\subsubsection{切换软件源}%
+\label{ssub:vm-source}
+% next
+
+\subsubsection{映射 CapsLock 键到 Ctrl 键}%
+\label{ssub:vm-caps-ctrl}
+
+CapsLock 键的位置非常好，但因为 Unix 用户经常要用 Ctrl 键而从来不用 CapsLock,
+所以做此映射。
+% next
+
+\subsubsection{安装虚拟机的 Guest Additions}%
+\label{ssub:vbox-guest-additions}
+\begin{itemize}
+    \item \textbf{Windows 系统}：参考
+        \href{https://www.virtualbox.org/manual/UserManual.html#additions-windows}{官方使用手册}
+        安装 \lstinline{Guest additions}.
+    \item \textbf{Mac 系统}： \textbf{不需要}~安装
+        \lstinline{Guest additions}.
+    \item \textbf{Linux 系统}： 参考
+        \href{https://www.virtualbox.org/manual/UserManual.html#additions-linux}{官方使用手册}
+    \item \textbf{Linux 系统 Debian 系列}：
+        \begin{enumerate}
+            \item \lstinline{sudo apt update}
+            \item \lstinline{sudo apt install build-essential gcc make perl dkms menu}
+            \item \lstinline{mount} 安装盘
+                \lstinline{VBoxGuestAdditions.iso},~
+                在光盘目录下运行如下命令安装：
+                 \begin{center}\label{center:vm-guest-additions}
+                     \lstinline{sh ./VBoxLinuxAdditions.run}
+                 \end{center}
+        \end{enumerate}
+\end{itemize}
+\begin{note}\label{note:ubuntu-update}
+    用 \lstinline{sudo apt install} 安装任何软件之前，都需要运行
+    \lstinline{sudo apt install} 来确保软件源提供的软件是最新的。
+    在教程的余下部分，我们省略掉这条命令以节省篇幅。
+\end{note}
+
+\subsubsection{设置虚拟机用户 ganx 创建共享目录的权限}%
+\label{ssub:vbox-ganx-vboxsf}
+\lstinline{sudo usermod -a -G vboxsf ganx}
+
+\subsubsection{安装设置工具 tweak}%
+\label{ssub:vm-treak}
+
+% next
+
+\subsubsection{安装 i-bus 拼音}%
+\label{ssub:pinyin-i-bus}
+\begin{enumerate}
+    \item \lstinline{sudo apt install ibus-libpinyin pinyin-database}
+    \item 安装中文语言。
+    \item 将 "intelligent pinyin" 加入 "Input source".
+\end{enumerate}
+
+\subsubsection{安装搜狗拼音}%
+\label{ssub:pinyin-sogou}
+\begin{enumerate}
+    \item 在 \href{https://pinyin.sogou.com/linux/}
+        {https://pinyin.sogou.com/linux/} 下载 64 位版本的安装包。
+        \footnote{安装本虚拟机时下载的版本是
+            \lstinline{sogoupinyin_2.3.1.0112_amd64.deb}
+        }
+    \item \lstinline{sudo apt -y install fcitx fcitx-bin fcitx-table-all}
+    \item \lstinline{sudo dpkg -i sogoupinyin_2.3.1.0112_amd64.deb}
+    \item \lstinline{sudo apt-get install -f}
+    \item 在系统设置中的语言设置选择缺省输入方式为 fcitx.
+\end{enumerate}
+
+\subsubsection{安装配置终端 zsh}%
+\label{ssub:vm-zsh}
+
+\begin{lstlisting}[escapeinside=``]
+sudo apt install curl zsh zsh-doc
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s $(which zsh)
+\end{lstlisting}
+
+\subsubsection{安装版本控制软件 Git}%
+\label{ssub:vm-git}
+
+\begin{lstlisting}[escapeinside=``]
+sudo apt install git gitk git-gui
+\end{lstlisting}
+
+\subsubsection{安装编辑软件 Vim}%
+\label{ssub:vm-apt-vim}
+
+\begin{lstlisting}[escapeinside=``]
+sudo apt install vim vim-common vim-gnome
+\end{lstlisting}
+
+\subsubsection{安装 pdf 阅读软件 zathura}%
+\label{ssub:vm-zathura}
+
+\begin{lstlisting}[escapeinside=``]
+sudo apt install zathura
+sudo apt install xdotool
+\end{lstlisting}
+
+\subsubsection{安装文献管理器 zotero}%
+\label{ssub:vm-zotero}
+
+在 \href{https://www.zotero.org/download/}{www.zotero.org/download/}
+下载安装包 \lstinline{Zotero-5.x.xx_linux-x86_64.tar.bz2}.
+然后运行如下命令：
+\begin{lstlisting}[escapeinside=``]
+sudo tar -xf ~/Documents/tools/Zotero-.x.xx_linux-x86_64.tar.bz2 -C /opt
+sudo bash /opt/Zotero_linux-x86_64/set_launcher_icon
+sudo ln -s /opt/Zotero_linux-x86_64/zotero.desktop /usr/share/applications/
+sudo chown -R ganx: /opt/Zotero_linux-x86_64
+\end{lstlisting}
 
 \section{Virtualbox 虚拟机}%
 \label{sec:vbox-a}
