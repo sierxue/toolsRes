@@ -1,0 +1,3 @@
+[submodule "books"]
+	path = books
+	url = https://git.coding.net/sierxue/books-toolsRes.git
