@@ -24,7 +24,7 @@
     最主要的目标是想让读者能在短时间内学会用{\rm \LaTeX{}} 写作，
     以及用~{\rm Git} 工具进行版本控制和团队协作。
     在使用本虚拟机和本教程的过程中，如果发现其有不当及需改进之处，
-    请不吝指出，谢谢{\rm !!!}}
+    请不吝指出，谢谢{\rm!!!}}
 
 \logo{logo.png}
 \cover{cover.jpg}
@@ -37,10 +37,10 @@
 \tableofcontents
 % \thispagestyle{empty}
 
-\mainmatter
+\mainmatter%
 \hypersetup{pageanchor=true}
 
-\chapter{系统设置}
+\chapter{系统设置}%
 \label{cha:settings-system}
 
 \section{Virtualbox 虚拟机}%
@@ -127,7 +127,7 @@ machine) 了。
 在虚拟机的系统设置中，可以设置虚拟机所用内存大小。设置内存请遵循以下原则：
 \begin{enumerate}
     \item 虚拟机的内存不能超过主机物理内存的一半；
-    \item 如要顺畅地运行，虚拟机的内存最好不小于 2048 MB.
+    \item 如要顺畅地运行，最好设置不小于 2048 MB 的虚拟机的内存。
 \end{enumerate}
 
 \subsubsection{硬盘设置}%
@@ -178,15 +178,15 @@ machine) 了。
 
 \begin{itemize}
     \item 官方网址： \href{https://www.linux.org/}{https://www.linux.org/}
-    \item Ubuntu ~ ~： \href{https://cn.ubuntu.com/}{https://cn.ubuntu.com/}
+    \item Ubuntu~~： \href{https://cn.ubuntu.com/}{https://cn.ubuntu.com/}
     \item 社区讨论：
         \href{https://forum.ubuntu.com.cn/}{https://forum.ubuntu.com.cn/}
     \item 问答网站：
         \href{https://askubuntu.com/}{https://askubuntu.com/}
     \item Linux 教程：
         \begin{itemize}
-            \item \lstinline{Ubuntu desktop help}
-                \footnote{按 \lstinline{F1} 即可以打开。}
+            \item \lstinline{Ubuntu desktop help}\footnote{
+                按 \lstinline{F1} 即可以打开。}
             \item \href{https://help.ubuntu.com/lts/ubuntu-help/index.html}
                 {Ubuntu 桌面指南}
             \item \href{https://linuxtools-rst.readthedocs.io/zh_CN/latest/}
@@ -206,8 +206,8 @@ machine) 了。
 \subsubsection{点文件介绍}%
 \label{ssub:dotfiles-settings-intro}
 
-在 Unix/Linux/Mac 系统上，软件有它们各自的配置文件，通常以 ~.  开头，
-管它们叫 \emph{点文件}~(~ \texttt{dotfiles}).
+在 Unix/Linux/Mac 系统上，软件有它们各自的配置文件，通常以~. 开头，
+管它们叫 \emph{点文件}~(~\texttt{dotfiles}).
 这些点文件数量多，并且所在的位置还有所不同，管理起来并不是一个容易的事情。
 一个方法是把所有的这些配置文件放进一个文件夹，对每个配置文件用命令
 \lstinline{ln -s} 链接到原来的位置。
@@ -290,7 +290,7 @@ git submodule update --remote --recursive
 \label{ssub:update-dotfiles-crontab}
 
 \begin{enumerate}
-    \item 本虚拟机已经将 ~\S\ref{ssub:update-dotfiles-manual}~ 中的所有命令写入
+    \item 本虚拟机已经将~\S\ref{ssub:update-dotfiles-manual}~中的所有命令写入
 \begin{lstlisting}[escapeinside=``]
 ~/.df/dotfiles-local/scripts/pullDotfiles.sh
 \end{lstlisting}
@@ -320,8 +320,8 @@ MAILTO=""
         \href{https://vi.stackexchange.com/}{https://vi.stackexchange.com/}
     \item Vim 教程：
         \begin{itemize}
-            \item \lstinline{vimtutor}
-                \footnote{在终端中，输入 \lstinline{vimtutor} 命令学习 Vim
+            \item \lstinline{vimtutor}\footnote{
+                在终端中，输入 \lstinline{vimtutor} 命令学习 Vim
                 的基本用法。}
             \item \href{https://github.com/wsdjeg/vim-galore-zh_cn}
                 {Vim 从入门到精通}
@@ -382,16 +382,15 @@ endif
 常用操作：
 \begin{itemize}
     \item \lstinline{\ll} 编译 \LaTeX{} 文档；
-    \item \lstinline{\lv} 正向搜索 (Forward search)
-        \footnote{打开 pdf 文档并且指向光标所在文本对应的位置。}；
+    \item \lstinline{\lv} 正向搜索 (Forward search)\footnote{
+        打开 pdf 文档并且指向光标所在文本对应的位置。}；
     \item \lstinline{\ll} 停止编译 (或者 \lstinline{\lk})；
     \item \lstinline{\le} 查看错误和警告信息；
     \item \lstinline{\lc} 清除编译中的辅助文件；
     \item \lstinline{\lC} 清除 pdf 文件；
-    \item \lstinline{ctrl + clik} 反向搜索 (Backward/inverse search)
-        \footnote{按住 ctrl 键，点击 pdf 文档上的内容，光标就会转到 Gvim
-        上相应的位置};
-    \item 更多操作见插件 README;
+    \item \lstinline{ctrl + clik} 反向搜索 (Backward/inverse search)\footnote{
+        按住 ctrl 键，点击 pdf 文档上的内容，光标就会转到 Gvim 上相应的位置};
+    \item 更多操作见插件帮助文档;
     \item 插件的详细文档可以在命令模式下用 \lstinline{h:vimtex} 命令查看。
 \end{itemize}
 
@@ -444,7 +443,7 @@ endif
 ~\footnote{参考
     \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
                 {一份（不太）简短的LATEX介绍}
-    {\emph 以及}
+    {\emph~以及}
     \href{https://github.com/HymanHuang/plutothesis/tree/master/PlutoKaiTi/a4paper}
     {哈尔滨工业大学开题报告模板}
 }
@@ -454,17 +453,17 @@ endif
     \item \LaTeX{}的设计思想基于 \emph{所想即所得}，即 \emph{WYSIWYG
         (What you see is what you mean)},
         让用户只需专注于论文的思路贯通而不是繁杂的格式要求；
-    \item \LaTeX 文件为纯文本文件，有利于使用 Git 进行版本控制；
-    \item \LaTeX 的输出为符合国际文档标准的 pdf 文档，
+    \item \LaTeX~文件为纯文本文件，有利于使用 Git 进行版本控制；
+    \item \LaTeX~的输出为符合国际文档标准的 pdf 文档，
         在 \emph{MicroSoft Windows},
         \emph{Mac}, \emph{Linux}~系统上是一致的，
         有利于跨平台使用以及使用不同平台成员的团队协作；
-    \item \LaTeX 文件比~\emph{MicroSoft Word} 文件显著地小，易于传输和分享；
-    \item \LaTeX 数学公式输入排版，输出精美，并且
+    \item \LaTeX~文件比~\emph{MicroSoft Word} 文件显著地小，易于传输和分享；
+    \item \LaTeX~数学公式输入排版，输出精美，并且
         很容易生成复杂的专业排版元素,如脚注、交叉引用、参考文献、目录等；
-    \item 国际期刊及会议一般都提供~\LaTeX 论文模板,使论文投稿排版更容易；
+    \item 国际期刊及会议一般都提供~\LaTeX~论文模板,使论文投稿排版更容易；
     \item 不少高校提供符合要求的~\LaTeX{}学位论文写作模板；
-    \item 制作幻灯片的~\LaTeX 宏包~\emph{beamer}, 公式和文字输入一样方便，
+    \item 制作幻灯片的~\LaTeX~宏包~\emph{beamer}, 公式和文字输入一样方便，
         % 没有~\emph{PowerPoint}~ 的那种繁琐公式和图片位置调整，
         众多的默认模版供选择，一个简单命令就可切换，
         让幻灯片制作更轻松、专业、漂亮；
@@ -540,21 +539,21 @@ endif
 \begin{itemize}
     \item 官方网址： \href{https://www.ctan.org/}{https://www.ctan.org/}
     \item 问答网站：
-        \href{https://wenda.latexstudio.net/}{https://wenda.latexstudio.net/}
-        ~
+        \href{https://wenda.latexstudio.net/}{https://wenda.latexstudio.net/}~%
         \href{https://tex.stackexchange.com/}{https://tex.stackexchange.com/}
     \item 软件下载：如果官方网址下载 \lstinline{texlive.iso} 慢的话，可以在
     \href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/}
                 {清华镜像}~下载。
-    \item 数学符号： \href{books/latex-math-symbols.pdf}{速查表}~ ~
-        \href{http://detexify.kirelabs.org/classify.html} {图像识别} ~ ~
+    \item 数学符号： \href{books/latex-math-symbols.pdf}{速查表}~~%
+        \href{http://detexify.kirelabs.org/classify.html} {图像识别}~~%
         \href{http://mirrors .ustc.edu.cn/CTAN/info/symbols/comprehensive/symbols-a4.pdf}
-        {详细列表}
-        \footnote{如果 \lstinline{git clone} 了本仓库,
-        可以在本仓库的 \lstinline{books}
-        目录中阅读此电子书:
-        \href{books/symbols-a4.pdf}{数学符号详细列表} 。
-        由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+        {详细列表}\footnote{
+            如果 \lstinline{git clone} 了本仓库,
+            可以在本仓库的 \lstinline{books}
+            目录中阅读此电子书:
+            \href{books/symbols-a4.pdf}{数学符号详细列表} 。
+            由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。
+            }
     \item \LaTeX{} 教程：
         \begin{itemize}
             \item \href{https://www.latexstudio.net/archives/9377.html}
@@ -563,56 +562,57 @@ endif
                 \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
                 {一份不太简短的LATEX介绍}：
         \href{http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf}
-                {中文下载}
-                \footnote{如果 \lstinline{git clone} 了本仓库,
-                可以在本仓库的 \lstinline{books}
-                目录中阅读此电子书:
-                \href{books/lshort-zh-cn.pdf}{一份不太简短的LATEX介绍} 。
-                由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+                {中文下载}\footnote{
+                    如果 \lstinline{git clone} 了本仓库,
+                    可以在本仓库的 \lstinline{books}
+                    目录中阅读此电子书:
+                    \href{books/lshort-zh-cn.pdf}{一份不太简短的LATEX介绍} 。
+                    由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。
+                    }
                 ，
         \href{http://mirrors.ctan.org/info/lshort/english/lshort.pdf}
-                {英文下载}
-                \footnote{如果 \lstinline{git clone} 了本仓库,
-                可以在本仓库的 \lstinline{books}
-                目录中阅读此电子书:
-                \href{books/lshort.pdf}
-                {The Not So Short Introduction to LaTeX} 。
-                由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+                {英文下载}\footnote{
+                    如果 \lstinline{git clone} 了本仓库,
+                    可以在本仓库的 \lstinline{books}
+                    目录中阅读此电子书:
+                    \href{books/lshort.pdf}
+                    {The Not So Short Introduction to LaTeX} 。
+                    由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。
+                    }
             \item
                 \href{https://www.ctan.org/tex-archive/info/lshort/chinese}
                 {一份简短的 LaTeX 数学指南}：
                 \href{https://wenda.latexstudio.net/article-5006.html}
-                {中文下载}
-                \footnote{如果 \lstinline{git clone} 了本仓库,
-                可以在本仓库的 \lstinline{books}
-                目录中阅读此电子书:
-                \href{books/short-math-guide(cn).pdf}
-                {一份简短的 LaTeX 数学指南} 。
-                由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+                {中文下载}\footnote{
+                    如果 \lstinline{git clone} 了本仓库,
+                    可以在本仓库的 \lstinline{books}
+                    目录中阅读此电子书:
+                    \href{books/short-math-guide_cn.pdf}
+                    {一份简短的 LaTeX 数学指南} 。
+                    由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。
+                    }
                 ，
-                \href{http://mirrors.ustc.edu.cn/CTAN/info/short-math-guide/short-math-guide.pdf}{英文下载}
-                \footnote{如果 \lstinline{git clone} 了本仓库,
-                可以在本仓库的 \lstinline{books}
-                目录中阅读此电子书:
-                \href{books/short-math-guide.pdf}
-                {Short Math Guide for \LaTeX{}} 。
-                由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+                \href{http://mirrors.ustc.edu.cn/CTAN/info/short-math-guide/short-math-guide.pdf}
+                {英文下载}\footnote{
+                    如果 \lstinline{git clone} 了本仓库,
+                    可以在本仓库的 \lstinline{books}
+                    目录中阅读此电子书:
+                    \href{books/short-math-guide.pdf}
+                    {Short Math Guide for \LaTeX{}} 。
+                    由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。
+                    }
             \item \href{https://github.com/huangxg/lnotes}
-                {雷太赫排版系统简介 An introduction to TeX/LaTeX
-                typesetting system}:~
-        \href{https://github.com/huangxg/lnotes/raw/master/lnotes2.pdf}{下载}
-                \footnote{如果 \lstinline{git clone} 了本仓库,
-                可以在本仓库的 \lstinline{books}
-                目录中阅读此电子书:
-                \href{books/lnotes2.pdf}{雷太赫排版系统简介} 。
-                由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。}
+                {雷太赫排版系统简介 An introduction to TeX/LaTeX typesetting system}:~%
+                    \href{https://github.com/huangxg/lnotes/raw/master/lnotes2.pdf}
+                    {下载}\footnote{
+                        如果 \lstinline{git clone} 了本仓库,
+                        可以在本仓库的 \lstinline{books}
+                        目录中阅读此电子书:
+                        \href{books/lnotes2.pdf}{雷太赫排版系统简介} 。
+                        由于从网页下载较慢，就放在本仓库了，感谢作者开源贡献。
+                        }
         \end{itemize}
 \end{itemize}
-
-%\section{使用教程}%
-%\label{sec:latex-tips}
-
-%待续
 
 \chapter{Git 使用教程}%
 \label{cha:git-tips}
@@ -625,15 +625,15 @@ endif
     \item 问答网站：
         \href{https://stackoverflow.com/questions/tagged/git+github}
         {https://stackoverflow.com/questions/tagged/git+github}
-    \item Git~ 教程：
+    \item Git~教程：
         \begin{itemize}
             \item \href{https://git-scm.com/book/zh/v2}
-                {Pro Git 中文}
-                ~ \href{books/progit_v2.1.31_zh.pdf}{pdf 中文}
-                ~ \href{https://git-scm.com/book/en/v2} {Pro Git 英文}
-                 ~ \href{books/progit_v2.1.177_en.pdf}{pdf 英文}
-            \item \href{https://help.github.com/en/github}
-                {Github 帮助}
+                {Pro Git 中文线上阅读}，~%
+                \href{books/progit_v2.1.31_zh.pdf}{pdf 中文本地阅读}
+            \item \href{https://git-scm.com/book/en/v2}
+                {Pro Git 英文线上阅读}，~%
+                \href{books/progit_v2.1.177_en.pdf}{pdf 英文本地阅读}
+            \item \href{https://help.github.com/en/github}{Github 帮助}
         \end{itemize}
 \end{itemize}
 
@@ -745,7 +745,7 @@ with \ldots.
   \centering
   \includegraphics[width=1.0\textwidth]{screenshots/Screenshot from
   2019-12-23 21-13-03.png}
-  \caption{搜索 Perishables Joint Pricing and Inventory Control}
+  \caption{搜索 Perishables Joint Pricing and Inventory Control}%
   \label{fig:ludwig-search}
 \end{figure}
 
@@ -758,12 +758,12 @@ with \ldots.
 
 令人遗憾的是，搜索结果任然不理想（见图
 \S\ref{fig:ludwig-result-3}），没有看到完整的匹配，只看到左中位置显示的 60
-SIMILAR.
+SIMILAR 提示。
 这时，我们可以考虑搜索更少的关键词。
 从搜索结果中，我们发现 Perishables
 和其它关键词甚少关联，可以考虑去掉这个关键词后重新搜索。
 搜索结果见图 \S\ref{fig:ludwig-result-4},
-我们可以看到仍然没有得到完美匹配，只看到 60 SIMILAR.
+我们可以看到仍然没有得到完美匹配，只看到 60 SIMILAR 提示。
 但令人欣慰的是，在第一个结果中，我们看到了除大小写外的完美匹配。
 可以理解成这个搜索是大小写敏感的。
 这时我们可以考虑把搜索框中的大写字母全部改成小写字母来搜索。
@@ -774,7 +774,7 @@ SIMILAR.
   \centering
   \includegraphics[width=1.0\textwidth]{screenshots/Screenshot from
   2019-12-23 21-16-43.png}
-  \caption{搜索结果 1}
+  \caption{搜索结果 1}%
   \label{fig:ludwig-result-1}
 \end{figure}
 
@@ -782,7 +782,7 @@ SIMILAR.
   \centering
   \includegraphics[width=1.0\textwidth]{screenshots/Screenshot from
   2019-12-23 21-16-55.png}
-  \caption{搜索结果 2}
+  \caption{搜索结果 2}%
   \label{fig:ludwig-result-2}
 \end{figure}
 
@@ -790,7 +790,7 @@ SIMILAR.
   \centering
   \includegraphics[width=1.0\textwidth]{screenshots/Screenshot from
   2019-12-23 21-17-32.png}
-  \caption{筛选搜索范围}
+  \caption{筛选搜索范围}%
   \label{fig:ludwig-filter}
 \end{figure}
 
@@ -798,7 +798,7 @@ SIMILAR.
   \centering
   \includegraphics[width=1.0\textwidth]{screenshots/Screenshot from
   2019-12-23 21-18-09.png}
-  \caption{搜索结果 3}
+  \caption{搜索结果 3}%
   \label{fig:ludwig-result-3}
 \end{figure}
 
@@ -806,7 +806,7 @@ SIMILAR.
   \centering
   \includegraphics[width=1.0\textwidth]{screenshots/Screenshot from
   2019-12-23 21-19-22.png}
-  \caption{去掉 Perashables 后的搜索结果}
+  \caption{去掉 Perashables 后的搜索结果}%
   \label{fig:ludwig-result-4}
 \end{figure}
 
@@ -814,7 +814,7 @@ SIMILAR.
   \centering
   \includegraphics[width=1.0\textwidth]{screenshots/Screenshot from
   2019-12-23 21-20-01.png}
-  \caption{去掉 Perashables 后且使用小写字母的搜索结果}
+  \caption{去掉 Perashables 后且使用小写字母的搜索结果}%
   \label{fig:ludwig-result-5}
 \end{figure}
 
@@ -932,10 +932,10 @@ CapsLock 键的位置非常好，但因为 Unix 用户经常要用 Ctrl 键而�
             \item \lstinline{sudo apt update}
             \item \lstinline{sudo apt install build-essential gcc make perl dkms menu}
             \item \lstinline{mount} 安装盘
-                \lstinline{VBoxGuestAdditions.iso},~
+                \lstinline{VBoxGuestAdditions.iso},~%
                 在光盘目录下运行如下命令安装：
                  \begin{center}\label{center:vm-guest-additions}
-                     \lstinline{sh ./VBoxLinuxAdditions.run}
+                     \lstinline{sh~./VBoxLinuxAdditions.run}
                  \end{center}
         \end{enumerate}
 \end{itemize}
@@ -959,15 +959,15 @@ CapsLock 键的位置非常好，但因为 Unix 用户经常要用 Ctrl 键而�
 \begin{enumerate}
     \item \lstinline{sudo apt install ibus-libpinyin pinyin-database}
     \item 安装中文语言。
-    \item 将 "intelligent pinyin" 加入 "Input source".
+    \item 将 ``intelligent pinyin'' 加入 ``Input source''.
 \end{enumerate}
 
 \subsubsection{安装搜狗拼音}%
 \label{ssub:pinyin-sogou}
 \begin{enumerate}
     \item 在 \href{https://pinyin.sogou.com/linux/}
-        {https://pinyin.sogou.com/linux/} 下载 64 位版本的安装包。
-        \footnote{安装本虚拟机时下载的版本是
+        {https://pinyin.sogou.com/linux/} 下载 64 位版本的安装包。\footnote{
+            安装本虚拟机时下载的版本是
             \lstinline{sogoupinyin_2.3.1.0112_amd64.deb}
         }
     \item \lstinline{sudo apt -y install fcitx fcitx-bin fcitx-table-all}
