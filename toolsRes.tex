@@ -154,14 +154,14 @@ Virtualbox 虚拟机的安装分为两个步骤：
 \label{ssub:vbox-set-share-folder}
 
 当虚拟机需要与主机系统交换文件时，就可以设定共享目录。
-重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
-共享目录生效。
+% 重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
+% 共享目录生效。
 共享目录的设定详情参见附录 \S\ref{ssub:vbox-set-share-folder-a}.
-\begin{tip}\label{tip:vbox-share-folder-activate}
-    如果曾经运行过 \S\ref{ssub:vbox-ganx-vboxsf} 中的命令授予用户权限，
-    可以运行命令 \lstinline{sudo systemctl daemon-reload},
-    共享目录在未重启虚拟机的情况下马上生效。
-\end{tip}
+% \begin{tip}\label{tip:vbox-share-folder-activate}
+%     如果曾经运行过 \S\ref{ssub:vbox-ganx-vboxsf} 中的命令授予用户权限，
+%     可以运行命令 \lstinline{sudo systemctl daemon-reload},
+%     共享目录在未重启虚拟机的情况下马上生效。
+% \end{tip}
 
 \subsection{调整虚拟机窗口大小}%
 \label{ssub:vbox-set-window-size}
@@ -263,7 +263,7 @@ endif
     \item \lstinline{\ll} 停止编译 (或者 \lstinline{\lk})；
     \item \lstinline{\le} 查看错误和警告信息；
     \item \lstinline{\lc} 清除编译中的辅助文件；
-    \item \lstinline{\lC} 清除 pdf 文件；
+    \item \lstinline{\lC} 清除编译中的辅助文件以及 pdf 文件；
     \item \lstinline{ctrl + clik} 反向搜索 (Backward/inverse search)\footnote{
         按住 ctrl 键，点击 pdf 文档上的内容，光标就会转到 Gvim 上相应的位置};
     \item 更多操作见插件帮助文档;
@@ -660,8 +660,7 @@ with \ldots.
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=1.0\textwidth]{media/screenshots/ludwig/Screenshot from
-  2019-12-23 21-13-03.png}
+  \includegraphics[width=1.0\textwidth]{media/screenshots/ludwig/Screenshot from 2019-12-23 21-13-03.png}
   \caption{搜索 Perishables Joint Pricing and Inventory Control}%
   \label{fig:ludwig-search}
 \end{figure}
