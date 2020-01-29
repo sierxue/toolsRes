@@ -12,6 +12,12 @@
     toc=onecol,
 ]{elegantbook_sierxue}
 \usepackage{float}
+% toc: add the glossaries to the table of contents.
+% sort=standard is default, the other two are 'def' and 'use'.
+\usepackage[xindy,toc,counter=section,style=listgroup]{glossaries}
+% \usepackage[nogroupskip]{glossaries-extra}
+\makeglossaries{}
+
 \usepackage[]{menukeys}
 \definecolor{geyecolor}{RGB}{199,237,204}%
 \pagecolor{geyecolor}
@@ -46,6 +52,12 @@
 
 \logo{logo.png}
 \cover{cover.jpg}
+
+% Index
+\usepackage{makeidx}
+\makeindex
+% Load glossaries.tex
+\input{glossaries}
 
 \begin{document}
 
@@ -1093,4 +1105,7 @@ sudo chown -R ganx: /opt/Zotero_linux-x86_64
         \lstinline{linespace} 的设置。比如，可以尝试  \lstinline{0 - 4}
         之间的一个值。
 \end{enumerate}
+
+\printindex
+\printglossary[title={术语表}]
 \end{document}
