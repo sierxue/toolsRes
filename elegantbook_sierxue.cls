@@ -561,6 +561,18 @@
 % second（orange-thm）: proof note remark  
 % third（blue-prop):  assumptions property conclusion custom
 
+%% LaTeX with counter
+\newcounter{tex}[chapter]
+\setcounter{tex}{0}
+\renewcommand{\thetex}{\thechapter.\arabic{tex}}
+\newenvironment{latex}[1][]{
+     \refstepcounter{tex}\par\noindent\textbf{\color{main}{%
+        \ifdefstring{\ELEGANT@lang}{en}{{\LaTeX} Learning}{{\LaTeX} 知识点}
+     }\thetex #1 \,}\rmfamily %
+   }{
+     \par\medskip\ignorespacesafterend %
+   }
+
 %% Example with counter
 \newcounter{exam}[chapter]
 \setcounter{exam}{0}
