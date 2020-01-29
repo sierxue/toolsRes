@@ -12,6 +12,8 @@
     toc=onecol,
 ]{elegantbook_sierxue}
 \usepackage{float}
+\usepackage{pdfpages}
+
 % toc: add the glossaries to the table of contents.
 % sort=standard is default, the other two are 'def' and 'use'.
 \usepackage[xindy,toc,counter=section,style=listgroup]{glossaries}
@@ -462,6 +464,11 @@ endif
     label=basic-01-text-en]%
 {learn-latex/basic-01/text-en.tex}
 
+\noindent 更多关于命令的知识，参见
+\hyperlink{books/lshort-zh-cn.pdf.15}%
+{《一份不太简短的LATEX介绍》\S1.3.1}.
+    （详情参见 \hyperlink{books/lshort-zh-cn.pdf.16}%
+    {《一份不太简短的LATEX介绍》\S1.4.1}.）。
 \lstinputlisting[
     style=input-float,
     caption={文本输入 --- 中西文},
