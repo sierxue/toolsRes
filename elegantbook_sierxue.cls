@@ -110,7 +110,7 @@
 \ifdefstring{\ELEGANT@device}{phone}{
 \geometry{
   a5paper,
-  margin=12mm,
+  margin=14mm,
 }}{\relax}
 % ganx Add a block. End
 
