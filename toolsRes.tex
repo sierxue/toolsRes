@@ -464,6 +464,26 @@ endif
     label=basic-01-text-en]%
 {learn-latex/basic-01/text-en.tex}
 
+按第 4 行的提示输入 ``Hello, world!'' 后，同时按下组合键 \keys{ctrl + s},
+程序就会编译这个 \LaTeX\ 文档，
+我们就会在右方的 pdf 页面看到输出的 ``Hello, world!''.
+\begin{latex}\label{tex:command}
+    \emph{\gls{ml}} (\gls{ml-en})\footnote{
+        也叫作控制序列（control sequence）。}
+    以反斜线 \texttt{\textbackslash}
+    开头，如模板~\ref{basic-01-text-en} 中第 1 行
+    \lstinline{\documentclass}。
+\end{latex}
+% \begin{latex}\label{tex:command}
+%     \emph{\gls{ml}} (\gls{ml-en})\footnote{
+%         也叫作控制序列（control sequence）。}
+%     以反斜线 \texttt{\textbackslash} 开头，为以下两种形式之一：
+% \begin{itemize}
+%   \item 反斜线和后面的一串字母，如 \lstinline{\documentclass}。
+%       它们以任意非字母符号（空格、数字、标点等）为界限。
+%   \item 反斜线和后面的单个非字母符号，如 \lstinline{\$}。
+% \end{itemize}
+% \end{latex}
 \noindent 更多关于命令的知识，参见
 \hyperlink{books/lshort-zh-cn.pdf.15}%
 {《一份不太简短的LATEX介绍》\S1.3.1}.
