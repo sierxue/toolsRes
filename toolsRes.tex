@@ -525,6 +525,33 @@ endif
     caption={文本输入 --- 西文},
     label=basic-01-text-en-a]%
 {learn-latex/basic-01/text-en-a.tex}
+在模板~\ref{basic-01-text-en-a} 的第 4 行末尾，
+如果输入中文『你好，世界！』，同时按下组合键 \keys{ctrl + s},
+就会发现编译错误，如图~\ref{fig:pdflatex-error} 所示。
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=1.0\textwidth]%
+  {../media-toolsRes/screenshots/learn-latex/pdflatex-error.png}
+  \caption{输入中文后的编译错误}%
+  \label{fig:pdflatex-error}
+\end{figure}
+
+按下右下角 \texttt{Open compiler log},
+我们可以查看到下图编译器给出的错误信息。
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=1.0\textwidth]%
+  {../media-toolsRes/screenshots/learn-latex/pdflatex-error-output.png}
+  \caption{编译错误信息 --- OUTPUT}%
+  \label{fig:pdflatex-error-output}
+\end{figure}
+
+注意到图~\ref{fig:pdflatex-error-output}
+中倒数第二行的文字为 \texttt{Tex engine is `pdfTex'}, 倒数第六行的文字中
+含有 \texttt{pdflatex},
+我们就知道 vscode 是使用编译命令 \texttt{pdflatex} 来编译的。
+但遗憾的是，\texttt{pdflatex} 无法编译含有中文的 \texttt{article} 文档类。
+由于历史的原因, \texttt{pdflatex} 主要用于处理西文（主要是英文）文档。
 \lstinputlisting[
     style=input-float,
     caption={文本输入 --- 中西文},
