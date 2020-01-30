@@ -552,12 +552,24 @@ endif
 我们就知道 vscode 是使用编译命令 \texttt{pdflatex} 来编译的。
 但遗憾的是，\texttt{pdflatex} 无法编译含有中文的 \texttt{article} 文档类。
 由于历史的原因, \texttt{pdflatex} 主要用于处理西文（主要是英文）文档。
+现在我们通常用编译命令 \texttt{xelatex} 以及提供良好中文支持的文档类
+\texttt{ctexart} 来处理含有中文的文档。
+当然，这种处理方式也能够很好地处理西文。
+模板~\ref{basic-01-text} 给出了一个典型的处理中西文混排的文档模板。
 \lstinputlisting[
     style=input-float,
     caption={文本输入 --- 中西文},
     label=basic-01-text]%
 {learn-latex/basic-01/text.tex}
 
+在模板~\ref{basic-01-text} 中，第一行给编辑器传递的信息是处理这个文档的
+编译命令应该是 \texttt{xelatex}.
+第二行表明了这个文件的编码是 \texttt{UTF-8}, 这是中文文档通常使用的编码。
+
+\begin{exercise}\label{ex:basic-01-text}
+    在文件 \directory{/Documents/learn-latex/basic-01/text.tex}
+    中按提示输入相应的文字后，按下组合键 \keys{ctrl + s}, 观察 pdf 输出。
+\end{exercise}
 本节的基础知识学完以后，就可以使用模板写作论文了。
 
 \section{学术论文}%
