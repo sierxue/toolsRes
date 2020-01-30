@@ -498,9 +498,23 @@ endif
     % 带星号和不带星号的命令效果有一定差异。
     % 初次接触这些概念时，可以粗略地把星号看作一种特殊的可选参数。
 \end{latex}
+
+\begin{latex}\label{tex:documentclass}
+    \LaTeX\ 源代码以一个 \lstinline{\documentclass} 命令作为开头，
+    它指定了文档使用的\emph{文档类}。
+\end{latex}
+
 文档类的详情可以参见 \hyperlink{books/lshort-zh-cn.pdf.16}%
 {《一份不太简短的LATEX介绍》\S1.4.1}.
 模板~\ref{basic-01-text-en} 中文档类的必选参数值为 \lstinline{article}.
+这条命令还有可选参数。
+如果没有设置可选参数的话，参数的取值为缺省值。
+对于文档类 \texttt{article}, 纸张的缺省规格为美式信纸
+\texttt{letterpaper}（$8.5\times11$英寸），字体的缺省大小为 \texttt{10pt}.
+
+\begin{latex}\label{tex:environment}
+    环境
+\end{latex}
 \lstinputlisting[
     style=input-float,
     caption={文本输入 --- 中西文},
