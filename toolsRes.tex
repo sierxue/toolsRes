@@ -24,9 +24,18 @@
 \definecolor{geyecolor}{RGB}{199,237,204}%
 \pagecolor{geyecolor}
 \renewcommand{\lstlistingname}{{\LaTeX}~模板}% Listing -> \LaTeX{}文档
+\lstdefinestyle{lst-left}{
+    escapeinside=``,
+    xleftmargin=.05\textwidth,
+}
+\lstdefinestyle{lst-right}{
+    escapeinside=``,
+    xrightmargin=.05\textwidth,
+}
 \lstdefinestyle{lst}{
     escapeinside=``,
-    xleftmargin=.05\textwidth
+    xleftmargin=.05\textwidth,
+    xrightmargin=.05\textwidth,
 }
 \lstdefinestyle{input}{
     language=[LaTeX]TeX,
@@ -811,13 +820,13 @@ endif
             \item 打开一个终端 (\lstinline{terminal});
             \item 运行以下命令 (用你注册时的电子邮件账户替换
                 \lstinline{yourEmail});
-\begin{lstlisting}
+\begin{lstlisting}[style=lst-right]
 ssh-keygen -t rsa -C "yourEmail" -f ~/.ssh/github
 \end{lstlisting}
             \item 提示输入 \lstinline{passphrase}
                 时，留空或者输入你的 \lstinline{passphrase};
             \item 运行以下命令，将公钥复制到剪切板;
-\begin{lstlisting}
+\begin{lstlisting}[style=lst-right]
 xclip -sel clip < ~/.ssh/github.pub
 \end{lstlisting}
             \item 粘贴剪切板里的内容到你的 GitHub 账户中的 SSH 公钥：
@@ -829,11 +838,11 @@ xclip -sel clip < ~/.ssh/github.pub
                         粘贴剪切板里的内容到文本框。
                 \end{itemize}
             \item 运行以下命令，测试你的 SSH 设置：
-\begin{lstlisting}
+\begin{lstlisting}[style=lst-right]
 ssh -T git@github.com
 \end{lstlisting}
             \item 如果你看到如下信息，你的设置就成功了。
-\begin{lstlisting}
+\begin{lstlisting}[style=lst-right]
 Hi yourUsername! You've successfully authenticated, but GitHub does not provide shell access.
 \end{lstlisting}
         \end{itemize}
