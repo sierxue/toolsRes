@@ -531,6 +531,13 @@ endif
 \end{latex}
 模板~\ref{basic-01-text-en} 中的第二和第五行定义了一个 \texttt{document}
 环境，包含在其中的内容标志出正文的范围。
+
+\begin{latex}\label{tex:comment}
+    \emph{\gls{zs}} (\gls{zs-en})
+    以百分号~\% 开头。
+    {\LaTeX} 源文件中，每一行中百分号后面的内容都会被编译器忽略。
+\end{latex}
+模板~\ref{basic-01-text-en} 中的第三行即为注释。
 \begin{exercise}\label{ex:documentclass}
     请在模板~\ref{basic-01-text-en} 中加上文档类的可选参数，设置纸张大小为
     \texttt{a5paper}, 字体大小为 \texttt{12pt}.
