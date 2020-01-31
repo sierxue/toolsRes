@@ -464,16 +464,18 @@ endif
     label=basic-01-text-en]%
 {learn-latex/basic-01/text-en.tex}
 
-按第 4 行的提示输入 ``Hello, world!'' 后，同时按下组合键 \keys{ctrl + s},
+按第 4 行的提示输入 ``Hello, world!'' 后，按下组合键 \keys{ctrl + s},
 程序就会编译这个 \LaTeX\ 文档，
 我们就会在右方的 pdf 页面看到输出的 ``Hello, world!''.
 \begin{latex}\label{tex:command}
     \emph{\gls{ml}} (\gls{ml-en})\footnote{
-        也叫作控制序列（control sequence）。}
+        也叫作控制序列 (control sequence).}
     以反斜线 \texttt{\textbackslash}
-    开头，如模板~\ref{basic-01-text-en} 中第 1 行
-    \lstinline{\documentclass}。
+    开头，且大小写敏感。
 \end{latex}
+
+模板~\ref{basic-01-text-en} 中第一行 \lstinline{\documentclass} 为一个
+{\LaTeX} 命令。
 % \begin{latex}\label{tex:command}
 %     \emph{\gls{ml}} (\gls{ml-en})\footnote{
 %         也叫作控制序列（control sequence）。}
@@ -485,7 +487,7 @@ endif
 % \end{itemize}
 % \end{latex}
 \noindent 更多关于命令的知识，参见
-\hyperlink{books/lshort-zh-cn.pdf.15}%
+\hyperlink{books/lshort-zh-cn.pdf.16}%
 {《一份不太简短的LATEX介绍》\S1.3.1}.
 
 \begin{latex}\label{tex:arguments}
@@ -500,11 +502,11 @@ endif
 \end{latex}
 
 \begin{latex}\label{tex:documentclass}
-    \LaTeX\ 源代码以一个 \lstinline{\documentclass} 命令作为开头，
-    它指定了文档使用的\emph{文档类}。
+    \LaTeX\ 源文件以一个 \lstinline{\documentclass} 命令作为开头，
+    它指定了文档使用的 \emph{\gls{wdl}} (\gls{wdl-en}).
 \end{latex}
 
-文档类的详情可以参见 \hyperlink{books/lshort-zh-cn.pdf.16}%
+文档类的详情可以参见 \hyperlink{books/lshort-zh-cn.pdf.17}%
 {《一份不太简短的LATEX介绍》\S1.4.1}.
 模板~\ref{basic-01-text-en} 中文档类的必选参数值为 \lstinline{article}.
 这条命令还有可选参数。
@@ -568,21 +570,21 @@ endif
 
 \begin{exercise}\label{ex:basic-01-text}
     在文件 \directory{/Documents/learn-latex/basic-01/text.tex}
-    中按提示输入相应的文字后，按下组合键 \keys{ctrl + s}, 观察 pdf 输出。
+    中按提示输入相应的文字后，编译此文件, 观察 pdf 输出。
 \end{exercise}
 本节的基础知识学完以后，就可以使用模板写作论文了。
 
+\newpage
 \section{学术论文}%
 \label{sec:latex-paper}
 
+\newpage
 \section{学位论文}%
 \label{sec:latex-thesis}
 
 \newpage
 \section{参考资料}%
 \label{sec:latex-refs}
-
-\includepdf[pages=15-16,link=true]{books/lshort-zh-cn.pdf}
 
 \LaTeX{} 参考资料网址：
 \begin{itemize}
@@ -663,6 +665,7 @@ endif
         \end{itemize}
 \end{itemize}
 
+\includepdf[pages=16-17,link=true]{books/lshort-zh-cn.pdf}
 \chapter{Git 使用教程}%
 \label{cha:git-tips}
 
