@@ -456,13 +456,13 @@ endif
 
 我们现在学习在 \LaTeX\ 文档中输入文本。
 请在 vscode 编辑器中打开文件夹 \directory{/Documents/learn-latex/basic-01}
-中的文件 \texttt{text-en.tex}.
-文件中的内容如模板~\ref{basic-01-text-en} 所示。
+中的文件 \texttt{text-en-a.tex}.
+文件中的内容如模板~\ref{basic-01-text-en-a} 所示。
 \lstinputlisting[
     style=input-float,
     caption={文本输入 --- 西文},
-    label=basic-01-text-en]%
-{learn-latex/basic-01/text-en.tex}
+    label=basic-01-text-en-a]%
+{learn-latex/basic-01/text-en-a.tex}
 
 按第 4 行的提示输入 ``Hello, world!'' 后，按下组合键 \keys{ctrl + s},
 程序就会编译这个 {\LaTeX} 文档，然后按下组合键 \keys{ctrl + alt + z},
@@ -484,7 +484,7 @@ endif
     开头，且大小写敏感。
 \end{latex}
 
-模板~\ref{basic-01-text-en} 中第一行 \lstinline{\documentclass} 为一个
+模板~\ref{basic-01-text-en-a} 中第一行 \lstinline{\documentclass} 为一个
 {\LaTeX} 命令。
 % \begin{latex}\label{tex:command}
 %     \emph{\gls{ml}} (\gls{ml-en})\footnote{
@@ -518,7 +518,7 @@ endif
 
 文档类的详情可以参见 \hyperlink{books/lshort-zh-cn.pdf.17}%
 {《一份不太简短的LATEX介绍》\S1.4.1}.
-模板~\ref{basic-01-text-en} 中文档类的必选参数值为 \lstinline{article}.
+模板~\ref{basic-01-text-en-a} 中文档类的必选参数值为 \lstinline{article}.
 这条命令还有可选参数。
 如果没有设置可选参数的话，参数的取值为缺省值。
 对于文档类 \texttt{article}, 纸张的缺省规格为美式信纸
@@ -529,7 +529,7 @@ endif
     \lstinline|\begin{environmentName}|,
     结束于 \lstinline|\end{environmentName}|.
 \end{latex}
-模板~\ref{basic-01-text-en} 中的第二和第五行定义了一个 \texttt{document}
+模板~\ref{basic-01-text-en-a} 中的第二和第五行定义了一个 \texttt{document}
 环境，包含在其中的内容标志出正文的范围。
 
 \begin{latex}\label{tex:comment}
@@ -537,18 +537,18 @@ endif
     以百分号~\% 开头。
     {\LaTeX} 源文件中，每一行中百分号后面的内容都会被编译器忽略。
 \end{latex}
-模板~\ref{basic-01-text-en} 中的第三行即为注释。
+模板~\ref{basic-01-text-en-a} 中的第三行即为注释。
 \begin{exercise}\label{ex:documentclass}
-    请在模板~\ref{basic-01-text-en} 中加上文档类的可选参数，设置纸张大小为
+    请在模板~\ref{basic-01-text-en-a} 中加上文档类的可选参数，设置纸张大小为
     \texttt{a5paper}, 字体大小为 \texttt{12pt}.
 \end{exercise}
-完成练习后，我们将文件保存为 \texttt{text-en-a.tex}.
+完成练习后，我们将文件保存为 \texttt{text-en-b.tex}.
 \lstinputlisting[
     style=input-float,
     caption={文本输入 --- 西文},
-    label=basic-01-text-en-a]%
-{learn-latex/basic-01/text-en-a.tex}
-在模板~\ref{basic-01-text-en-a} 的第 4 行末尾，
+    label=basic-01-text-en-b]%
+{learn-latex/basic-01/text-en-b.tex}
+在模板~\ref{basic-01-text-en-b} 的第 4 行末尾，
 如果输入中文『你好，世界！』，同时按下组合键 \keys{ctrl + s},
 就会发现编译错误，如图~\ref{fig:pdflatex-error} 所示。
 \begin{figure}[!htbp]
@@ -578,24 +578,24 @@ endif
 现在我们通常用编译命令 \texttt{xelatex} 以及提供良好中文支持的文档类
 \texttt{ctexart} 来处理含有中文的文档。
 当然，这种处理方式也能够很好地处理西文。
-模板~\ref{basic-01-text} 给出了一个典型的处理中西文混排的文档模板。
+模板~\ref{basic-01-text-a} 给出了一个典型的处理中西文混排的文档模板。
 \lstinputlisting[
     style=input-float,
     caption={文本输入 --- 中西文},
-    label=basic-01-text]%
-{learn-latex/basic-01/text.tex}
+    label=basic-01-text-a]%
+{learn-latex/basic-01/text-a.tex}
 
-在模板~\ref{basic-01-text} 中，第一行给编辑器传递的信息是处理这个文档的
+在模板~\ref{basic-01-text-a} 中，第一行给编辑器传递的信息是处理这个文档的
 编译命令应该是 \texttt{xelatex}.
 第二行表明了这个文件的编码是 \texttt{UTF-8}, 这是中文文档通常使用的编码。
 
-\begin{exercise}\label{ex:basic-01-text}
-    在文件 \directory{/Documents/learn-latex/basic-01/text.tex}
+\begin{exercise}\label{ex:basic-01-text-a}
+    在文件 \directory{/Documents/learn-latex/basic-01/text-a.tex}
     中按提示输入相应的文字后，编译此文件, 观察 pdf 输出。
 \end{exercise}
 
-\begin{exercise}\label{ex:basic-01-text-a}
-    在文件 \directory{/Documents/learn-latex/basic-01/text-a.tex}
+\begin{exercise}\label{ex:basic-01-text-b}
+    在文件 \directory{/Documents/learn-latex/basic-01/text-b.tex}
     中按提示输入相应的文字后，编译此文件, 观察 pdf 输出。
 \end{exercise}
 \begin{share}\label{share:user-designer}
