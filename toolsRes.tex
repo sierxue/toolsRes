@@ -777,21 +777,21 @@ endif
 \begin{itemize}
     \item 在 \href{https://github.com/}{https://github.com/}
         上登陆（注册并登陆）你的账户。
-        假设你在 \lstinline{github.com} 的用户名为 \lstinline{yourUsername},
-        你的电子邮件为 \lstinline{yourEmail}.
+        假设你在 GitHub 的用户名为 \lstinline{yourUsername},
+        电子邮件为 \lstinline{yourEmail}.
     \item 新建在github上使用的公匙：
         \begin{itemize}
             \item 打开一个终端 (\lstinline{terminal});
             \item 运行以下命令 (用你注册时的电子邮件账户替换
                 \lstinline{yourEmail});
 \begin{lstlisting}
-ssh-keygen -t rsa -C "yourEmail" -f ~/.ssh/github_ddpom_ganx
+ssh-keygen -t rsa -C "yourEmail" -f ~/.ssh/github
 \end{lstlisting}
             \item 提示输入 \lstinline{passphrase}
-                时，可以留空，也可以输入你的 \lstinline{passphrase};
+                时，留空或者输入你的 \lstinline{passphrase};
             \item 运行以下命令，将公钥复制到剪切板;
 \begin{lstlisting}
-xclip -sel clip < ~/.ssh/github_ddpom_ganx.pub
+xclip -sel clip < ~/.ssh/github.pub
 \end{lstlisting}
             \item 粘贴剪切板里的内容到你的 GitHub 账户中的 SSH 公钥：
                 \begin{itemize}
@@ -818,11 +818,11 @@ Hi yourUsername! You've successfully authenticated, but GitHub does not provide 
 \begin{enumerate}
     \item 用 \lstinline{gvim} 修改 \lstinline{~/.gitconfig_local}
         （如果没有这个文件, \lstinline{gvim} 会新建这个文件并打开它）：
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 gvim ~/.gitconfig_local
 \end{lstlisting}
     \item 写入下面的内容，用你个人的用户名和邮件地址替换相应的信息：
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 [user]
 	name = yourUsername
 	email = yourEmail
@@ -1047,10 +1047,10 @@ SIMILAR 提示。
 
 本虚拟机的配置文件主要由以下两个仓库控制：
 \begin{itemize}
-    \item \href{https://github.com/ddpom/dotfiles}
-        {https://github.com/ddpom/dotfiles}
-    \item \href{https://github.com/ddpom/dotfiles-local}
-        {https://github.com/ddpom/dotfiles-local}
+    \item \href{https://github.com/sierxue/dotfiles}
+        {https://github.com/sierxue/dotfiles}
+    \item \href{https://github.com/sierxue/dotfiles-local}
+        {https://github.com/sierxue/dotfiles-local}
 \end{itemize}
 
 \subsubsection{设置点文件仓库的更新提示}%
@@ -1060,12 +1060,12 @@ SIMILAR 提示。
 如果你 \lstinline{watch (关注)} 了这两个仓库，就可以收到更新提示。
 设置步骤如下：
 \begin{enumerate}
-    \item 访问 \href{https://github.com/ddpom/dotfiles}
-        {https://github.com/ddpom/dotfiles}, 点击右上方
+    \item 访问 \href{https://github.com/sierxue/dotfiles}
+        {https://github.com/sierxue/dotfiles}, 点击右上方
         \lstinline{watch (关注)} 旁边的下拉菜单，选择 \lstinline{watching}.
         如果你觉得这个仓库还有用的话，顺便点一下右边的 \lstinline{star}.
-    \item 访问 \href{https://github.com/ddpom/dotfiles-local}
-        {https://github.com/ddpom/dotfiles-local},
+    \item 访问 \href{https://github.com/sierxue/dotfiles-local}
+        {https://github.com/sierxue/dotfiles-local},
         点击右上方 \lstinline{watch (关注)} 旁边的下拉菜单，
         选择 \lstinline{watching}.
         如果你觉得这个仓库还有用的话，顺便点一下右边的 \lstinline{star}.
@@ -1079,9 +1079,9 @@ SIMILAR 提示。
 \label{ssub:update-dotfiles-manual}
 
 \begin{enumerate}
-    \item 运行下面几个命令，更新 \href{https://github.com/ddpom/dotfiles}
-        {https://github.com/ddpom/dotfiles}:
-\begin{lstlisting}[escapeinside=``]
+    \item 运行下面几个命令，更新 \href{https://github.com/sierxue/dotfiles}
+        {https://github.com/sierxue/dotfiles}:
+\begin{lstlisting}[style=lst]
 cd ~/.df/dotfiles
 git checkout .
 git pull --rebase
@@ -1089,9 +1089,9 @@ git submodule update --remote --recursive
 ./install
 \end{lstlisting}
     \item 运行下面几个命令，更新
-        \href{https://github.com/ddpom/dotfiles-local}
-        {https://github.com/ddpom/dotfiles-local}:
-\begin{lstlisting}[escapeinside=``]
+        \href{https://github.com/sierxue/dotfiles-local}
+        {https://github.com/sierxue/dotfiles-local}:
+\begin{lstlisting}[style=lst]
 cd ~/.df/dotfiles-local
 git checkout .
 git pull --rebase
@@ -1105,14 +1105,14 @@ git submodule update --remote --recursive
 
 \begin{enumerate}
     \item 本虚拟机已经将~\S\ref{ssub:update-dotfiles-manual}~中的所有命令写入
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 ~/.df/dotfiles-local/scripts/pullDotfiles.sh
 \end{lstlisting}
         脚本 \lstinline{pullDotfiles.sh} 的内容见 Github
-        \href{https://github.com/ddpom/scripts/blob/master/pullDotfiles.sh}
+        \href{https://github.com/sierxue/scripts/blob/master/pullDotfiles.sh}
         {链接}。
     \item 运行命令 \lstinline{crontab -l}, 确认你看到以下内容：
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 SHELL=/usr/bin/zsh
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=""
@@ -1151,7 +1151,7 @@ MAILTO=""
 \begin{enumerate}
     \item \lstinline{sudo gedit /etc/sudoers.d/ganx}
     \item 写入下面两行：
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 User_Alias      NORMAL = ganx
 NORMAL  ALL = NOPASSWD: ALL
 \end{lstlisting}
@@ -1231,7 +1231,7 @@ CapsLock 键的位置非常好，但因为 Unix 用户经常要用 Ctrl 键而�
 \subsubsection{安装配置终端 zsh}%
 \label{ssub:vm-zsh}
 
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 sudo apt install curl zsh zsh-doc
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s $(which zsh)
@@ -1240,21 +1240,21 @@ chsh -s $(which zsh)
 \subsubsection{安装版本控制软件 Git}%
 \label{ssub:vm-git}
 
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 sudo apt install git gitk git-gui
 \end{lstlisting}
 
 \subsubsection{安装编辑软件 Vim}%
 \label{ssub:vm-apt-vim}
 
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 sudo apt install vim vim-common vim-gnome
 \end{lstlisting}
 
 \subsubsection{安装 pdf 阅读软件 zathura}%
 \label{ssub:vm-zathura}
 
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 sudo apt install zathura
 sudo apt install xdotool
 \end{lstlisting}
@@ -1265,7 +1265,7 @@ sudo apt install xdotool
 在 \href{https://www.zotero.org/download/}{www.zotero.org/download/}
 下载安装包 \lstinline{Zotero-5.x.xx_linux-x86_64.tar.bz2}.
 然后运行如下命令：
-\begin{lstlisting}[escapeinside=``]
+\begin{lstlisting}[style=lst]
 sudo tar -xf ~/Documents/tools/Zotero-.x.xx_linux-x86_64.tar.bz2 -C /opt
 sudo bash /opt/Zotero_linux-x86_64/set_launcher_icon
 sudo ln -s /opt/Zotero_linux-x86_64/zotero.desktop /usr/share/applications/
