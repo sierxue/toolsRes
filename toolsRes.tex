@@ -615,6 +615,19 @@ endif
     其二是单独列为一行排版，称为\textbf{行间公式}。
 \end{latex}
 
+\begin{latex}\label{tex:math-inline}
+    行内公式由一对 \texttt\$ 符号包裹，或者是由 \lstinline|\( \)| 包裹。
+\end{latex}
+\lstinputlisting[
+    style=input-float,
+    caption={数学公式输入 --- 行内公式},
+    label=basic-02-math-a]%
+{learn-latex/basic-02/math-a.tex}
+\begin{exercise}\label{ex:basic-02-math-a}
+    在文件 \directory{/Documents/learn-latex/basic-02/math-a.tex}
+    中按提示输入相应的内容后，编译此文件, 观察 pdf 输出。
+\end{exercise}
+
 \begin{latex}\label{tex:package}
     在使用 \LaTeX\ 时，时常需要依赖一些扩展来增强或补充 \LaTeX\ 的功能，
     比如排版复杂的表格、插入图片、增加颜色甚至超链接等等。
