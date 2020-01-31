@@ -465,8 +465,18 @@ endif
 {learn-latex/basic-01/text-en.tex}
 
 按第 4 行的提示输入 ``Hello, world!'' 后，按下组合键 \keys{ctrl + s},
-程序就会编译这个 \LaTeX\ 文档，
+程序就会编译这个 {\LaTeX} 文档，然后按下组合键 \keys{ctrl + alt + z},
 我们就会在右方的 pdf 页面看到输出的 ``Hello, world!''.
+\begin{tip}\label{tip:vscode-shortcut-compile}
+    对于本虚拟机中的编辑器 vscode,
+    我们设置了在保存文件时自动编译 {\LaTeX} 文件。
+    按下组合键 \keys{ctrl + s},
+    则在保存了文件的同时又激活了对 {\LaTeX} 文件的编译。
+\end{tip}
+\begin{tip}\label{tip:vscode-shortcut-pdfviewer}
+    对于本虚拟机中的编辑器 vscode,
+    我们可以用组合键 \keys{ctrl + alt + z} 打开 pdf 页面。
+\end{tip}
 \begin{latex}\label{tex:command}
     \emph{\gls{ml}} (\gls{ml-en})\footnote{
         也叫作控制序列 (control sequence).}
