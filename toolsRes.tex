@@ -628,6 +628,12 @@ endif
     中按提示输入相应的内容后，编译此文件, 观察 pdf 输出。
 \end{exercise}
 
+\begin{latex}\label{tex:preamble}
+    在 \lstinline|\documentclass{ }| 和
+    \lstinline|\begin{document}| 之间的位置称为
+    \emph{\gls{dyq}} (\gls{dyq-en}).
+    在导言区中一般会进行对文档的全局设置。
+\end{latex}
 \begin{latex}\label{tex:package}
     在使用 \LaTeX\ 时，时常需要依赖一些扩展来增强或补充 \LaTeX\ 的功能，
     比如排版复杂的表格、插入图片、增加颜色甚至超链接等等。
@@ -636,6 +642,7 @@ endif
 \end{latex}
 宏包的详情可以参见 \hyperlink{books/lshort-zh-cn.pdf.18}%
 {《一份不太简短的LATEX介绍》\S1.4.2}.
+我们可以在导言区中使用 \lstinline|\usepackage{ }| 调用宏包。
 本节的基础知识学完以后，就可以使用模板写作论文了。
 
 \newpage
