@@ -525,8 +525,12 @@ endif
 \texttt{letterpaper}（\(8.5\times11\)英寸），字体的缺省大小为 \texttt{10pt}.
 
 \begin{latex}\label{tex:environment}
-    环境
+    \emph{\gls{hj}} (\gls{hj-en}) 开始于
+    \lstinline|\begin{environmentName}|,
+    结束于 \lstinline|\end{environmentName}|.
 \end{latex}
+模板~\ref{basic-01-text-en} 中的第二和第五行定义了一个 \texttt{document}
+环境，包含在其中的内容标志出正文的范围。
 \begin{exercise}\label{ex:documentclass}
     请在模板~\ref{basic-01-text-en} 中加上文档类的可选参数，设置纸张大小为
     \texttt{a5paper}, 字体大小为 \texttt{12pt}.
