@@ -517,8 +517,8 @@ endif
     一些 \LaTeX\ 命令可以接收 \emph{\gls{cs}} (\gls{cs-en})，
     参数的内容会影响命令的效果。
     \LaTeX\ 的参数分为可选参数和必选参数。
-    可选参数以方括号 \texttt[ ~\texttt] 包裹；
-    必选参数一般以花括号 \texttt\{ ~\texttt\} 包裹。
+    可选参数以方括号 \texttt{[~]} 包裹；
+    必选参数一般以花括号 \texttt{\{~\}} 包裹。
     % 还有些命令可以带一个星号 \texttt*，
     % 带星号和不带星号的命令效果有一定差异。
     % 初次接触这些概念时，可以粗略地把星号看作一种特殊的可选参数。
@@ -629,7 +629,7 @@ endif
 \end{latex}
 
 \begin{latex}\label{tex:math-inline}
-    行内公式由一对 \texttt\$ 符号包裹，或者是由 \lstinline|\( \)| 包裹。
+    行内公式由一对 \texttt{\$} 符号包裹，或者是由 \lstinline|\( \)| 包裹。
 \end{latex}
 \lstinputlisting[
     style=input-float,
@@ -642,8 +642,8 @@ endif
 \end{exercise}
 
 \begin{latex}\label{tex:preamble}
-    在 \lstinline|\documentclass{ }| 和
-    \lstinline|\begin{document}| 之间的位置称为
+    在 \lstinline|documentclass{ }| 和
+    \lstinline|begin{document}| 之间的位置称为
     \emph{\gls{dyq}} (\gls{dyq-en}).
     在导言区中一般会进行对文档的全局设置。
 \end{latex}
