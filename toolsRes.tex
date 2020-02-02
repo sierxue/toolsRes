@@ -703,6 +703,18 @@ endif
 \directory{/media/screencasts/math-d.mp4}.
 
 如果我们在文档中需要引用公式，
+我们可以使用 \texttt{label} 和 \texttt{ref} 生成交叉引用，
+宏包 \texttt{amsmath} 的 \texttt{eqref} 命令甚至为引用自动加上圆括号；
+还可以用 \texttt{tag} 命令手动修改公式编号，
+或者用 \texttt{notag} 命令取消为公式编号。
+
+\begin{exercise}\label{ex:basic-02-math-e}
+    在 \href{learn-latex/basic-02/math-e.tex}{文件}
+    \directory{/Documents/learn-latex/basic-02/math-e.tex}
+    中按提示输入相应的内容后，将文件保存为 \texttt{math-e.tex}.
+    编译此文件, 观察 pdf 输出。
+\end{exercise}
+
 本节的基础知识学完以后，就可以使用模板写作论文了。
 
 \newpage
