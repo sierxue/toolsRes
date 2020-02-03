@@ -640,7 +640,7 @@
   \ifdefstring{\ELEGANT@lang}{en}{Conclusion}{结论}\,
 }}{\par}
 \newenvironment{solution}{\par\noindent\textbf{\color{main}%
-  \ifdefstring{\ELEGANT@lang}{en}{Solution}{解}\;
+  \ifdefstring{\ELEGANT@lang}{en}{Solution}{解答}\; % ganx add “答”。
 }\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\kaishu}}{\vskip2ex\par}
 \newenvironment{property}{\par\noindent\textbf{\color{third}%
   \ifdefstring{\ELEGANT@lang}{en}{Property}{性质}\;
