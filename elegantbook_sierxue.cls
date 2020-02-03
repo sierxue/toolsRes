@@ -397,7 +397,7 @@
 
 
 %%define the note and proof environment
-\RequirePackage{pifont,manfnt,bbding} % ganx Insert fontawesome.
+\RequirePackage{fontawesome,pifont,manfnt,bbding} % ganx Insert fontawesome.
 % list/itemize/enumerate setting
 \RequirePackage[shortlabels]{enumitem}
 \setlist{nolistsep}
@@ -598,6 +598,18 @@
    }
 
 %% Exercise with counter
+\newcounter{cast}[chapter]
+\setcounter{cast}{0}
+\renewcommand{\thecast}{\thechapter.\arabic{cast}}
+\newenvironment{cast}[1][]{
+     \refstepcounter{cast}\par\noindent\makebox[-3pt][r]{\scriptsize\color{red!90}\faYoutubePlay\quad}\textbf{\color{main}{%
+       \ifdefstring{\ELEGANT@lang}{en}{Screencast}{演示}
+     }\thecast #1 \,}\rmfamily %
+   }{
+     \par\medskip\ignorespacesafterend %
+   }
+
+%% Exercise with counter
 \newcounter{prob}[chapter]
 \setcounter{prob}{0}
 \renewcommand{\theprob}{\thechapter.\arabic{prob}}
@@ -608,8 +620,6 @@
    }{
      \par\medskip\ignorespacesafterend %
    }
-
-
 
 \newenvironment{note}{\par\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}\dbend\quad}\textbf{\color{second}% % ganx Change textdbend to dbend.
   \ifdefstring{\ELEGANT@lang}{en}{Note}{注意}\,
@@ -640,7 +650,7 @@
   \ifdefstring{\ELEGANT@lang}{en}{Conclusion}{结论}\,
 }}{\par}
 \newenvironment{solution}{\par\noindent\textbf{\color{main}%
-  \ifdefstring{\ELEGANT@lang}{en}{Solution}{解答}\; % ganx add “答”。
+  \ifdefstring{\ELEGANT@lang}{en}{Solution}{解}\;
 }\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\kaishu}}{\vskip2ex\par}
 \newenvironment{property}{\par\noindent\textbf{\color{third}%
   \ifdefstring{\ELEGANT@lang}{en}{Property}{性质}\;
