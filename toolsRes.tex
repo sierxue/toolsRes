@@ -270,10 +270,10 @@ Virtualbox 虚拟机的安装分为两个步骤：
 你对本台虚拟机的特殊设置可以在 \lstinline{.vimrc_customized} 和
 \lstinline{.gvimrc_customized} 中配置。
 
-\subsubsection{Gvim 的个性化设置}%
+\subsubsection{gVim 的个性化设置}%
 \label{ssub:vim-gui-config-customized}
 
-打开 \lstinline{~/.gvimrc_customized}, 进行 Gvim 的个性化设置。例如：
+打开 \lstinline{~/.gvimrc_customized}, 进行 gVim 的个性化设置。例如：
 \begin{lstlisting}[style=lst]
 set guifont=Monospace\ 13
 set linespace=4
@@ -311,7 +311,7 @@ endif
     \item \lstinline{\lc} 清除编译中的辅助文件；
     \item \lstinline{\lC} 清除编译中的辅助文件以及 pdf 文件；
     \item \lstinline{ctrl + clik} 反向搜索 (Backward/inverse search)\footnote{
-        按住 ctrl 键，点击 pdf 文档上的内容，光标就会转到 Gvim 上相应的位置};
+        按住 ctrl 键，点击 pdf 文档上的内容，光标就会转到 gVim 上相应的位置};
     \item 更多操作见插件帮助文档;
     \item 插件的详细文档可以在命令模式下用 \lstinline{h:vimtex} 命令查看。
 \end{itemize}
@@ -462,14 +462,14 @@ endif
 \label{sub:vm-vscode}
 
 我们假定你已经装好了 Virtualbox 软件，下载了虚拟机，
-并且对 Visual Studio Code (vscode) 代码编辑器已经有了一定的了解。
-现在请打开虚拟机，并且打开代码编辑器 vscode.
+并且对 Visual Studio Code (VSCode) 代码编辑器已经有了一定的了解。
+现在请打开虚拟机，并且打开代码编辑器 VSCode.
 
 \subsection{文本输入}%
 \label{sub:latex-text}
 
 我们现在学习在 \LaTeX\ 文档中输入文本。
-请在 vscode 编辑器中打开文件夹 \directory{/Documents/learn-latex/basic-01}
+请在 VSCode 编辑器中打开文件夹 \directory{/Documents/learn-latex/basic-01}
 中的文件 \texttt{text-en-a.tex}.
 文件中的内容如模板~\ref{basic-01-text-en-a} 所示。
 \lstinputlisting[
@@ -482,13 +482,13 @@ endif
 程序就会编译这个 {\LaTeX} 文档，然后按下组合键 \keys{ctrl + alt + z},
 我们就会在右方的 pdf 页面看到输出的 ``Hello, world!''.
 \begin{tip}\label{tip:vscode-shortcut-compile}
-    对于本虚拟机中的编辑器 vscode,
+    对于本虚拟机中的编辑器 VSCode,
     我们设置了在保存文件时自动编译 {\LaTeX} 文件。
     按下组合键 \keys{ctrl + s},
     则在保存了文件的同时又激活了对 {\LaTeX} 文件的编译。
 \end{tip}
 \begin{tip}\label{tip:vscode-shortcut-pdfviewer}
-    对于本虚拟机中的编辑器 vscode,
+    对于本虚拟机中的编辑器 VSCode,
     我们可以用组合键 \keys{ctrl + alt + z} 打开 pdf 页面。
 \end{tip}
 \begin{latex}\label{tex:command}
@@ -586,7 +586,7 @@ endif
 注意到图~\ref{fig:pdflatex-error-output}
 中倒数第二行的文字为 \texttt{Tex engine is `pdfTex'}, 倒数第六行的文字中
 含有 \texttt{pdflatex},
-我们就知道 vscode 是使用编译命令 \texttt{pdflatex} 来编译的。
+我们就知道 VSCode 是使用编译命令 \texttt{pdflatex} 来编译的。
 但遗憾的是，\texttt{pdflatex} 无法编译含有中文的 \texttt{article} 文档类。
 由于历史的原因, \texttt{pdflatex} 主要用于处理西文（主要是英文）文档。
 现在我们通常用编译命令 \texttt{xelatex} 以及提供良好中文支持的文档类
@@ -885,8 +885,8 @@ Hi yourUsername! You've successfully authenticated, but GitHub does not provide 
 \label{sub:git-user-info}
 
 \begin{enumerate}
-    \item 用 \lstinline{gvim} 修改 \lstinline{~/.gitconfig_local}
-        （如果没有这个文件, \lstinline{gvim} 会新建这个文件并打开它）：
+    \item 用 gVim 修改 \lstinline{~/.gitconfig_local}
+        （如果没有这个文件, gVim 会新建这个文件并打开它）：
 \begin{lstlisting}[style=lst]
 gvim ~/.gitconfig_local
 \end{lstlisting}
@@ -1347,7 +1347,7 @@ sudo chown -R ganx: /opt/Zotero_linux-x86_64
 \subsection{故障排除}%
 \label{sub:vim-troubleshooting}
 
-\subsubsection{Gvim 打开文件后不见光标}%
+\subsubsection{gVim 打开文件后不见光标}%
 \label{ssub:vim-ts-cursor}
 
 \begin{enumerate}
