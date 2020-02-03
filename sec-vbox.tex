@@ -1,0 +1,75 @@
+\section{Virtualbox 虚拟机软件}%
+\label{sec:vbox}
+
+\subsection{参考资料}%
+\label{sub:vbox-refs}
+
+Virtualbox 虚拟机软件参考资料网址：
+\begin{itemize}
+    \item 官方网址： \href{https://www.virtualbox.org/}{https://www.virtualbox.org/}
+    \item 官方论坛： \href{https://forums.virtualbox.org/}{https://forums.virtualbox.org/}
+\end{itemize}
+
+\subsection{下载安装}%
+\label{sub:vbox-install}
+\href{https://www.virtualbox.org/wiki/Downloads}{官方网址}
+下载虚拟机软件通常比较慢，可以在
+\href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/}{清华镜像}下载。
+点击
+\href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/LATEST.TXT}
+{Virtualbox清华镜像最新版本}，可以查到当前最新版本。
+写作这个教程的时候，版本是 6.1.
+Virtualbox 虚拟机的安装分为两个步骤：
+\begin{enumerate}
+    \item 在主机（host computer）上安装基本软件；
+        \begin{itemize}
+            \item \textbf{Windows}: 下载
+                \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/virtualbox-Win-latest.exe}
+                {最新 Virtualbox 基本软件}，按常规安装。
+            \item \textbf{Mac}: 下载
+                \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/virtualbox-osx-latest.dmg}
+                {最新 Virtualbox 基本软件}，按常规安装。
+            \item Linux 的所有发行版可以参考
+                \href{https://www.virtualbox.org/wiki/Linux_Downloads}{官方安装文档}，
+                Debian 系列的发行版可以按下面两种方法安装：
+                \begin{itemize}
+                    \item 在
+                        \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/}
+                        {清华镜像}
+                        下载相应的 \lstinline{deb} 安装包安装。
+                    \item 参考
+                        \href{https://www.virtualbox.org/wiki/Linux_Downloads}
+                        {官方安装文档}
+                        添加源，用 \lstinline{apt} 方式安装。
+                        \begin{note}\label{note:vbox-apt-upgrade}
+                           当版本跳跃时，比如从 6.0 升级到 6.1,
+                           \lstinline{sudo apt update}
+                           并不提醒升级，需要运行命令
+                           \lstinline{sudo apt install virtualbox-6.1}.
+                        \end{note}
+                \end{itemize}
+        \end{itemize}
+    \item 在主机（host computer）上安装 \lstinline{Extension pack}.
+        此步中的 \lstinline{Extension pack} 软件对 Windows, Mac, Linux
+        等都通用。
+        点击
+        \href{https://mirror.tuna.tsinghua.edu.cn/virtualbox/}{清华镜像}，
+        选择最新的版本号，
+        假设最新的版本为 6.1.0，
+        则找到并下载
+        \begin{center}\label{center:vm-extension}
+            \lstinline{Oracle_VM_VirtualBox_Extension_Pack-6.1.0.vbox-extpack},
+        \end{center}
+        双击后，按提示安装。
+\end{enumerate}
+
+\subsection{使用虚拟机}%
+\label{sub:vbox-vm}
+
+按照 \S\ref{sub:vbox-install} 完成安装后，
+就可以使用虚拟机 (guest machine) 了。
+虚拟机的一个优点是共享方便，团队成员使用同样的配置大大有利于团队协作。
+为配合本教程，我们精心制作了虚拟机，可以让读者快速地学习常用的开源工具，
+而不用花费大量时间于软件的安装和配置。
+
+\newpage

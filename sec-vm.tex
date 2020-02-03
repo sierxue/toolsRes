@@ -1,0 +1,66 @@
+\section{使用 Linux 虚拟机}%
+\label{sec:linux}
+
+\subsection{获取虚拟机}%
+\label{ssub:vm-download}
+
+此虚拟机的安装和配置参见 \S\ref{sub:vbox-vm-u18-install-set}.
+
+\subsection{内存分配}%
+\label{ssub:vbox-set-memory}
+
+在虚拟机的系统设置中，可以设置虚拟机所用内存大小。设置内存请遵循以下原则：
+\begin{enumerate}
+    \item 虚拟机的内存不能超过主机物理内存的一半；
+    \item 如要顺畅地运行，最好设置不小于 2048 MB 的虚拟机的内存。
+\end{enumerate}
+
+\subsection{硬盘设置}%
+\label{ssub:vbox-set-vdi}
+
+如果虚拟机运行在固态硬盘上，在虚拟机的存储设置中的属性处，选择固态驱动器。
+
+\subsection{设定共享目录}%
+\label{ssub:vbox-set-share-folder}
+
+当虚拟机需要与主机系统交换文件时，就可以设定共享目录。
+% 重启虚拟主机或者运行命令 \lstinline{sudo systemctl daemon-reload},
+% 共享目录生效。
+共享目录的设定详情参见附录 \S\ref{ssub:vbox-set-share-folder-a}.
+% \begin{tip}\label{tip:vbox-share-folder-activate}
+%     如果曾经运行过 \S\ref{ssub:vbox-ganx-vboxsf} 中的命令授予用户权限，
+%     可以运行命令 \lstinline{sudo systemctl daemon-reload},
+%     共享目录在未重启虚拟机的情况下马上生效。
+% \end{tip}
+
+\subsection{调整虚拟机窗口大小}%
+\label{ssub:vbox-set-window-size}
+
+此虚拟机的窗口大小缺省设置为 \(1360 \times 768\).
+如果需要更大的窗口，可以在打开虚拟机后，于窗口顶部菜单选择
+\menu{视图 > 自动调整尺寸}，然后最大化虚拟机窗口。
+（在 Linux 和  Windows 上通常为点击右上角的方框，在 Mac 上点击左上的放大键）
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=1.0\textwidth]%
+  {media/shots/vm/vlcsnap-2020-01-28-01h24m55s147-vm.png}
+  \caption{\menu{视图 > 自动调整尺寸}}%
+  \label{fig:vm-display}
+\end{figure}
+
+调整虚拟机窗口还有其它方法，我们这里提供两种：
+\begin{enumerate}
+    \item 按组合键 Host + F.（组合键在 Linux 和 Windows 上通常为右边的
+        Ctrl, 在 Mac 上通常为左边的 Command 键）
+    \item 将鼠标移动到窗口边缘，调节窗口大小。
+\end{enumerate}
+
+\subsection{Virtualbox 的其它设置}%
+\label{ssub:vbox-others}
+\begin{enumerate}
+    \item 设置虚拟机的共享剪贴板选项为 \emph{双向}；
+    \item 在 \textbf{设置 --> 存储}
+        菜单中，设置虚拟硬盘是放置在固态硬盘还是机械硬盘上。
+    \item 设置用户界面，隐藏菜单以增加虚拟机窗口大小。
+\end{enumerate}
+\newpage

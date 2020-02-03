@@ -1,0 +1,92 @@
+\section{Vim 编辑器}%
+\label{sec:vim}
+
+\subsection{参考资料}%
+\label{sub:vim-refs}
+
+\begin{itemize}
+    \item 官方网址： \href{https://www.vim.org/}{https://www.vim.org/}
+    \item 问答网站：
+        \href{https://vi.stackexchange.com/}{https://vi.stackexchange.com/}
+    \item Vim 教程：
+        \begin{itemize}
+            \item \lstinline{vimtutor}\footnote{
+                在终端中，输入 \lstinline{vimtutor} 命令学习 Vim
+                的基本用法。}
+            \item \href{https://github.com/wsdjeg/vim-galore-zh_cn}
+                {Vim 从入门到精通}
+            \item \href{https://item.jd.com/12056490.html}
+                {Vim 使用技巧 (Pratical Vim) 第二版}
+        \end{itemize}
+\end{itemize}
+
+\subsection{常用配置}%
+\label{sub:vim-intro}
+
+\subsubsection{Vim 的配置文件}%
+\label{ssub:vim-config}
+
+本虚拟机中的配置文件为：
+\begin{lstlisting}[style=lst]
+~/.df/dotfiles/vimrc
+~/.df/dotfiles-local/gvimrc
+~/.vimrc_customized
+~/.gvimrc_customized
+\end{lstlisting}
+\lstinline{vimrc} 和 \lstinline{gvimrc} 由
+\S\ref{ssub:vbox-guest-ganx-conf} 中的两个 git 仓库控制，请勿修改。
+你对本台虚拟机的特殊设置可以在 \lstinline{.vimrc_customized} 和
+\lstinline{.gvimrc_customized} 中配置。
+
+\subsubsection{gVim 的个性化设置}%
+\label{ssub:vim-gui-config-customized}
+
+打开 \lstinline{~/.gvimrc_customized}, 进行 gVim 的个性化设置。例如：
+\begin{lstlisting}[style=lst]
+set guifont=Monospace\ 13
+set linespace=4
+\end{lstlisting}
+对于以上两个选项的设置，可以用命令 \lstinline{:h guifont} 和
+\lstinline{:h linespace} 查看帮助。
+例如，在 \lstinline{guifont} 的设置帮助中，有建议在中文系统下，使用如下配置：
+\begin{lstlisting}[xleftmargin=.04\textwidth]
+if has("gui_gtk3")
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 12,Fixed\ 12
+  set guifontwide=Microsoft\ Yahei\ 12,WenQuanYi\ Zen\ Hei\ 12
+endif
+\end{lstlisting}
+\begin{note}\label{note:guifont}
+    在本虚拟机上，这个建议的设置不尽人意。也许在 \lstinline{Window}
+    系统上还不错。
+\end{note}
+
+\subsection{常用插件}%
+\label{sub:vim-plugins}
+
+\subsubsection{vimtex --- 用 Vim 编辑 \LaTeX{} 的利器}%
+\label{ssub:vim-plugin-vimtex}
+
+插件网址:
+\href{https://github.com/lervag/vimtex}{https://github.com/lervag/vimtex}
+
+常用操作：
+\begin{itemize}
+    \item \lstinline{\ll} 编译 \LaTeX{} 文档；
+    \item \lstinline{\lv} 正向搜索 (Forward search)\footnote{
+        打开 pdf 文档并且指向光标所在文本对应的位置。}；
+    \item \lstinline{\ll} 停止编译 (或者 \lstinline{\lk})；
+    \item \lstinline{\le} 查看错误和警告信息；
+    \item \lstinline{\lc} 清除编译中的辅助文件；
+    \item \lstinline{\lC} 清除编译中的辅助文件以及 pdf 文件；
+    \item \lstinline{ctrl + clik} 反向搜索 (Backward/inverse search)\footnote{
+        按住 ctrl 键，点击 pdf 文档上的内容，光标就会转到 gVim 上相应的位置};
+    \item 更多操作见插件帮助文档;
+    \item 插件的详细文档可以在命令模式下用 \lstinline{h:vimtex} 命令查看。
+\end{itemize}
+
+%待续
+%%Vim 的学习曲线（To do）。
+%
+%\subsection{Vim 的学习方式}%
+%\label{sub:vim-learning}
+

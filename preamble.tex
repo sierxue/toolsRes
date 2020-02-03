@@ -1,0 +1,43 @@
+\usepackage{float}
+\usepackage{pdfpages}
+% toc: add the glossaries to the table of contents.
+% sort=standard is default, the other two are 'def' and 'use'.
+\usepackage[xindy,toc,counter=section,style=listgroup]{glossaries}
+% \usepackage[nogroupskip]{glossaries-extra}
+\makeglossaries{}
+\usepackage{makeidx}
+\makeindex % Index making
+\input{glossaries} % Load glossaries.tex
+
+\usepackage{menukeys}
+
+\definecolor{geyecolor}{RGB}{199,237,204}%
+\pagecolor{geyecolor}
+\renewcommand{\lstlistingname}{{\LaTeX}~模板}% Listing -> \LaTeX{}文档
+\lstdefinestyle{lst-left}{
+    escapeinside=``,
+    xleftmargin=.05\textwidth,
+}
+\lstdefinestyle{lst-right}{
+    escapeinside=``,
+    xrightmargin=.05\textwidth,
+}
+\lstdefinestyle{lst}{
+    escapeinside=``,
+    xleftmargin=.05\textwidth,
+    xrightmargin=.05\textwidth,
+}
+\lstdefinestyle{input}{
+    language=[LaTeX]TeX,
+    numbers=left,
+    frame=none,
+    xleftmargin=.05\textwidth
+}
+\lstdefinestyle{input-float}{
+    float=ht,
+    language=[LaTeX]TeX,
+    numbers=left,
+    frame=none,
+    xleftmargin=.05\textwidth
+}
+
