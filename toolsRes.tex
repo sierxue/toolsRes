@@ -555,8 +555,8 @@ endif
 \begin{exercise}\label{ex:documentclass}
     请在模板~\ref{basic-01-text-en-a} 中加上文档类的可选参数，设置纸张大小为
     \texttt{a5paper}, 字体大小为 \texttt{12pt}.
+    完成练习后，将文件保存为 \texttt{text-en-b.tex}.
 \end{exercise}
-完成练习后，我们将文件保存为 \texttt{text-en-b.tex}.
 \lstinputlisting[
     style=input-float,
     caption={文本输入 --- 西文},
@@ -587,7 +587,7 @@ endif
 中倒数第二行的文字为 \texttt{Tex engine is `pdfTex'}, 倒数第六行的文字中
 含有 \texttt{pdflatex},
 我们就知道 VSCode 是使用编译命令 \texttt{pdflatex} 来编译的。
-但遗憾的是，\texttt{pdflatex} 无法编译含有中文的 \texttt{article} 文档类。
+% 但遗憾的是，\texttt{pdflatex} 无法编译含有中文的 \texttt{article} 文档类。
 由于历史的原因, \texttt{pdflatex} 主要用于处理西文（主要是英文）文档。
 现在我们通常用编译命令 \texttt{xelatex} 以及提供良好中文支持的文档类
 \texttt{ctexart} 来处理含有中文的文档。
@@ -671,24 +671,19 @@ endif
     中按提示输入相应的内容后，将文件保存为 \texttt{math-c.tex}.
     编译此文件, 观察 pdf 输出。
 \end{exercise}
-
-要完成练习~\ref{ex:basic-02-math-c}, 我们需要输入以下内容：
+要完成练习~\ref{ex:math-c}, 我们需要输入以下内容：
 \begin{lstlisting}[style=lst]
 \begin{equation}
     1 + 2 = 3.
 \end{equation}
 \end{lstlisting}
 注意到我们有可能输入环境 \texttt{equation}
-很多次，而对于这种多次重复的输入，我们可以使用 \emph{\gls{pd}} (\gls{pd-en})
-来节省输入时间。
+很多次，而对于这种多次重复的输入，我们通常可以找到节省输入时间的方法。
 在 vscode 编辑器中, LaTeX-Workshop 插件已经为我们提供了常用的片段。
-比如，输入 BEQ, 然后按 \keys{Tab} 键，环境就自动跳出来，并且光标移动到了
-需要输入的位置。
-接着输入 \(1 + 2 = 3\) 就完成练习~\ref{ex:basic-02-math-c} 了。
-完成此练习的演示可以参见
-\href{media/screencasts/math-c.mp4}{录屏文件}
-\directory{/media/screencasts/math-c.mp4}.
-
+比如，输入 BEQ, 然后按 \keys{Tab} 键，
+环境 \texttt{equation} 就自动跳出来，
+并且光标移动到了需要输入的位置。
+接着输入 \(1 + 2 = 3\) 就完成练习~\ref{ex:math-c} 了。
 查看 pdf 输出，我们会看到公式的右侧有一个编号 (1).
 这个编号是自动生成的，并且会根据这个公式在正文中的位置，自动变化。
 比如，我们如果在这个公式之前插入一个公式，那么这个公式的编号就会变成 (2).
@@ -700,8 +695,7 @@ endif
     将这个文件另存为 \texttt{math-d.tex}.
     编译此文件，观察 pdf 输出。
 \end{exercise}
-\noindent 详情参见 \href{media/screencasts/math-d.mp4}{录屏文件}
-\directory{/media/screencasts/math-d.mp4}.
+\begin{cast}\label{sol:math-d}
 
 如果我们在文档中需要引用公式，
 我们可以使用 \texttt{label} 和 \texttt{ref} 生成交叉引用，
