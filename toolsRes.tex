@@ -557,6 +557,10 @@ endif
     \texttt{a5paper}, 字体大小为 \texttt{12pt}.
     完成练习后，将文件保存为 \texttt{text-en-b.tex}.
 \end{exercise}
+\begin{cast}\label{cast:documentclass}
+    gVim: \href{media/casts/math-d.mp4}{math-d-vim.mp4};
+    VSCode: \href{media/casts/math-d.mp4}{math-d-vscode.mp4}.
+\end{cast}
 \lstinputlisting[
     style=input-float,
     caption={文本输入 --- 西文},
@@ -607,11 +611,19 @@ endif
     在文件 \directory{/Documents/learn-latex/basic-01/text-a.tex}
     中按提示输入相应的文字后，编译此文件, 观察 pdf 输出。
 \end{exercise}
+\begin{cast}\label{cast:text-a}
+    gVim: \href{media/casts/text-a.mp4}{text-a-vim.mp4};
+    VSCode: \href{media/casts/text-a.mp4}{text-a-vscode.mp4}.
+\end{cast}
 
 \begin{exercise}\label{ex:text-b}
     在文件 \directory{/Documents/learn-latex/basic-01/text-b.tex}
     中按提示输入相应的文字后，编译此文件, 观察 pdf 输出。
 \end{exercise}
+\begin{cast}\label{cast:text-b}
+    gVim: \href{media/casts/text-b.mp4}{text-b-vim.mp4};
+    VSCode: \href{media/casts/text-b.mp4}{text-b-vscode.mp4}.
+\end{cast}
 \begin{share}\label{share:user-designer}
     更多的字体命令，参见
     \hyperlink{books/lshort-zh-cn.pdf.74}%
@@ -641,6 +653,10 @@ endif
     在文件 \directory{/Documents/learn-latex/basic-02/math-a.tex}
     中按提示输入相应的内容后，编译此文件, 观察 pdf 输出。
 \end{exercise}
+\begin{cast}\label{cast:math-a}
+    gVim: \href{media/casts/math-a.mp4}{math-a-vim.mp4};
+    VSCode: \href{media/casts/math-a.mp4}{math-a-vscode.mp4}.
+\end{cast}
 
 \begin{latex}\label{tex:preamble}
     在 \lstinline|documentclass{ }| 和
@@ -671,6 +687,10 @@ endif
     中按提示输入相应的内容后，将文件保存为 \texttt{math-c.tex}.
     编译此文件, 观察 pdf 输出。
 \end{exercise}
+\begin{cast}\label{cast:math-b}
+    gVim: \href{media/casts/math-b.mp4}{math-b-vim.mp4};
+    VSCode: \href{media/casts/math-b.mp4}{math-b-vscode.mp4}.
+\end{cast}
 要完成练习~\ref{ex:math-c}, 我们需要输入以下内容：
 \begin{lstlisting}[style=lst]
 \begin{equation}
@@ -679,6 +699,11 @@ endif
 \end{lstlisting}
 注意到我们有可能输入环境 \texttt{equation}
 很多次，而对于这种多次重复的输入，我们通常可以找到节省输入时间的方法。
+\begin{share}\label{share:snippets}
+    对于需要多次重复的输入，我们可以使用
+    \emph{\gls{pd}} (\gls{pd-en}) 来节省输入时间。
+    片段是一种可以由几个字符触发的可重复使用的短文本。
+\end{share}
 在 vscode 编辑器中, LaTeX-Workshop 插件已经为我们提供了常用的片段。
 比如，输入 BEQ, 然后按 \keys{Tab} 键，
 环境 \texttt{equation} 就自动跳出来，
@@ -688,6 +713,17 @@ endif
 这个编号是自动生成的，并且会根据这个公式在正文中的位置，自动变化。
 比如，我们如果在这个公式之前插入一个公式，那么这个公式的编号就会变成 (2).
 
+在本虚拟机中，我们用插件
+\href{https://github.com/SirVer/ultisnips}{UltiSnips}
+来管理 Vim 编辑器的片段。
+除了使用插件中已经设置好的片段，我们还使用了
+\href{https://github.com/gillescastel/latex-snippets}{Gilles Castel}
+制作的片段。
+这些片段的使用，可以参考其
+\href{https://castel.dev/post/lecture-notes-1/}{博客} 以及博客的
+\href{https://bonxg.com/p/85.html}{中文翻译}。
+在我们的演示录屏中，也可以学到怎么使用其中的一些片段。
+
 \begin{exercise}\label{ex:math-d}
     在\href{learn-latex/basic-02/math-c.tex}{文件}
     \directory{/Documents/learn-latex/basic-02/math-c.tex}
@@ -696,6 +732,9 @@ endif
     编译此文件，观察 pdf 输出。
 \end{exercise}
 \begin{cast}\label{sol:math-d}
+    gVim: \href{media/casts/math-d.mp4}{math-d-vim.mp4};
+    VSCode: \href{media/casts/math-d.mp4}{math-d-vscode.mp4}.
+\end{cast}
 
 如果我们在文档中需要引用公式，
 我们可以使用 \texttt{label} 和 \texttt{ref} 生成交叉引用，
@@ -709,7 +748,10 @@ endif
     中按提示输入相应的内容后，将文件保存为 \texttt{math-e.tex}.
     编译此文件, 观察 pdf 输出。
 \end{exercise}
-
+\begin{cast}\label{cast:math-e}
+    gVim: \href{media/casts/math-e.mp4}{math-e-vim.mp4};
+    VSCode: \href{media/casts/math-e.mp4}{math-e-vscode.mp4}.
+\end{cast}
 本节的基础知识学完以后，就可以使用模板写作论文了。
 
 \newpage
