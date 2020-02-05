@@ -158,6 +158,7 @@
     我们设置了在保存文件时自动编译 {\LaTeX} 文件。
     按下组合键 \keys{ctrl + s},
     则在保存了文件的同时又激活了对 {\LaTeX} 文件的编译。
+    能够编译的另外一个组合键是 \keys{ctrl + alt + b}.
 \end{tip}
 \begin{tip}\label{tip:vscode-shortcut-pdfviewer}
     对于本虚拟机中的编辑器 VSCode,
@@ -225,9 +226,12 @@
 \end{latex}
 模板~\ref{basic-01-text-en-a} 中的第三行即为注释。
 \begin{exercise}\label{ex:documentclass}
-    请在模板~\ref{basic-01-text-en-a} 中加上文档类的可选参数，设置纸张大小为
-    \texttt{a5paper}, 字体大小为 \texttt{12pt}.
-    完成练习后，将文件保存为 \texttt{text-en-b.tex}.
+    打开文件
+    \href{learn-latex/basic-01/text-en-a.tex}{text-en-a.tex},
+    将文件保存为
+    \href{learn-latex/basic-01/text-en-b.tex}{text-en-b.tex}.
+    设置文档类可选参数的
+    纸张大小为 \texttt{a5paper}, 字体大小为 \texttt{12pt}.
 \end{exercise}
 \begin{cast}\label{cast:documentclass}
     gVim: \href{media/casts/text-en-b-vim.mp4}{text-en-b-vim.mp4};
@@ -280,7 +284,8 @@
 第二行表明了这个文件的编码是 \texttt{UTF-8}, 这是中文文档通常使用的编码。
 
 \begin{exercise}\label{ex:text-a}
-    在文件 \directory{/Documents/learn-latex/basic-01/text-a.tex}
+    在文件
+    \href{learn-latex/basic-01/text-a.tex}{text-a.tex}
     中按提示输入相应的文字后，编译此文件, 观察 pdf 输出。
 \end{exercise}
 \begin{cast}\label{cast:text-a}
@@ -289,7 +294,8 @@
 \end{cast}
 
 \begin{exercise}\label{ex:text-b}
-    在文件 \directory{/Documents/learn-latex/basic-01/text-b.tex}
+    在文件
+    \href{learn-latex/basic-01/text-b.tex}{text-b.tex}
     中按提示输入相应的文字后，编译此文件, 观察 pdf 输出。
 \end{exercise}
 \begin{cast}\label{cast:text-b}
@@ -322,7 +328,8 @@
     label=basic-02-math-a]%
 {learn-latex/basic-02/math-a.tex}
 \begin{exercise}\label{ex:math-a}
-    在文件 \directory{/Documents/learn-latex/basic-02/math-a.tex}
+    在文件
+    \href{learn-latex/basic-02/math-a.tex}{math-a.tex}
     中按提示输入相应的内容后，编译此文件, 观察 pdf 输出。
 \end{exercise}
 \begin{cast}\label{cast:math-a}
@@ -354,10 +361,11 @@
     label=basic-02-math-b]%
 {learn-latex/basic-02/math-b.tex}
 \begin{exercise}\label{ex:math-c}
-    在 \href{learn-latex/basic-02/math-b.tex}{文件}
-    \directory{/Documents/learn-latex/basic-02/math-b.tex}
-    中按提示输入相应的内容后，将文件保存为 \texttt{math-c.tex}.
-    编译此文件, 观察 pdf 输出。
+    打开文件
+    \href{learn-latex/basic-02/math-b.tex}{math-b.tex},
+    将文件保存为
+    \href{learn-latex/basic-02/math-c.tex}{math-c.tex}.
+    按提示输入相应的内容后，编译此文件, 观察 pdf 输出。
 \end{exercise}
 \begin{cast}\label{cast:math-c}
     gVim: \href{media/casts/math-c-vim.mp4}{math-c-vim.mp4};
@@ -397,10 +405,11 @@
 在我们的演示录屏中，也可以学到怎么使用其中的一些片段。
 
 \begin{exercise}\label{ex:math-d}
-    在\href{learn-latex/basic-02/math-c.tex}{文件}
-    \directory{/Documents/learn-latex/basic-02/math-c.tex}
-    中的公式~(1)~的前面插入带编号的公式 \(1\,+\,1 = 2\),
-    将这个文件另存为 \texttt{math-d.tex}.
+    打开文件
+    \href{learn-latex/basic-02/math-c.tex}{math-c.tex},
+    将这个文件另存为
+    \href{learn-latex/basic-02/math-d.tex}{math-d.tex}.
+    在公式~(1)~的前面插入公式 \(1\,+\,1 = 2\),
     编译此文件，观察 pdf 输出。
 \end{exercise}
 \begin{cast}\label{sol:math-d}
