@@ -449,6 +449,94 @@
 
 更多的公式排版知识，可以参考 \hyperlink{books/lshort-zh-cn.pdf.51}%
 {《一份不太简短的LATEX介绍》\S4.2}.
+
+\subsection{数学符号输入}%
+\label{sub:latex-math-symbol}
+
+\subsubsection{希腊字母}%
+\label{ssub:greek-letter}
+
+小写希腊字母符号的输入就是 \textbackslash~加上其小写英文名称，
+如 \lstinline{\alpha}、\lstinline{\beta} 等等。
+大写希腊字母符号的输入就是 \textbackslash~加上其首字母大写英文名称，
+如 \lstinline{\Gamma}、\lstinline{\Delta} 等等。
+更多希腊字母相关的命令可参考
+\hyperlink{books/lshort-zh-cn.pdf.66}%
+{《一份不太简短的LATEX介绍》表 4.5}.
+% 大写的希腊字母为首字母大写的命令，如 \msym{Gamma}、\msym{Delta} 等等。
+% 无穷大符号为 \msym{infty}。更多符号命令可参考表 \ref{tbl:math-greek} 和 \ref{tbl:math-misc} 等。
+\begin{exercise}\label{ex:symbol-a}
+    在文件
+    \href{learn-latex/basic-03/symbol-a.tex}{symbol-a.tex}
+    中按提示输入相应的希腊字母后，编译此文件, 观察 pdf 输出。
+\end{exercise}
+\begin{cast}\label{cast:symbol-a}
+    gVim: \href{media/casts/symbol-a-vim.mp4}{symbol-a-vim.mp4};
+    VSCode: \href{media/casts/symbol-a-vscode.mp4}{symbol-a-vscode.mp4}.
+\end{cast}
+
+\subsubsection{常用数学符号}%
+\label{ssub:math-gneral}
+
+除希腊字母外，常见的数学符号有省略号 \(\dots,\;\cdots\), \(\forall\),
+\(\exists\), \(\partial\), 等等。
+\begin{exercise}\label{ex:symbol-b}
+    在文件
+    \href{learn-latex/basic-03/symbol-b.tex}{symbol-b.tex}
+    中按提示输入相应的符号后，编译此文件, 观察 pdf 输出。
+\end{exercise}
+\begin{cast}\label{cast:symbol-b}
+    gVim: \href{media/casts/symbol-b-vim.mp4}{symbol-b-vim.mp4};
+    VSCode: \href{media/casts/symbol-b-vscode.mp4}{symbol-b-vscode.mp4}.
+\end{cast}
+
+\LaTeX\ 默认提供了常用的数学符号，
+\lstinline{\amssymb} 宏包提供了一些次常用的符号，比如
+\(\mho,\;\Box,\;\Diamond\), 等等。
+\begin{exercise}\label{ex:symbol-c}
+    在文件
+    \href{learn-latex/basic-03/symbol-c.tex}{symbol-c.tex}
+    中按提示输入相应的符号后，编译此文件, 观察 pdf 输出。
+\end{exercise}
+\begin{cast}\label{cast:symbol-c}
+    gVim: \href{media/casts/symbol-c-vim.mp4}{symbol-c-vim.mp4};
+    VSCode: \href{media/casts/symbol-c-vscode.mp4}{symbol-c-vscode.mp4}.
+\end{cast}
+更多符号命令可参考
+\hyperlink{books/lshort-zh-cn.pdf.69}%
+{《一份不太简短的LATEX介绍》表 4.14}.
+
+
+\subsection{上下标及导数}%
+\label{sub:sup_sub_scripts}
+
+在 \LaTeX\ 中用 \texttt\textasciicircum 和 \texttt\textunderscore 标明上下标。
+如果上下标的内容（子公式）超过了一个字符，一般需要\textbf{用花括号包裹}；
+如果只有一个字符，可以不用花括号包裹。
+
+\begin{exercise}\label{ex:symbol-d}
+    在文件
+    \href{learn-latex/basic-03/symbol-d.tex}{symbol-d.tex}
+    中按提示输入相应的符号后，编译此文件, 观察 pdf 输出。
+\end{exercise}
+\begin{cast}\label{cast:symbol-d}
+    gVim: \href{media/casts/symbol-d-vim.mp4}{symbol-d-vim.mp4};
+    VSCode: \href{media/casts/symbol-d-vscode.mp4}{symbol-d-vscode.mp4}.
+\end{cast}
+
+导数符号 ${}'$ 是一类特殊的上标，
+可以适当连用表示多阶导数，也可以在其后连用上标。
+
+\begin{exercise}\label{ex:symbol-e}
+    在文件
+    \href{learn-latex/basic-03/symbol-e.tex}{symbol-e.tex}
+    中按提示输入相应的符号后，编译此文件, 观察 pdf 输出。
+\end{exercise}
+\begin{cast}\label{cast:symbol-e}
+    gVim: \href{media/casts/symbol-e-vim.mp4}{symbol-e-vim.mp4};
+    VSCode: \href{media/casts/symbol-e-vscode.mp4}{symbol-e-vscode.mp4}.
+\end{cast}
+
 本节的基础知识学完以后，就可以使用模板写作论文了。
 
 \newpage
@@ -543,6 +631,9 @@
 \end{itemize}
 
 \includepdf[pages=16-18,link=true]{books/lshort-zh-cn.pdf}
+\includepdf[pages=51-52,link=true]{books/lshort-zh-cn.pdf}
+\includepdf[pages=66,link=true]{books/lshort-zh-cn.pdf}
+\includepdf[pages=69,link=true]{books/lshort-zh-cn.pdf}
 \includepdf[pages=74,link=true]{books/lshort-zh-cn.pdf}
 
 \chapter{Git 使用教程}%
