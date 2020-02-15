@@ -8,7 +8,7 @@
 %%%%%%%%%%%%%%%%%%%%%
 % % !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{elegantbook}[2020/02/10 v3.10 ElegantBook document class]
+\ProvidesClass{elegantsierxue310}[2020/02/10 v3.10 ElegantBook document class]
 
 \RequirePackage{kvoptions}
 \RequirePackage{etoolbox}
@@ -490,7 +490,7 @@
 %\titlespacing{\subsection}{0pt}{0.5\baselineskip}{-\baselineskip}
 
 %%define the note and proof environment
-\RequirePackage{pifont,manfnt,bbding}
+\RequirePackage{fontawesome,pifont,manfnt,bbding}
 
 \RequirePackage[many]{tcolorbox}
 
@@ -666,7 +666,7 @@
 
 \newenvironment{note}{
   \par\noindent\makebox[-3pt][r]{
-    \scriptsize\color{red!90}\textdbend\quad}
+    \scriptsize\color{red!90}\faWarning\quad}
     \textbf{\color{second}\notename} \citshape}{\par}
 
 \newenvironment{tip}{
