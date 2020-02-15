@@ -55,6 +55,7 @@
 
 \DeclareVoidOption{normal}{\ekv{device=normal}}
 \DeclareVoidOption{pad}{\ekv{device=pad}}
+\DeclareVoidOption{phone}{\ekv{device=phone}}
 
 \DeclareStringOption[numbers]{cite}
 \DeclareVoidOption{numbers}{\ekv{cite=numbers}}
@@ -111,6 +112,12 @@
   margin=16mm,
   headheight=2.17cm,
   footskip=4mm
+}}{\relax}
+
+\ifdefstring{\ELEGANT@device}{phone}{
+\geometry{
+  a5paper,
+  margin=14mm,
 }}{\relax}
 
 \RequirePackage{indentfirst,comment}
@@ -827,17 +834,34 @@
       \ifcsname @bioinfo\endcsname \@bioinfo\\ \fi
     \end{tabular}}
   \end{minipage}
-  \begin{minipage}[c]{0.27\linewidth}
-  \begin{tikzpicture}[remember picture,overlay]
-    \begin{pgfonlayer}{background}
-      \node[opacity=0.8,
-            anchor=south east,
-            outer sep=0pt,
-            inner sep=0pt] at ($(current page.south east) +(-0.8in,1.5in)$) {
-              \ifcsname @logo\endcsname\includegraphics[width=4.2cm]{\@logo}\fi};
-    \end{pgfonlayer}
-  \end{tikzpicture}
-  \end{minipage}
+  \ifdefstring{\ELEGANT@device}{normal}{
+    \begin{minipage}[c]{0.27\linewidth}
+    \begin{tikzpicture}[remember picture,overlay]
+      \begin{pgfonlayer}{background}
+        \node[opacity=0.8,
+              anchor=south east,
+              outer sep=0pt,
+              inner sep=0pt] at ($(current page.south east) +(-0.8in,1.5in)$) {
+                \ifcsname @logo\endcsname\includegraphics[width=4.2cm]{\@logo}\fi};
+      \end{pgfonlayer}
+    \end{tikzpicture}
+    \end{minipage}
+  \fi
+  }{\relax}
+  \ifdefstring{\ELEGANT@device}{pad}{
+    \begin{minipage}[c]{0.27\linewidth}
+    \begin{tikzpicture}[remember picture,overlay]
+      \begin{pgfonlayer}{background}
+        \node[opacity=0.8,
+              anchor=south east,
+              outer sep=0pt,
+              inner sep=0pt] at ($(current page.south east) +(-0.8in,1.5in)$) {
+                \ifcsname @logo\endcsname\includegraphics[width=4.2cm]{\@logo}\fi};
+      \end{pgfonlayer}
+    \end{tikzpicture}
+    \end{minipage}
+  \fi
+  }{\relax}
   \vfill
   \begin{center}
     \setstretch{1.3}
