@@ -1,6 +1,6 @@
 [submodule "books"]
 	path = books
-	url = https://git.coding.net/sierxue/books-toolsRes.git
+	url = https://e.coding.net/sierxue/books-toolsRes.git
 [submodule "media"]
 	path = media
-	url = https://git.coding.net/sierxue/media-toolsRes.git
+	url = https://e.coding.net/sierxue/media-toolsRes.git
